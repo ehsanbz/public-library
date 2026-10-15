@@ -7,6 +7,7 @@ import datetime
 import json
 import os
 import pathlib
+import re
 import subprocess
 import time
 import urllib.parse
@@ -74,8 +75,14 @@ class Drive:
 
     def request(self, method, path, params=None, body=None):
         headers = {}
-        if self.keys:
-            headers['X-Goog-Drive-Resource-Keys'] = ','.join(k+'/'+v for k,v in self.keys.items())
+        # Only send resource keys for the file/parent addressed by THIS request.
+        # Sending every discovered key eventually exceeds Google's header limit (HTTP 413).
+        addressed = set(re.findall(r"'([^']+)' in parents", (params or {}).get('q', '')))
+        if path.startswith('files/'):
+            addressed.add(path.split('/')[1])
+        selected = [k+'/'+self.keys[k] for k in sorted(addressed) if k in self.keys]
+        if selected:
+            headers['X-Goog-Drive-Resource-Keys'] = ','.join(selected)
         for attempt in range(4):
             response = self.session.request(method, 'https://www.googleapis.com/drive/v3/'+path,
                                             params=params, json=body, headers=headers, timeout=90)

@@ -34,6 +34,21 @@ class FakeDrive:
 
 
 class CloudTests(unittest.TestCase):
+    def test_resource_key_headers_stay_bounded_for_large_vaults(self):
+        from unittest.mock import Mock
+        drive = object.__new__(c.Drive)
+        drive.keys = {str(i): 'key-'+str(i) for i in range(3000)}
+        response = Mock(ok=True)
+        response.json.return_value = {'files': []}
+        drive.session = Mock()
+        drive.session.request.return_value = response
+        drive.request('GET', 'files', {'q': "'42' in parents and trashed = false"})
+        self.assertEqual(drive.session.request.call_args.kwargs['headers'],
+                         {'X-Goog-Drive-Resource-Keys': '42/key-42'})
+        drive.request('GET', 'files/99', {})
+        self.assertEqual(drive.session.request.call_args.kwargs['headers'],
+                         {'X-Goog-Drive-Resource-Keys': '99/key-99'})
+
     def test_credential_validation_never_exposes_secret_values(self):
         import json
         sentinel = 'PRIVATE-SENTINEL-NOT-FOR-LOGS'
