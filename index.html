@@ -17,6 +17,7 @@
 <main class="layout">
 <aside class="sidebar" aria-label="Catalog filters"><details class="filter-panel" id="filter-panel" open><summary class="filter-panel-summary">Filter your library</summary><div class="filter-heading"><h2>Refine your library</h2><button class="plain" id="reset">Reset all</button></div><div class="filter-grid">
 <label class="field"><span class="field-label">Language</span><select id="language"><option value="">All languages</option></select></label>
+<label class="field"><span class="field-label">Author</span><select id="author"><option value="">All authors</option></select></label>
 <label class="field"><span class="field-label">Main category</span><select id="category"><option value="">All categories</option></select></label>
 <label class="field"><span class="field-label">Theme / subcategory</span><select id="theme"><option value="">All themes</option></select></label>
 <label class="field"><span class="field-label">Topic tag</span><select id="topic"><option value="">All topics</option></select></label>
@@ -44,12 +45,12 @@ const HEADERS=DATA.headers;
 const normalize=value=>String(value).normalize('NFKD').replace(/[\u0300-\u036f\u064b-\u065f\u0670]/g,'').replace(/ي|ى/g,'ی').replace(/ك/g,'ک').replace(/[\u200c\u200d]/g,' ').toLocaleLowerCase().replace(/\s+/g,' ').trim();
 const split=value=>String(value).split(';').map(s=>s.trim()).filter(Boolean);
 const reviewIDs=new Set(DATA.summary.review_ids);
-const BOOKS=DATA.rows.map((row,index)=>({row,index,id:row[0],title:row[1],author:row[2],type:row[3],category:row[4],theme:row[5],topics:split(row[6]),languages:split(row[7]),year:row[8],series:row[9],notes:row[10],isbn:row[11],edition:row[12],format:row[13],location:row[14],search:normalize(row.join(' ')),review:reviewIDs.has(row[0]),duplicate:/\bDUP-\d+\b/.test(row[10]),archive:['RAR','ZIP'].includes(row[13])}));
+const BOOKS=DATA.rows.map((row,index)=>({row,index,id:row[0],title:row[1],author:row[2],authors:[...new Set(split(row[2]))],type:row[3],category:row[4],theme:row[5],topics:split(row[6]),languages:split(row[7]),year:row[8],series:row[9],notes:row[10],isbn:row[11],edition:row[12],format:row[13],location:row[14],search:normalize(row.join(' ')),review:reviewIDs.has(row[0]),duplicate:/\bDUP-\d+\b/.test(row[10]),archive:['RAR','ZIP'].includes(row[13])}));
 const mobileLayout=window.matchMedia('(max-width:760px)');
 $('filter-panel').open=!mobileLayout.matches;
 mobileLayout.addEventListener('change',event=>{$('filter-panel').open=!event.matches;});
-const state={query:'',language:'',category:'',theme:'',topic:'',type:'',format:'',review:'',sort:'catalog',view:mobileLayout.matches?'cards':'table',page:1,size:25};
-const filterNames={language:'Language',category:'Category',theme:'Theme',topic:'Topic',type:'Book type',format:'Format',review:'Review'};
+const state={query:'',language:'',author:'',category:'',theme:'',topic:'',type:'',format:'',review:'',sort:'catalog',view:mobileLayout.matches?'cards':'table',page:1,size:25};
+const filterNames={language:'Language',author:'Author',category:'Category',theme:'Theme',topic:'Topic',type:'Book type',format:'Format',review:'Review'};
 let filtered=[],focusReturn=null;
 const collator=new Intl.Collator(undefined,{numeric:true,sensitivity:'base'});
 const isUnknown=value=>['Unknown','Needs review','ناشناس'].includes(value);
@@ -58,7 +59,7 @@ function authorKey(author){const first=author.split(';')[0].trim();return first.
 function matches(book,except=''){
  const words=normalize(state.query).split(' ').filter(Boolean);
  if(words.some(word=>!book.search.includes(word)))return false;
- for(const name of ['language','category','theme','topic','type','format']){if(name===except||!state[name])continue;const value=name==='language'?book.languages:name==='topic'?book.topics:book[name];if(Array.isArray(value)?!value.includes(state[name]):value!==state[name])return false;}
+ for(const name of ['language','author','category','theme','topic','type','format']){if(name===except||!state[name])continue;const value=name==='language'?book.languages:name==='topic'?book.topics:name==='author'?book.authors:book[name];if(Array.isArray(value)?!value.includes(state[name]):value!==state[name])return false;}
  if(except!=='review'&&state.review){const checks={review:book.review,duplicate:book.duplicate,'unknown-title':book.title==='Unknown','unknown-author':book.author==='Unknown','unknown-category':book.category==='Unknown',archive:book.archive,complete:!book.review};if(!checks[state.review])return false;}
  return true;
 }
@@ -67,8 +68,8 @@ function sortBooks(books){
  const [field,direction]=state.sort.split('-');const descending=direction==='desc';
  return books.sort((a,b)=>{let av=a[field],bv=b[field];if(field==='author'){av=authorKey(av);bv=authorKey(bv);}if(field==='language'){av=a.languages.join('; ');bv=b.languages.join('; ');}if(field==='year'){const an=parseInt(av,10),bn=parseInt(bv,10);if(Number.isNaN(an)!==Number.isNaN(bn))return Number.isNaN(an)?1:-1;if(!Number.isNaN(an)&&an!==bn)return (an-bn)*(descending?-1:1);return a.index-b.index;}return compareValue(av,bv,descending)||a.index-b.index;});
 }
-function facetOptions(name){const counts=new Map();for(const book of BOOKS.filter(b=>matches(b,name))){const values=name==='language'?book.languages:name==='topic'?book.topics:[book[name]];for(const value of values)counts.set(value,(counts.get(value)||0)+1);}if(state[name]&&!counts.has(state[name]))counts.set(state[name],0);return [...counts].sort((a,b)=>compareValue(a[0],b[0]));}
-function updateFacets(){for(const name of ['language','category','theme','topic','type','format']){const select=$(name);const placeholder={language:'All languages',category:'All categories',theme:'All themes',topic:'All topics',type:'All book types',format:'All formats'}[name];select.replaceChildren(new Option(placeholder,''));for(const [value,count] of facetOptions(name))select.add(new Option(value+' ('+count+')',value));select.value=state[name];}}
+function facetOptions(name){const counts=new Map();for(const book of BOOKS.filter(b=>matches(b,name))){const values=name==='language'?book.languages:name==='topic'?book.topics:name==='author'?book.authors:[book[name]];for(const value of values)counts.set(value,(counts.get(value)||0)+1);}if(state[name]&&!counts.has(state[name]))counts.set(state[name],0);return [...counts].sort((a,b)=>compareValue(a[0],b[0]));}
+function updateFacets(){for(const name of ['language','author','category','theme','topic','type','format']){const select=$(name);const placeholder={language:'All languages',author:'All authors',category:'All categories',theme:'All themes',topic:'All topics',type:'All book types',format:'All formats'}[name];select.replaceChildren(new Option(placeholder,''));for(const [value,count] of facetOptions(name))select.add(new Option(value+' ('+count+')',value));select.value=state[name];}}
 function element(tag,className,text){const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;}
 function safeDriveURL(value){try{const url=new URL(value);return url.protocol==='https:'&&url.hostname==='drive.google.com'?url.href:null;}catch{return null;}}
 function driveLink(book){const link=element('a','drive-link');const url=safeDriveURL(book.location);if(!url){link.textContent='—';return link;}link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.title='Open in Google Drive';link.setAttribute('aria-label','Open '+book.title+' in Google Drive');link.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3h7v7M21 3l-11 11M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg>';return link;}
@@ -89,7 +90,7 @@ function update(){
 }
 function openDetails(book,trigger){focusReturn=trigger;$('detail-title').textContent=book.title;$('detail-author').textContent=book.author;$('detail-category').textContent=book.category+' / '+book.theme;const list=$('detail-metadata');list.replaceChildren();for(const [label,value] of [['Original ID',book.id],['Book type',book.type],['Main category',book.category],['Theme / subcategory',book.theme],['Topic tags',book.topics.join('; ')],['Language',book.languages.join('; ')],['Publication year',book.year],['Series / volume',book.series],['ISBN',book.isbn],['Edition',book.edition],['Format',book.format],['File location',book.location]]){list.append(element('dt','',label));const dd=element('dd',label==='Original ID'?'id-value':'');dd.dir='auto';if(label==='Topic tags'){const tags=element('div','detail-tags');for(const tag of book.topics){const button=element('button','tag',tag);button.title='Filter by this topic';button.addEventListener('click',()=>{closeDetails();state.topic=tag;state.page=1;update();$('topic').focus();});tags.append(button);}dd.append(tags);}else dd.textContent=value;list.append(dd);}$('detail-notes').textContent=book.notes;const link=$('detail-drive');const url=safeDriveURL(book.location);link.hidden=!url;if(url)link.href=url;$('details').showModal();}
 function closeDetails(){$('details').close();}
-function reset(){for(const name of ['query','language','category','theme','topic','type','format','review'])state[name]='';state.sort='catalog';state.page=1;$('search').value='';$('review').value='';update();}
+function reset(){for(const name of ['query','language','author','category','theme','topic','type','format','review'])state[name]='';state.sort='catalog';state.page=1;$('search').value='';$('review').value='';update();}
 function downloadCSV(){const cell=value=>{let text=String(value??'');if(/^[=+@]/.test(text))text="'"+text;return '"'+text.replaceAll('"','""')+'"';};const csv='\ufeff'+[HEADERS,...filtered.map(book=>book.row)].map(row=>row.map(cell).join(',')).join('\r\n')+'\r\n';const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=element('a');a.href=url;a.download='bookshelf_'+filtered.length+'_entries.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
 let debounce; $('search').addEventListener('input',()=>{clearTimeout(debounce);debounce=setTimeout(()=>{state.query=$('search').value;state.page=1;update();},120);});
 for(const name of Object.keys(filterNames))$(name).addEventListener('change',()=>{state[name]=$(name).value;state.query=$('search').value;if(name==='category'){state.theme='';state.topic='';}if(name==='theme')state.topic='';state.page=1;update();});

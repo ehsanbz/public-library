@@ -4,13 +4,13 @@
 
 1,416 catalog entries from 1,533 files across 216 folders, inventoried 15 October 2026. 117 software/image assets excluded from the catalog and retained in the inventory.
 
-The Bookshelf interface supports normalized Persian/Arabic search, filters, sorting, table and card views, details, and CSV export. Books stay on Google Drive; links preserve the resource keys and existing access permissions.
+The Bookshelf interface supports normalized Persian/Arabic search, author and subject filters, sorting, table and card views, details, and CSV export. Books stay on Google Drive; links preserve the resource keys and existing access permissions.
 
 ## Metadata
 
 Metadata has been enriched using document text, explicit filename credits, author collections, and curated bibliographic corrections. Titles have been cleaned; authors, translators and biography subjects are distinguished. Categories follow the original Bookshelf vocabulary. Language is checked against readable document text and scanned pages. At the owner’s request, Persian-script filenames or author names, including Iranian authors, receive a Persian language tag. Policy tags are explicitly distinguished from verified book languages; confirmed additional languages are retained. Remaining language inferences are explicitly marked. 1,366 entries have named authors and 1,416 have a language assignment. Unknown fields remain Unknown; years, ISBNs and editions are not invented. Review flags identify remaining uncertainty, and the per-entry notes preserve original filenames and folder paths. Archive contents are not expanded; one file is one entry. Potential duplicates are retained, with matching title/author/language/volume groups flagged for review.
 
-The published catalog files are the current reviewed snapshot. The evidence and audit JSON files retain the earlier public snapshot; updated working evidence remains local. A rebuild requires that updated evidence to preserve the current verification flags.
+The catalog, evidence, audit and methodology files are the current reviewed snapshot. Existing Drive IDs, source paths and field provenance are published with the owner’s approval. The public inputs reproduce the catalog without publishing book text or scanned pages. The Author filter lists individual co-authors separately and works with language, subject and review filters.
 
 ## Files and updates
 
