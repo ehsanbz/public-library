@@ -1,0 +1,77 @@
+name: Organize Inbox and update library
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: public-library-maintenance
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check cloud authorization
+        env:
+          DRIVE_AUTH: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
+        run: |
+          if [ -z "$DRIVE_AUTH" ]; then
+            echo '::error::Add GOOGLE_DRIVE_CREDENTIALS_JSON to repository Actions secrets. See CLOUD_SETUP.md.'
+            exit 1
+          fi
+      - name: Install Drive authentication libraries
+        run: python -m pip install 'google-auth[requests]>=2.40,<3'
+      - name: Check synchronization safeguards
+        run: |
+          python test_sync_catalog.py
+          python test_cloud_sync.py
+      - name: Organize personal Inbox and rebuild both vaults
+        env:
+          GOOGLE_DRIVE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
+        run: python cloud_sync.py
+      - name: Commit catalog metadata with concurrent-edit protection
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv bookshelf_source.json vault_inventory.json metadata_source_order.json metadata_audit.json sync_config.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update both library vaults from Drive'
+          fi
+          git fetch origin main
+          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then
+            if ! git merge-base --is-ancestor origin/main HEAD; then
+              echo '::error::Main changed during synchronization; next run will retry from current metadata.'
+              exit 1
+            fi
+            git push origin HEAD:main
+          fi
+      - name: Prepare public site files only
+        run: |
+          mkdir -p site.local
+          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv .nojekyll site.local/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site.local
+      - name: Deploy catalog
+        id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Verify the live catalog
+        run: python verify_cloud_deployment.py

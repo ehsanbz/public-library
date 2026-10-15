@@ -81,11 +81,12 @@ payload=json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\
 html=template.replace('__CATALOG_DATA__',payload)
 (root/'index.html').write_text(html,encoding='utf-8')
 (root/'.nojekyll').write_text('',encoding='utf-8')
+automation_description = ('Hourly checks run on GitHub Actions with Google Drive API authorization and do not require a local computer or Codex. Personal Inbox files are organized within the personal vault; Public Library remains read-only.' if sync.get('cloud_enabled') else 'The active hourly routine currently runs in Codex desktop while the computer is on and awake. A computer-independent GitHub Actions workflow is prepared; complete the authorization and first-run steps in CLOUD_SETUP.md before retiring the desktop routine.')
 (root/'README.md').write_text(f'''# Public Library
 
 [Open the catalog](https://ehsanbz.github.io/public-library/)
 
-{len(rows):,} entries in two distinct vaults: **Public Library ({vaults[0]['count']:,})** and **My Bookshelf ({vaults[1]['count']:,})**. Use the Include vaults checkboxes to browse either or both. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved or combined across Drive folders; existing IDs and access links are preserved.
+{len(rows):,} entries in two distinct vaults: **Public Library ({vaults[0]['count']:,})** and **My Bookshelf ({vaults[1]['count']:,})**. Use the Include vaults checkboxes to browse either or both. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved between vaults; existing IDs and access links are preserved.
 
 ## Sources
 
@@ -103,7 +104,7 @@ No deduplication or bibliographic merging occurs across vaults. Author, language
 - `vault_inventory.json`, `metadata_source_order.json`, `metadata_rules.py`, `metadata_evidence.json`, `metadata_audit.json`, `metadata_sources.md`: Public Library inventory and metadata evidence; audit records identify imported Bookshelf provenance separately.
 - `build_catalog.py` / `catalog_ui.template.html`: builder and interface template.
 
-Run `python build_catalog.py` to rebuild, then `python verify_metadata.py`. `public_library_catalog.csv`, `bookshelf_source.json`, `metadata_audit.json` and `sync_config.json` are durable inputs; preserve them when rebuilding. The published inputs reproduce the catalog without book text or scanned pages. Existing Drive IDs, source paths and provenance are public with the owner’s approval. No books are stored here. Automatic hourly checks use connected Drive and GitHub tools through Codex desktop. Keep the computer on, awake and the app running; this is not a cloud-only Drive watcher. The rendered page is a snapshot of the last published metadata update. See `SYNC.md`. Files are discovered by full folder traversal, so uploaded books with old modification dates are still found. Drive files, private Drive catalogs and the original Bookshelf repository are read-only to this scheduled workflow.
+Run `python build_catalog.py` to rebuild, then `python verify_metadata.py`. `public_library_catalog.csv`, `bookshelf_source.json`, `metadata_audit.json` and `sync_config.json` are durable inputs; preserve them when rebuilding. The published inputs reproduce the catalog without book text or scanned pages. Existing Drive IDs, source paths and provenance are public with the owner’s approval. No books are stored here. {automation_description} See [cloud setup](CLOUD_SETUP.md) and `SYNC.md`. The rendered page is a snapshot of the last published metadata update. Full folder traversal finds uploaded books with old modification dates. Private Drive catalog files and the original Bookshelf repository remain read-only.
 ''',encoding='utf-8')
 assert json.loads(re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)[1])==data
 assert len(list(csv.reader((root/'book_catalog.csv').open(encoding='utf-8-sig'))))-1==len(rows)
