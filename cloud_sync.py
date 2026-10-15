@@ -30,6 +30,32 @@ def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
+class CloudSetupError(Exception):
+    """Only fixed, credential-free messages may be emitted to public logs."""
+
+
+def credential_info(secret):
+    try:
+        info = json.loads(secret)
+    except (ValueError, TypeError):
+        raise CloudSetupError('GOOGLE_DRIVE_CREDENTIALS_JSON must contain valid JSON, not a file path or encoded string.') from None
+    if not isinstance(info, dict):
+        raise CloudSetupError('GOOGLE_DRIVE_CREDENTIALS_JSON must contain a JSON credential object.')
+    if 'installed' in info or 'web' in info:
+        raise CloudSetupError('The secret contains the downloaded OAuth CLIENT file. Authorize it once with authorize_drive.py, then replace the secret with the generated credential JSON containing a refresh_token. See CLOUD_SETUP.md.')
+    # google.oauth2.credentials.Credentials.to_json() omits type; accept its normal output.
+    if not info.get('type') and all(info.get(k) for k in ('client_id', 'client_secret', 'refresh_token')):
+        info['type'] = 'authorized_user'
+    kind = info.get('type')
+    required = {'authorized_user': ('client_id', 'client_secret', 'refresh_token'),
+                'service_account': ('client_email', 'private_key', 'token_uri')}
+    if kind not in required:
+        raise CloudSetupError('Use generated authorized_user credentials with a refresh_token, or a service_account key. A downloaded OAuth client file or access token alone cannot run unattended.')
+    if any(not isinstance(info.get(k), str) or not info[k].strip() for k in required[kind]):
+        raise CloudSetupError('The credential JSON is missing required authorization fields. Generate it again using CLOUD_SETUP.md; do not paste credentials into logs or chat.')
+    return info
+
+
 class Drive:
     def __init__(self, info):
         # Lazy imports let tests exercise safety boundaries without credentials.
@@ -243,7 +269,7 @@ def main():
     secret = os.environ.get('GOOGLE_DRIVE_CREDENTIALS_JSON', '')
     if not secret:
         raise ValueError('Add GOOGLE_DRIVE_CREDENTIALS_JSON in repository Actions secrets first')
-    drive = Drive(json.loads(secret))
+    drive = Drive(credential_info(secret))
     config = catalog.read_json(ROOT/'sync_config.json')
     # Complete read access to BOTH vaults is required before any Inbox mutations.
     scan(drive, config)
@@ -263,6 +289,9 @@ def main():
 if __name__ == '__main__':
     try:
         main()
+    except CloudSetupError as error:
+        print('::error::'+str(error))
+        raise SystemExit(1)
     except Exception as error:
         # No auth response bodies / raw metadata / book content in public runner logs.
         print('Cloud sync failed: '+type(error).__name__+'. Check Drive authorization, folder access and workflow setup.')

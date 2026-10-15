@@ -34,6 +34,21 @@ class FakeDrive:
 
 
 class CloudTests(unittest.TestCase):
+    def test_credential_validation_never_exposes_secret_values(self):
+        import json
+        sentinel = 'PRIVATE-SENTINEL-NOT-FOR-LOGS'
+        for info in ({'installed': {'client_secret': sentinel}}, {'type': 'authorized_user', 'client_secret': sentinel}, [sentinel]):
+            with self.assertRaises(c.CloudSetupError) as error:
+                c.credential_info(json.dumps(info))
+            self.assertNotIn(sentinel, str(error.exception))
+        with self.assertRaises(c.CloudSetupError):
+            c.credential_info(sentinel)
+
+    def test_normal_google_credentials_json_without_type_is_accepted(self):
+        import json
+        info = {'client_id': 'id', 'client_secret': 'secret', 'refresh_token': 'refresh'}
+        self.assertEqual(c.credential_info(json.dumps(info))['type'], 'authorized_user')
+
     @patch.object(c.catalog, 'write_json')
     @patch.object(c.catalog, 'read_json', return_value={'rows': []})
     def test_moves_only_classified_inbox_and_recovers_without_local_state(self, *_):
