@@ -34595,11 +34595,29 @@
       "PDF",
       "https://drive.google.com/file/d/1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg/view?usp=drivesdk",
       "My Bookshelf"
+    ],
+    [
+      "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
+      "tasvir ezandarfarhang eiran tarikhem com",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Needs review",
+      "Needs review",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Title/category use filename or explicit source folder only. Original file: tasvir_ezandarfarhang_eiran_tarikhem_com.pdf | Source folder: Inbox.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o/view?usp=drivesdk",
+      "My Bookshelf"
     ]
   ],
   "summary": {
     "screened_files": 1533,
-    "catalog_output_rows": 1921,
+    "catalog_output_rows": 1922,
     "review_ids": [
       "0B9wuggJUWO5PdWg1c2stS3ZkT2M",
       "0B9wuggJUWO5PYXhhcjJrUnd0ekE",
@@ -35147,9 +35165,10 @@
       "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
       "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
       "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
-      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg"
+      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
+      "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
     ],
-    "review_count": 547,
+    "review_count": 548,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
     "updated_at": "2026-10-15",
@@ -35175,7 +35194,7 @@
       "Health": 3,
       "Science": 4,
       "Technology & Computing": 254,
-      "Unknown": 24
+      "Unknown": 25
     },
     "language_counts": {
       "Persian": 1326,
@@ -35185,7 +35204,7 @@
       "Romanian": 2,
       "Italian": 1,
       "Arabic; Persian": 3,
-      "Unknown": 205,
+      "Unknown": 206,
       "German; English": 1,
       "German": 5,
       "Turkish": 2,
@@ -35198,7 +35217,7 @@
     "language_confirmed_from_text": 226,
     "vault_counts": {
       "Public Library": 1416,
-      "My Bookshelf": 505
+      "My Bookshelf": 506
     }
   },
   "vaults": [
@@ -35277,7 +35296,7 @@
       "drive_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM",
       "repository_url": "https://github.com/ehsanbz/bookshelf-catalog",
       "csv": "bookshelf_catalog.csv",
-      "count": 505,
+      "count": 506,
       "review_ids": [
         "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
         "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -35767,7 +35786,8 @@
         "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
         "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
         "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
-        "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg"
+        "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
+        "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
       ],
       "updated_at": "2026-10-15"
     }
