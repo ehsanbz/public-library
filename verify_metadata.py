@@ -17,8 +17,8 @@ assert row(425)[2]=='Bickel, Margot'
 assert row(719)[2]=='Shaw, George Bernard'
 assert row(771)[2]=='Camus, Albert'
 assert row(106)[7]=='Romanian'
-assert row(923)[7]=='Azerbaijani'
-assert row(1125)[7]==row(1130)[7]=='English'
+assert row(923)[7]=='Azerbaijani; Persian'
+assert row(1125)[7]==row(1130)[7]=='English; Persian'
 assert row(1009)[7]=='Persian'
 assert row(804)[7]=='Italian'
 assert row(1515)[2]=='Stein, Marky'
@@ -27,6 +27,10 @@ assert row(1384)[2]=='رسول پرویزی'
 assert row(1135)[1]=='دیوان شمس تبریزی'
 assert row(943)[1]=='مردان مریخی، زنان ونوسی'
 assert row(1428)[1]=='مانیفست حزب کمونیست'
+assert row(1244)[2]=='Anderson, Perry'
+assert row(1239)[2]=='Pannekoek, Anton'
+assert row(1526)[2]=='Loomis, Andrew'
+assert all('Persian' in r[7].split('; ') for r in d['rows'] if re.search(r'[\u0600-\u06ff]',source[r[0]]['title']+' '+r[2]))
 assert all(not re.search(r'\.(pdf|docx?|epub|mht|rar|zip)$',r[1],re.I) for r in d['rows'])
 html=(p/'index.html').read_text(encoding='utf-8')
 assert '<title>Public Library</title>' in html

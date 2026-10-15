@@ -1,6 +1,6 @@
 # Public Library
 
-[Open the searchable catalog](https://ehsanbz.github.io/my-public-library-catalog/)
+[Open the searchable catalog](https://ehsanbz.github.io/public-library/)
 
 1,416 catalog entries from 1,533 files across 216 folders, inventoried 15 October 2026. 117 software/image assets excluded from the catalog and retained in the inventory.
 
@@ -8,7 +8,9 @@ The Bookshelf interface supports normalized Persian/Arabic search, filters, sort
 
 ## Metadata
 
-Metadata has been enriched using document text, explicit filename credits, author collections, and curated bibliographic corrections. Titles have been cleaned; authors, translators and biography subjects are distinguished. Categories follow the original Bookshelf vocabulary. Language is checked against extracted text where readable; remaining language inferences are explicitly marked in each entry. 1,356 entries have named authors and 1,414 have a language assignment. Unknown fields remain Unknown; years, ISBNs and editions are not invented. Review flags identify remaining uncertainty, and the per-entry notes preserve original filenames and folder paths. Archive contents are not expanded; one file is one entry. Potential duplicates are retained, with matching title/author/language/volume groups flagged for review.
+Metadata has been enriched using document text, explicit filename credits, author collections, and curated bibliographic corrections. Titles have been cleaned; authors, translators and biography subjects are distinguished. Categories follow the original Bookshelf vocabulary. Language is checked against readable document text and scanned pages. At the owner’s request, Persian-script filenames or author names, including Iranian authors, receive a Persian language tag. Policy tags are explicitly distinguished from verified book languages; confirmed additional languages are retained. Remaining language inferences are explicitly marked. 1,366 entries have named authors and 1,416 have a language assignment. Unknown fields remain Unknown; years, ISBNs and editions are not invented. Review flags identify remaining uncertainty, and the per-entry notes preserve original filenames and folder paths. Archive contents are not expanded; one file is one entry. Potential duplicates are retained, with matching title/author/language/volume groups flagged for review.
+
+The published catalog files are the current reviewed snapshot. The evidence and audit JSON files retain the earlier public snapshot; updated working evidence remains local. A rebuild requires that updated evidence to preserve the current verification flags.
 
 ## Files and updates
 

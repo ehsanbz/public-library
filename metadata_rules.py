@@ -464,12 +464,15 @@ def read_evidence():
  for path in sorted(ROOT.glob('text_evidence*.json')):
   for k,v in json.loads(path.read_text(encoding='utf-8')).items():
    if v is None:continue
-   e[v.get('id',k)]=v
+   id=v.get('id',k)
+   if not v.get('text') and e.get(id,{}).get('text'):continue
+   e[id]=v
  return e
 EVIDENCE=read_evidence()
 def content_language(text):
  # Broken legacy font encodings and OCR soup must not be mistaken for English.
  t=text[:5000];letters=re.findall(r'[^\W\d_]',t,re.U);pers=len(re.findall(r'[\u0621-\u064a\u067e\u0686\u0698\u06af\u06a9\u06cc]',t))
+ if sum(ord(c)<32 and c not in '\n\r\t' for c in t)>max(10,len(t)*.01):return None
  if pers>160 and pers/max(1,len(letters))>.55:return 'Persian'
  words=re.findall(r'[a-z]+',t.casefold());common=sum(w in {'the','and','of','to','in','is','a','that','it','for','with','was','you','this','by','from'} for w in words)
  if len(words)>120 and common/len(words)>.14:return 'English'
@@ -562,18 +565,33 @@ def enrich(i,f,row):
  if fmt=='MP3':
   m=re.search(r'(\d+)\)?$',re.sub(r'\.mp3$','',original,flags=re.I));track=int(m[1]) if m else None
   title='The Little Prince'+(' — Track '+str(track) if track else '');author='Saint-Exupéry, Antoine de';kind='Audiobook';category=C['F'];sub='Children & young adult fiction';language='English';language_method='inferred from audiobook folder and track labels; audio not transcribed'
- if fmt in ['RAR','ZIP']:kind='Archive / Collection';review.append('Archive contents not inspected')
+ if fmt in ['RAR','ZIP']:
+  kind='Archive / Collection'
+  if i!=149:review.append('Archive contents not inspected')
+  else:notes.append('ZIP text/HTML contents inspected locally; English language established from contained book text.')
  title=norm(title);title=re.sub(r'\s*—\s*',' — ',title)
  series=o.get('series','Unknown')
  volume=re.search(r'(?:جلد|بخش|دفتر|کتاب)\s*([0-9۰-۹]+|اول|دوم|سوم|چهارم|پنجم|ششم|هفتم|هشتم|نهم|دهم)|\b(?:Volume|Vol\.?|Track)\s*(\d+)',title,re.I)
  if volume:series=title[:volume.start()].strip(' —-:')+'; '+volume[0]
  if series=='Unknown' and 'کلیدر' in folder:series='کلیدر'
- if i in [1143,1144]:title='شهید جاوید — فایل '+('2' if i==1143 else '1');review.append('Numeric filename; exact document title/author requires inspection')
+ if i in [1143,1144]:title='شهید جاوید — فایل '+('2' if i==1143 else '1')
+ # Requested catalog policy is distinct from evidence about the document language.
+ content_language_method=language_method
+ if detected_language or o.get('language_verified'):review=[r for r in review if r!='Language needs verification']
+ persian_policy=bool(re.search(r'[\u0600-\u06ff]',original+' '+author))
+ if persian_policy:
+  confirmed=bool(detected_language or o.get('language_verified'))
+  langs=[x.strip() for x in language.split(';') if x.strip()!='Unknown']
+  if not confirmed and language_method.startswith('inferred'):langs=[]
+  language='; '.join(dict.fromkeys(langs+['Persian']))
+  notes.append('Persian language tag assigned by user rule: Persian-script filename or author name (including Iranian authors). This policy tag does not assert the language of the book text.')
+  if not confirmed:
+   language_method='user-requested Persian tagging rule; document language not independently confirmed'
+  review=[r for r in review if r!='Language needs verification']
  notes.append('Language: '+language_method+'.')
  if language_method.startswith('inferred'):review.append('Language inferred')
- if evidence and not text and not evidence.get('text_length',0) and not evidence.get('language'):notes.append('Drive text extraction unavailable (scan/unsupported format).')
- if (text or evidence.get('text_length',0)) and not detected_language:notes.append('Extracted text has legacy-font/OCR limitations; not used as language proof.')
- if title=='Unknown' or (re.fullmatch(r'\d+',title) and i!=451):review.append('Title needs verification')
+ if evidence and not detected_language:notes.append('No readable language evidence from text extraction; rely on visual verification or the stated catalog tagging rule where available.')
+ if title=='Unknown' or (re.fullmatch(r'\d+',title) and i not in [451,232]):review.append('Title needs verification')
  if i==451:notes.append('Title ۲۳ is confirmed in extracted text; it is not an unidentified numeric filename.')
  if re.search(r'زنده?گی.?نامه|زندگینامه|معرفی|ویژه نامه|یادنامه',title) and 'category' not in o:category=C['M'];sub='Biography';kind='Nonfiction'
  # Every normalized field is traceable without claiming unverified edition details.
@@ -581,12 +599,12 @@ def enrich(i,f,row):
  notes.append('Original file: '+original+' | Source folder: '+folder+'.')
  if review:notes.insert(0,'REVIEW: '+('; '.join(dict.fromkeys(review)))+'.')
  tags=[sub]
- if language=='Persian':tags.append('Persian-language edition')
+ if 'Persian' in language.split('; '):tags.append('Persian language tag' if persian_policy else 'Persian-language edition')
  if kind=='Poetry':tags.append('Poetry')
  if category in [C['F'],C['D'],C['Q'],C['I']]:tags.append('Fiction')
  if re.search(r'ترجمه|برگردان',original):tags.append('Translation')
  row=[f['id'],title,author,kind,category,sub,'; '.join(dict.fromkeys(tags)),language,row[8],series,' '.join(notes),row[11],row[12],fmt,f['url']]
- return row,bool(review),{'author_source':provenance['author'],'language_source':language_method,'text_checked':bool(evidence),'text_readable_language':bool(content_language(text) or evidence.get('language'))}
+ return row,bool(review),{'author_source':provenance['author'],'language_source':language_method,'content_language_source':content_language_method,'persian_tag_by_user_rule':persian_policy,'text_checked':bool(evidence),'text_readable_language':bool(content_language(text) or evidence.get('language'))}
 
 # Corrections confirmed in extracted title pages or retained as explicitly uncertain.
 put(1515,author='Stein, Marky',note='Author confirmed on the extracted title and copyright pages.')
@@ -682,3 +700,18 @@ SOURCE_INDEX=json.loads((ROOT/'metadata_source_order.json').read_text(encoding='
 put(1384,author='رسول پرویزی',source_url='https://fa.wikisource.org/wiki/فهرست:Shalvarha-ye_vassle_dar_-_Rasoul_Parvizi.pdf',note='Matched to the contents of the author’s collection Shalvarha-ye vassle-dar.')
 put(1532,author='هلموت دله',note='Author name transcribed from scanned title page; Hans Thoma is the subject.')
 put([422,446,452],author='Unknown',note='Secondary political commentary found in the Shamlou collection; no reliable author credit established.')
+for i,a in [(1238,'حمید حمید'),(1239,'Pannekoek, Anton'),(1244,'Anderson, Perry')]:
+ put(i,author=a,language='Persian',language_verified=True,note='Author signature and Persian language verified on the final page of the document; publisher and transcription credits distinguished from authorship.')
+for i,a in [(1526,'Loomis, Andrew'),(1527,'غلامحسین امیرخانی'),(1530,'Franks, Gene'),(1531,'Tacconi, Ferdinando')]:
+ put(i,author=a,language='Persian',language_verified=True,note='Author/artist credit read on the scanned cover or title page; Persian instructional edition verified visually.')
+put(779,author='جلال آل احمد',category=C['M'],subcategory='Autobiography',note='First-person autobiographical text checked visually, beginning with the author’s family background and birth in 1302; distinguished from third-person biographies.')
+put(551,author='Various authors',note='Multiple essays and a biographical chronology; individual essay contributors not established. Collective authorship recorded rather than the subject Hedayat.')
+put(446,author='مسلم منصوری',language='Persian',language_verified=True,note='Author signature read at the end of the complete extracted document; Ahmad Shamlou is the subject and quoted poet.')
+for i in [238,1169,1252,1379]:put(i,language='English',language_verified=True,note='English text verified visually on rendered opening and final pages of this file.')
+for i in [421,1011,1398,1401,1405,1407,1410,1414,1464]:put(i,language='Persian',language_verified=True,note='Persian text verified visually on rendered pages; romanized or English filename was not taken as language proof.')
+put(1252,title='The Grass Is Singing — Penguin Readers adaptation',note='Scanned cover identifies Penguin Readers Level 5; catalog distinguishes the graded adaptation from the unabridged novel.')
+put(1464,title='لئوناردو داوینچی و پابلو پیکاسو',note='Biographical/art overview; artists are subjects, no author byline established.')
+put(1397,author='خسرو شاهانی',title='زباله های دولتی',language='Persian',language_verified=True,note='Author explicitly credited in the decoded Windows-1256 HTML body; office-file editor metadata was not taken as authorship.')
+put(1408,author='محمد پورثانی',title='لبخند',language='Persian',language_verified=True,note='Author explicitly credited in the decoded Windows-1256 HTML body; replaces earlier attribution based on filename/collection.')
+for i in [272,274,275,287]:put(i,language='English',language_verified=True,note='English narrative paragraphs read directly from the legacy Word file contents; language not inferred from the filename.')
+put(1340,language='English',language_verified=True,note='English narrative verified in the source RTF body, including the final scene; embedded image data ignored.')
