@@ -47,7 +47,20 @@ for n,group in enumerate(duplicate_groups,1):
 rows.sort(key=lambda r:(r[4].casefold(),r[5].casefold(),r[2].casefold(),r[9].casefold(),r[1].casefold()))
 assert len(rows)==len({r[0] for r in rows})
 summary={'screened_files':len(source['files']),'catalog_output_rows':len(rows),'review_ids':review_ids,'review_count':len(review_ids),'duplicate_groups':len(duplicate_groups),'duplicate_rows':sum(map(len,duplicate_groups)),'updated_at':'2026-10-15','excluded_assets':len(excluded),'folders_scanned':len(source['folders']),'authors_identified':sum(r[2] not in ['Unknown','Various authors'] for r in rows),'languages_identified':sum(r[7]!='Unknown' for r in rows),'category_counts':dict(collections.Counter(r[4] for r in rows)),'language_counts':dict(collections.Counter(r[7] for r in rows)),'text_extraction_attempted':len(EVIDENCE),'language_confirmed_from_text':sum(v['text_readable_language'] for v in audit.values())}
-data={'headers':headers,'rows':rows,'summary':summary}
+personal=json.loads((root/'bookshelf_source.json').read_text(encoding='utf-8'))
+assert personal['headers']==headers
+with (root/'public_library_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*rows])
+with (root/'bookshelf_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*personal['rows']])
+vaults=[{'id':'public-library','name':'Public Library','drive_url':'https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw','repository_url':'https://github.com/ehsanbz/public-library','csv':'public_library_catalog.csv','count':len(rows),'review_ids':review_ids,'updated_at':summary['updated_at']},
+ {'id':'bookshelf','name':'My Bookshelf','drive_url':'https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM','repository_url':'https://github.com/ehsanbz/bookshelf-catalog','csv':'bookshelf_catalog.csv','count':len(personal['rows']),'review_ids':personal['summary']['review_ids'],'updated_at':personal['summary']['updated_at']}]
+rows=[r+['Public Library'] for r in rows]+[r+['My Bookshelf'] for r in personal['rows']]
+for r in personal['rows']:
+ assert r[0] not in audit,'Overlapping Drive IDs require vault-qualified audit keys'
+ audit[r[0]]={'vault':'My Bookshelf','author_source':'imported unchanged from bookshelf-catalog','language_source':'imported unchanged from bookshelf-catalog','source_repository':'https://github.com/ehsanbz/bookshelf-catalog','source_catalog_date':personal['summary']['updated_at']}
+for v in audit.values():v.setdefault('vault','Public Library')
+headers=headers+['Vault']
+summary.update(catalog_output_rows=len(rows),vault_counts={v['name']:v['count'] for v in vaults},review_ids=review_ids+personal['summary']['review_ids'],review_count=len(review_ids)+len(personal['summary']['review_ids']),authors_identified=sum(r[2] not in ['Unknown','Various authors'] for r in rows),languages_identified=sum(r[7]!='Unknown' for r in rows),category_counts=dict(collections.Counter(r[4] for r in rows)),language_counts=dict(collections.Counter(r[7] for r in rows)))
+data={'headers':headers,'rows':rows,'summary':summary,'vaults':vaults}
 (root/'catalog_data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
 (root/'metadata_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
 with (root/'book_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*rows])
@@ -58,31 +71,27 @@ html=template.replace('__CATALOG_DATA__',payload)
 (root/'.nojekyll').write_text('',encoding='utf-8')
 (root/'README.md').write_text(f'''# Public Library
 
-[Open the searchable catalog](https://ehsanbz.github.io/public-library/)
+[Open the catalog](https://ehsanbz.github.io/public-library/)
 
-{len(rows):,} catalog entries from {len(source['files']):,} files across {len(source['folders'])} folders, inventoried 15 October 2026. {len(excluded)} software/image assets excluded from the catalog and retained in the inventory.
+{len(rows):,} entries in two distinct vaults: **Public Library (1,416)** and **My Bookshelf (500)**. Use the Include vaults checkboxes to browse either or both. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved or combined across Drive folders; existing IDs and access links are preserved.
 
-The Bookshelf interface supports normalized Persian/Arabic search, author and subject filters, sorting, table and card views, details, and CSV export. Books stay on Google Drive; links preserve the resource keys and existing access permissions.
+## Sources
 
-## Metadata
+- Public Library: [Drive vault](https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw), with the reviewed metadata and Persian tagging rule from this repository.
+- My Bookshelf: [Drive vault](https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM) and [original catalog](https://github.com/ehsanbz/bookshelf-catalog), snapshot dated {personal['summary']['updated_at']}. Its 500 entries, metadata and review flags are imported unchanged; Drive and GitHub CSV fields were compared and matched. The shortcut to Public Library inside this vault is not imported as another copy.
 
-Metadata has been enriched using document text, explicit filename credits, author collections, and curated bibliographic corrections. Titles have been cleaned; authors, translators and biography subjects are distinguished. Categories follow the original Bookshelf vocabulary. Language is checked against readable document text and scanned pages. At the owner’s request, Persian-script filenames or author names, including Iranian authors, receive a Persian language tag. Policy tags are explicitly distinguished from verified book languages; confirmed additional languages are retained. Remaining language inferences are explicitly marked. {summary['authors_identified']:,} entries have named authors and {summary['languages_identified']:,} have a language assignment. Unknown fields remain Unknown; years, ISBNs and editions are not invented. Review flags identify remaining uncertainty, and the per-entry notes preserve original filenames and folder paths. Archive contents are not expanded; one file is one entry. Potential duplicates are retained, with matching title/author/language/volume groups flagged for review.
+No deduplication or bibliographic merging occurs across vaults. Author, language, category and review filters combine with vault selection. Co-authored books appear under each author. Filtered CSV exports contain only the selected results, with a Vault column. Reset all includes both vaults again.
 
-The catalog, evidence, audit and methodology files are the current reviewed snapshot. Existing Drive IDs, source paths and field provenance are published with the owner’s approval. The public inputs reproduce the catalog without publishing book text or scanned pages. The Author filter lists individual co-authors separately and works with language, subject and review filters.
+## Data and rebuilding
 
-## Files and updates
+- `index.html`: offline-capable interface and embedded data.
+- `catalog_data.json` / `book_catalog.csv`: combined browse data, with an explicit Vault field.
+- `public_library_catalog.csv` / `bookshelf_catalog.csv`: separate 15-column source catalogs.
+- `bookshelf_source.json`: unchanged source snapshot from the original GitHub catalog.
+- `vault_inventory.json`, `metadata_source_order.json`, `metadata_rules.py`, `metadata_evidence.json`, `metadata_audit.json`, `metadata_sources.md`: Public Library inventory and metadata evidence; audit records identify imported Bookshelf provenance separately.
+- `build_catalog.py` / `catalog_ui.template.html`: builder and interface template.
 
-- `index.html`: standalone catalog, also usable offline.
-- `book_catalog.csv`: UTF-8 catalog with the same 15 columns as Bookshelf.
-- `catalog_data.json`: catalog data and summary.
-- `vault_inventory.json`: source file metadata and scanned folder paths.
-- `catalog_ui.template.html` and `build_catalog.py`: reusable interface and builder.
-- `metadata_rules.py`: curated normalization and bibliographic corrections.
-- `metadata_audit.json`: field provenance for the enriched catalog.
-- `metadata_evidence.json` and `metadata_source_order.json`: reproducible language evidence and stable source mapping.
-- `metadata_sources.md`: methodology, uncertainty policy and bibliographic references.
-
-Run `python build_catalog.py` after updating the inventory, evidence, rules and template. Local extracted-text evidence supports the audit; book text is not published to this repository. The Drive inventory is a snapshot and does not refresh automatically. GitHub Pages serves the main branch root.
+Run `python build_catalog.py` to rebuild, then `python verify_metadata.py`. The published inputs reproduce the catalog without book text or scanned pages. Existing Drive IDs, source paths and provenance are public with the owner’s approval. No books are stored here. This is a snapshot: changes to either Drive vault or the original Bookshelf repository are not automatically imported into this combined catalog. The original Bookshelf catalog remains independently maintained.
 ''',encoding='utf-8')
 assert json.loads(re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)[1])==data
 assert len(list(csv.reader((root/'book_catalog.csv').open(encoding='utf-8-sig'))))-1==len(rows)

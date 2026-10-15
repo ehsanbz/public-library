@@ -1,5 +1,11 @@
 # Metadata sources and method
 
+## Separate vaults
+
+The combined catalog keeps Public Library (1,416 entries) and My Bookshelf (500 entries) distinct. The [original Bookshelf repository](https://github.com/ehsanbz/bookshelf-catalog) supplies the unchanged metadata and review flags in `bookshelf_source.json`; the CSV fields were verified identical to the catalog in the [personal Drive vault](https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM). Importing the catalog does not reclassify its entries or reverify its books. Every output row records its vault; records are not deduplicated or combined across sources. The Public Library shortcut inside the personal vault is not followed. Original catalogs are also exported separately. Per-entry audit records distinguish imported Bookshelf metadata from Public Library evidence. Both vaults are snapshots, not automatic synchronizations.
+
+## Public Library evidence
+
 Updated 15 October 2026. All 1,416 catalog entries retain their Drive IDs and original file links. Source filenames and folder paths are retained in each entry’s notes.
 
 The catalog uses the original Bookshelf category vocabulary. Foreign author names use consistent surname-first spelling; Persian authors retain Persian names. Fiction, poetry, drama, memoir, biography, religion, philosophy, political writing and practical guides are distinguished.
