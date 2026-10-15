@@ -1,4 +1,4 @@
-# MY PUBLIC LIBRARY catalog
+# Public Library
 
 [Open the searchable catalog](https://ehsanbz.github.io/my-public-library-catalog/)
 
@@ -8,7 +8,7 @@ The Bookshelf interface supports normalized Persian/Arabic search, filters, sort
 
 ## Metadata
 
-Titles come from filenames; authors and subjects are inferred from folder labels. All entries are flagged for review. Language, publication year, ISBN, series, and edition remain Unknown until verified. Archive contents are not expanded; one file is one entry. Duplicates are retained, and content-based duplicate detection has not been performed. This is a complete file inventory, not a verified bibliographic edition catalog.
+Metadata has been enriched using document text, explicit filename credits, author collections, and curated bibliographic corrections. Titles have been cleaned; authors, translators and biography subjects are distinguished. Categories follow the original Bookshelf vocabulary. Language is checked against extracted text where readable; remaining language inferences are explicitly marked in each entry. 1,356 entries have named authors and 1,414 have a language assignment. Unknown fields remain Unknown; years, ISBNs and editions are not invented. Review flags identify remaining uncertainty, and the per-entry notes preserve original filenames and folder paths. Archive contents are not expanded; one file is one entry. Potential duplicates are retained, with matching title/author/language/volume groups flagged for review.
 
 ## Files and updates
 
@@ -17,5 +17,9 @@ Titles come from filenames; authors and subjects are inferred from folder labels
 - `catalog_data.json`: catalog data and summary.
 - `vault_inventory.json`: source file metadata and scanned folder paths.
 - `catalog_ui.template.html` and `build_catalog.py`: reusable interface and builder.
+- `metadata_rules.py`: curated normalization and bibliographic corrections.
+- `metadata_audit.json`: field provenance for the enriched catalog.
+- `metadata_evidence.json` and `metadata_source_order.json`: reproducible language evidence and stable source mapping.
+- `metadata_sources.md`: methodology, uncertainty policy and bibliographic references.
 
-Run `python build_catalog.py` after updating the inventory and template. The Drive inventory is a snapshot and does not refresh automatically. GitHub Pages serves the main branch root.
+Run `python build_catalog.py` after updating the inventory, evidence, rules and template. Local extracted-text evidence supports the audit; book text is not published to this repository. The Drive inventory is a snapshot and does not refresh automatically. GitHub Pages serves the main branch root.

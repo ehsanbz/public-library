@@ -1,0 +1,7 @@
+__pycache__/
+scan_review/
+rebuild-check/
+text_evidence*.json
+*.local.*
+download_references*.json
+*.jpg
