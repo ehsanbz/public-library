@@ -2,7 +2,7 @@
   "schema_version": 1,
   "enabled": true,
   "frequency": "hourly",
-  "execution": "Codex desktop heartbeat with connected Drive and GitHub tools",
+  "execution": "GitHub Actions hosted runner with Google Drive API",
   "automation_id": "sync-bookshelf-inbox",
   "catalog_updated_at": "2026-10-15",
   "public_updated_at": "2026-10-15",
@@ -13,5 +13,7 @@
   "vaults": {
     "public-library": "https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw",
     "bookshelf": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
-  }
+  },
+  "cloud_enabled": true,
+  "personal_inbox_organization": true
 }

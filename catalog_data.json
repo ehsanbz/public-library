@@ -35755,6 +35755,6 @@
   "sync": {
     "enabled": true,
     "frequency": "hourly",
-    "execution": "Codex desktop heartbeat with connected Drive and GitHub tools"
+    "execution": "GitHub Actions hosted runner with Google Drive API"
   }
 }
