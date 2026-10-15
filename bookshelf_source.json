@@ -8584,10 +8584,27 @@
       "Unknown",
       "PDF",
       "https://drive.google.com/file/d/1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz/view?usp=drivesdk"
+    ],
+    [
+      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
+      "گرگ پالان دیده",
+      "محمد ابراهیم باستانی پاریزی",
+      "Nonfiction",
+      "History",
+      "Iranian history",
+      "Iranian history; Historical essays; Memoir",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: Gregorian publication year and bibliographic edition remain unverified. Title and author verified from PDF cover (page 1); ISBN, second printing in 1393 SH, and Iranian history subject verified from imprint/cataloging page (page 3). Persian text verified visually in contents (page 4). Original filename: @RastarLib گرگ پالان دیده.pdf. Initially discovered in personal Inbox; classified as Iranian historical essays and memoir.",
+      "9789644050983",
+      "Second printing (1393 SH)",
+      "PDF",
+      "https://drive.google.com/file/d/1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg/view?usp=drivesdk"
     ]
   ],
   "summary": {
-    "catalog_output_rows": 504,
+    "catalog_output_rows": 505,
     "review_ids": [
       "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
       "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -9076,9 +9093,10 @@
       "1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm",
       "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
       "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
-      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz"
+      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
+      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg"
     ],
-    "review_count": 488,
+    "review_count": 489,
     "updated_at": "2026-10-15",
     "drive_library_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
   }

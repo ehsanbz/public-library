@@ -16270,5 +16270,13 @@
     "language_source": "owner Persian tagging rule",
     "source_path": "Inbox",
     "discovered_at": "2026-10-15T13:03:16.464Z"
+  },
+  "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg": {
+    "vault": "My Bookshelf",
+    "author_source": "Verified visually from the book cover and imprint, PDF pages 1 and 3, 2026-10-15",
+    "language_source": "Persian prose verified visually from PDF contents page 4; owner Persian-script/author rule also applies",
+    "source_path": "History/Iranian history",
+    "discovered_at": "2026-10-15T16:11:53.060038+00:00",
+    "classification_source": "Iran/history subject in PDF cataloging page 3 and historical contents on page 4"
   }
 }

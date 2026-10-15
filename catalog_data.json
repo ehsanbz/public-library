@@ -34577,11 +34577,29 @@
       "PDF",
       "https://drive.google.com/file/d/1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz/view?usp=drivesdk",
       "My Bookshelf"
+    ],
+    [
+      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
+      "گرگ پالان دیده",
+      "محمد ابراهیم باستانی پاریزی",
+      "Nonfiction",
+      "History",
+      "Iranian history",
+      "Iranian history; Historical essays; Memoir",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: Gregorian publication year and bibliographic edition remain unverified. Title and author verified from PDF cover (page 1); ISBN, second printing in 1393 SH, and Iranian history subject verified from imprint/cataloging page (page 3). Persian text verified visually in contents (page 4). Original filename: @RastarLib گرگ پالان دیده.pdf. Initially discovered in personal Inbox; classified as Iranian historical essays and memoir.",
+      "9789644050983",
+      "Second printing (1393 SH)",
+      "PDF",
+      "https://drive.google.com/file/d/1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg/view?usp=drivesdk",
+      "My Bookshelf"
     ]
   ],
   "summary": {
     "screened_files": 1533,
-    "catalog_output_rows": 1920,
+    "catalog_output_rows": 1921,
     "review_ids": [
       "0B9wuggJUWO5PdWg1c2stS3ZkT2M",
       "0B9wuggJUWO5PYXhhcjJrUnd0ekE",
@@ -35128,22 +35146,23 @@
       "1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm",
       "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
       "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
-      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz"
+      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
+      "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg"
     ],
-    "review_count": 546,
+    "review_count": 547,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
     "updated_at": "2026-10-15",
     "excluded_assets": 117,
     "folders_scanned": 216,
-    "authors_identified": 1643,
-    "languages_identified": 1715,
+    "authors_identified": 1644,
+    "languages_identified": 1716,
     "category_counts": {
       "Arts & Culture": 278,
       "Biography & Memoir": 69,
       "Business & Economics": 85,
       "Historical Fiction": 42,
-      "History": 46,
+      "History": 47,
       "Language & Linguistics": 29,
       "Literary Fiction": 682,
       "Mystery & Thriller": 10,
@@ -35159,7 +35178,7 @@
       "Unknown": 24
     },
     "language_counts": {
-      "Persian": 1325,
+      "Persian": 1326,
       "English": 366,
       "English; Persian": 3,
       "Azerbaijani; Persian": 1,
@@ -35179,7 +35198,7 @@
     "language_confirmed_from_text": 226,
     "vault_counts": {
       "Public Library": 1416,
-      "My Bookshelf": 504
+      "My Bookshelf": 505
     }
   },
   "vaults": [
@@ -35258,7 +35277,7 @@
       "drive_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM",
       "repository_url": "https://github.com/ehsanbz/bookshelf-catalog",
       "csv": "bookshelf_catalog.csv",
-      "count": 504,
+      "count": 505,
       "review_ids": [
         "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
         "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -35747,14 +35766,15 @@
         "1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm",
         "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
         "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
-        "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz"
+        "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
+        "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg"
       ],
       "updated_at": "2026-10-15"
     }
   ],
   "sync": {
     "enabled": true,
-    "frequency": "hourly",
+    "frequency": "daily",
     "execution": "GitHub Actions hosted runner with Google Drive API"
   }
 }
