@@ -5,3 +5,4 @@ text_evidence*.json
 *.local.*
 download_references*.json
 *.jpg
+sync_tests.local/

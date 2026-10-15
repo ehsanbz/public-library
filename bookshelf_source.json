@@ -8516,10 +8516,78 @@
       "Unknown",
       "PDF",
       "https://drive.google.com/file/d/19eQYhFNsdgcbC3S5Wkajf-0vxdtlo0fi/view?usp=drivesdk"
+    ],
+    [
+      "1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm",
+      "ویرگول شماره 2 سال2",
+      "Various authors",
+      "Reference",
+      "Arts & Culture",
+      "Literary periodicals",
+      "Literary periodicals",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Persian tag assigned by owner rule for Persian-script filename; book text not independently verified. Title/category use filename or explicit source folder only. Original file: ویرگول شماره 2 سال2.pdf | Source folder: Inbox.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm/view?usp=drivesdk"
+    ],
+    [
+      "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
+      "ویرگول شماره 1 سال دوم",
+      "Various authors",
+      "Reference",
+      "Arts & Culture",
+      "Literary periodicals",
+      "Literary periodicals",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Persian tag assigned by owner rule for Persian-script filename; book text not independently verified. Title/category use filename or explicit source folder only. Original file: ویرگول شماره 1 سال دوم.pdf | Source folder: Inbox.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI/view?usp=drivesdk"
+    ],
+    [
+      "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
+      "ویرگول شماره 3 سال 2",
+      "Various authors",
+      "Reference",
+      "Arts & Culture",
+      "Literary periodicals",
+      "Literary periodicals",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Persian tag assigned by owner rule for Persian-script filename; book text not independently verified. Title/category use filename or explicit source folder only. Original file: ویرگول شماره 3 سال 2.pdf | Source folder: Inbox.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2/view?usp=drivesdk"
+    ],
+    [
+      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
+      "نسخه آنلاین مجله ویرگول- شماره اول. سری سوم",
+      "Various authors",
+      "Reference",
+      "Arts & Culture",
+      "Literary periodicals",
+      "Literary periodicals",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Persian tag assigned by owner rule for Persian-script filename; book text not independently verified. Title/category use filename or explicit source folder only. Original file: نسخه آنلاین مجله ویرگول- شماره اول. سری سوم.pdf | Source folder: Inbox.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz/view?usp=drivesdk"
     ]
   ],
   "summary": {
-    "catalog_output_rows": 500,
+    "catalog_output_rows": 504,
     "review_ids": [
       "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
       "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -9004,10 +9072,14 @@
       "1sKjJjX1fY1WcFTZ6tZzL8i4CvTBC9fUn",
       "1_-6LwuHsFe9q_9T6wmYlp2_Mj62nWKDs",
       "18SjPYXcY5Et1gc1kM-_aWBRLT0m2KgeZ",
-      "1KOsWkrPWQwixFDy-wicWnv9uehj0PE9c"
+      "1KOsWkrPWQwixFDy-wicWnv9uehj0PE9c",
+      "1dojTuJiin44lv-JmK3kiK4p3dxqTDrGm",
+      "1DPQ_D6ZxnrX2Qr2_cks2je2mlB_mQIMI",
+      "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
+      "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz"
     ],
-    "review_count": 484,
-    "updated_at": "2026-10-14",
+    "review_count": 488,
+    "updated_at": "2026-10-15",
     "drive_library_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "frequency": "hourly",
+  "execution": "Codex desktop heartbeat with connected Drive and GitHub tools",
+  "automation_id": "sync-bookshelf-inbox",
+  "catalog_updated_at": "2026-10-15",
+  "public_updated_at": "2026-10-15",
+  "preserve_existing_metadata": true,
+  "follow_shortcuts": false,
+  "delete_missing_entries": false,
+  "publish_repository": "ehsanbz/public-library",
+  "vaults": {
+    "public-library": "https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw",
+    "bookshelf": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
+  }
+}
