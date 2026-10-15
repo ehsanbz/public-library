@@ -84,7 +84,24 @@ class Drive:
                 continue
             if not response.ok:
                 # Do not emit response bodies, credentials or private book contents to public logs.
-                raise RuntimeError('Drive '+method+' failed with HTTP '+str(response.status_code))
+                explanations = {
+                    'notFound': 'File or folder is unavailable to the cloud identity.',
+                    'insufficientPermissions': 'The Google authorization lacks the required Drive scope.',
+                    'insufficientFilePermissions': 'The cloud identity lacks permission for this file or folder.',
+                    'accessNotConfigured': 'Enable Google Drive API in the credential project.',
+                    'rateLimitExceeded': 'Google Drive rate limit exceeded.',
+                    'userRateLimitExceeded': 'Google Drive per-user rate limit exceeded.',
+                    'storageQuotaExceeded': 'The cloud identity cannot create folders because its storage quota is unavailable or exceeded. Use user OAuth credentials or precreate filing folders.',
+                    'appNotAuthorizedToFile': 'The OAuth app is not authorized for this file.',
+                    'teamDriveFileLimitExceeded': 'The shared Drive file limit was reached.',
+                }
+                reasons = []
+                try:
+                    reasons = [e.get('reason') for e in response.json().get('error', {}).get('errors', [])]
+                except (ValueError, AttributeError, TypeError):
+                    pass
+                hints = list(dict.fromkeys(explanations[r] for r in reasons if r in explanations))
+                raise CloudSetupError('Drive '+method+' failed with HTTP '+str(response.status_code)+'. '+' '.join(hints))
             result = response.json()
             for item in result.get('files', [result]):
                 if item.get('resourceKey') and item.get('id'):
@@ -241,12 +258,17 @@ def organize(drive, root=ROOT):
 def scan(drive, config):
     result = {'started_at': now(), 'complete': False, 'errors': [], 'vaults': {}}
     for vault, url in config['vaults'].items():
+        print('Scanning vault: '+vault, flush=True)
         parsed = urllib.parse.urlparse(url)
         root_id = parsed.path.rstrip('/').split('/')[-1]
         key = urllib.parse.parse_qs(parsed.query).get('resourcekey', [None])[0]
         if key:
             drive.keys[root_id] = key
-        result['vaults'][vault] = walk(drive, root_id)
+        try:
+            result['vaults'][vault] = walk(drive, root_id)
+        except CloudSetupError as error:
+            raise CloudSetupError('While scanning '+vault+': '+str(error)) from None
+        print('Completed vault scan: '+vault, flush=True)
     result.update(complete=True, finished_at=now())
     catalog.validate_scan(result)
     return result
@@ -273,6 +295,7 @@ def main():
     config = catalog.read_json(ROOT/'sync_config.json')
     # Complete read access to BOTH vaults is required before any Inbox mutations.
     scan(drive, config)
+    print('Organizing personal Inbox.', flush=True)
     organized = organize(drive)
     state = scan(drive, config)  # Scan after moves; crash recovery discovers moved IDs here next run.
     result = catalog.ingest(ROOT, state, upstream=upstream_catalog())
