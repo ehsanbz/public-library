@@ -218,6 +218,14 @@ def organize(drive, root=ROOT):
             unresolved += 1
             continue
         row = metadata.get(item['id']) or catalog.default_row('bookshelf', item)
+        row = list(row)
+        if item['id'] not in metadata:
+            additions = catalog.read_json(root/'metadata_additions.json', {})
+            headers = catalog.read_json(root/'bookshelf_source.json')['headers']
+            for field, value in additions.get('bookshelf:'+item['id'], {}).get('fields', {}).items():
+                if field not in headers[1:14]:
+                    raise ValueError('Verified addition cannot alter source ID or link')
+                row[headers.index(field)] = value
         category, subcategory = row[4:6]
         if category not in catalog.CATEGORIES or subcategory in {'', 'Unknown', 'Needs review'}:
             unresolved += 1
@@ -305,7 +313,7 @@ def main():
     print('Organizing personal Inbox.', flush=True)
     organized = organize(drive)
     state = scan(drive, config)  # Scan after moves; crash recovery discovers moved IDs here next run.
-    result = catalog.ingest(ROOT, state, upstream=upstream_catalog())
+    result = catalog.ingest(ROOT, state, overrides=catalog.read_json(ROOT/'metadata_additions.json', {}), upstream=upstream_catalog())
     config = catalog.read_json(ROOT/'sync_config.json')
     config.update(execution='GitHub Actions hosted runner with Google Drive API',
                   cloud_enabled=True, personal_inbox_organization=True)

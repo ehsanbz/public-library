@@ -49,6 +49,19 @@ class CloudTests(unittest.TestCase):
         self.assertEqual(drive.session.request.call_args.kwargs['headers'],
                          {'X-Goog-Drive-Resource-Keys': '99/key-99'})
 
+    @patch.object(c.catalog, 'write_json')
+    def test_verified_new_book_metadata_guides_sorting_before_ingestion(self, _):
+        from test_sync_catalog import HEADERS
+        drive = FakeDrive()
+        drive.files['book']['name'] = 'New book.pdf'
+        additions = {'bookshelf:book': {'fields': {'Main Category': 'Arts & Culture',
+                                                  'Subcategory': 'Literary periodicals'}}}
+        def read(path, default=None):
+            return {'rows': [], 'headers': HEADERS} if path.name == 'bookshelf_source.json' else additions
+        with patch.object(c.catalog, 'read_json', side_effect=read):
+            self.assertEqual(c.organize(drive)['moved'], 1)
+        self.assertIn('periodicals', drive.files['book']['parents'])
+
     def test_credential_validation_never_exposes_secret_values(self):
         import json
         sentinel = 'PRIVATE-SENTINEL-NOT-FOR-LOGS'
@@ -65,7 +78,7 @@ class CloudTests(unittest.TestCase):
         self.assertEqual(c.credential_info(json.dumps(info))['type'], 'authorized_user')
 
     @patch.object(c.catalog, 'write_json')
-    @patch.object(c.catalog, 'read_json', return_value={'rows': []})
+    @patch.object(c.catalog, 'read_json', return_value={'rows': [], 'headers': []})
     def test_moves_only_classified_inbox_and_recovers_without_local_state(self, *_):
         drive = FakeDrive()
         result = c.organize(drive)

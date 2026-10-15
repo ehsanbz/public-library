@@ -84,6 +84,9 @@ def ingest(root,scan,overrides=None,upstream=None):
    personal['rows'].append(r);personal['summary']['review_ids'].append(f['id'])
   key=f['id'] if f['id'] not in audit else vault+':'+f['id']
   audit[key]={'vault':NAMES[vault],'author_source':'automatic filename/folder discovery; needs review','language_source':'owner Persian tagging rule' if 'Persian' in r[7] else 'unverified','source_path':f.get('folder',''),'discovered_at':scan['finished_at']}
+  for field,value in o.get('evidence',{}).items():
+   if field not in {'author_source','language_source','classification_source'} or not isinstance(value,str):raise ValueError('Unsupported verified metadata evidence')
+   audit[key][field]=value
   counts[vault]+=1
  # Every existing row survives untouched; new IDs are idempotent within each vault.
  assert public[:len(pcsv)-1]==pcsv[1:]

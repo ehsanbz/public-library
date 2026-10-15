@@ -1,6 +1,6 @@
 # Run the library while your computer is off
 
-The repository now includes `.github/workflows/library-sync.yml`: an hourly GitHub-hosted job (at minute 23) with a manual **Run workflow** button. It sorts the personal Inbox, scans both vaults independently, preserves curated metadata, commits additions and deploys GitHub Pages directly. It does not use Codex, a local computer, connector sessions, local scans or local checkpoints. The authoritative metadata masters and builder are checked out from this repository every run. Drive IDs and current parents make moves recoverable even if a runner stops after a move but before publication.
+The repository now includes `.github/workflows/library-sync.yml`: a daily GitHub-hosted job (16:23 UTC, every 24 hours) with a manual **Run workflow** button. It sorts the personal Inbox, scans both vaults independently, preserves curated metadata, commits additions and deploys GitHub Pages directly. It does not use Codex, a local computer, connector sessions, local scans or local checkpoints. The authoritative metadata masters and builder are checked out from this repository every run. Drive IDs and current parents make moves recoverable even if a runner stops after a move but before publication.
 
 ## One-time authorization
 
@@ -17,11 +17,13 @@ An existing service account JSON key is also supported if it has read access to 
 
 ## Scope and recovery
 
+Verified metadata for new books can be stored in `metadata_additions.json`, keyed by vault plus Drive ID, with field overrides and concise evidence references. The same reviewed metadata guides Inbox filing before ingestion and is preserved in the catalog. This is a metadata master in GitHub, not a dependency on local files. The 2026-10-15 end-to-end test uses the actual Inbox PDF گرگ پالان دیده, with title/author/imprint/contents checked visually, classified as History / Iranian history. Unidentified books without reliable classification stay in Inbox for review; this job does not claim automatic content verification of every new book.
+
 - Only eligible personal Inbox files are moved, within the personal category/subcategory hierarchy. Existing metadata guides classification; new uncertain items remain in Inbox for review. Saved web pages requiring assets stay in Inbox for review. Names, file bytes, sharing and unrelated parents are preserved. Public Library is read-only; shortcuts are never followed.
 - Both complete vault scans must succeed before Inbox changes. A second scan follows sorting. Pagination is exhausted; incomplete scans fail without committing partial catalogs. Newly uploaded books with old modification dates are found.
 - The original Bookshelf repository and private Drive catalog files remain read-only. Their existing metadata is preserved; the original repository supplies additional missing IDs.
 - Only allowlisted catalog metadata is committed. No books, raw text, credentials, local move journals or scans are uploaded. The Pages artifact contains only the public catalog and CSV exports.
 - Concurrent workflow runs are serialized. A concurrent human commit aborts publication instead of overwriting corrections. A later run starts from current GitHub masters and Drive state, recovering previously moved but unpublished books.
-- Hourly is a best-effort schedule, not an immediate Drive event. GitHub may delay scheduled runs and may disable schedules in public repositories after 60 days of repository inactivity. Reenable the workflow in Actions if that happens. See [GitHub scheduled workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+- Daily is a best-effort schedule, not an immediate Drive event. GitHub may delay scheduled runs and may disable schedules in public repositories after 60 days of repository inactivity. Reenable the workflow in Actions if that happens. See [GitHub scheduled workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
 
 The cloud job is **not operational until the secret and Pages setup are completed and its first run succeeds**. Existing desktop status in `sync_config.json` remains accurate until that transition is verified.

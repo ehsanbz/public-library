@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "enabled": true,
-  "frequency": "hourly",
+  "frequency": "daily",
   "execution": "GitHub Actions hosted runner with Google Drive API",
   "automation_id": "sync-bookshelf-inbox",
   "catalog_updated_at": "2026-10-15",
@@ -15,5 +15,6 @@
     "bookshelf": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
   },
   "cloud_enabled": true,
-  "personal_inbox_organization": true
+  "personal_inbox_organization": true,
+  "schedule_utc": "16:23"
 }
