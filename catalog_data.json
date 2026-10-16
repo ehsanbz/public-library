@@ -5493,7 +5493,7 @@
     [
       "0B9wuggJUWO5PMHpEa2l3YzVIOTQ",
       "تکنولوژی و اقتصاد",
-      "Unknown",
+      "رﭘﻴﺸﮕﻔﺘﺎ",
       "Nonfiction",
       "Business & Economics",
       "Economics",
@@ -5501,7 +5501,7 @@
       "Persian",
       "Unknown",
       "Unknown",
-      "REVIEW: Author unresolved. Persian language tag assigned by user rule: Persian-script filename or author name (including Iranian authors). This policy tag does not assert the language of the book text. Language: document text / title page. Author source: curated credit; see notes and source filename. Original file: تکنولوژی و اقتصاد.pdf | Source folder: 0-OTHERS/0-POLITICAL BOOKS/0-BOOKS.",
+      "REVIEW: Author unresolved. Persian language tag assigned by user rule: Persian-script filename or author name (including Iranian authors). This policy tag does not assert the language of the book text. Language: document text / title page. Author source: curated credit; see notes and source filename. Original file: تکنولوژی و اقتصاد.pdf | Source folder: 0-OTHERS/0-POLITICAL BOOKS/0-BOOKS. REVIEW: Metadata read automatically from book pages 1, 3, 4, 5, 6, 7, 8, 79, 158, 236 using embedded text. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -20469,7 +20469,7 @@
     [
       "0B9wuggJUWO5PLVZoX3FORlZBNlE",
       "قرآن مبین",
-      "Unknown",
+      "استاد شهيد مطهری",
       "Reference",
       "Religion",
       "Islam & Quran",
@@ -20477,7 +20477,7 @@
       "Arabic; Persian",
       "Unknown",
       "Unknown",
-      "REVIEW: Author unresolved. Quran; Persian translation credited to Taheri Qazvini. Translator is not treated as author. Language: curated source indication; see notes. No readable language evidence from text extraction; rely on visual verification or the stated catalog tagging rule where available. Author source: curated credit; see notes and source filename. Original file: quran-mobin - for print.pdf | Source folder: 0-OTHERS/0-RELIGIOUS BOOKS.",
+      "REVIEW: Author unresolved. Quran; Persian translation credited to Taheri Qazvini. Translator is not treated as author. Language: curated source indication; see notes. No readable language evidence from text extraction; rely on visual verification or the stated catalog tagging rule where available. Author source: curated credit; see notes and source filename. Original file: quran-mobin - for print.pdf | Source folder: 0-OTHERS/0-RELIGIOUS BOOKS. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 5, 6, 7, 8, 154, 308, 462 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification did not meet the filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -33501,7 +33501,7 @@
     [
       "1-7RnvIi83I4sRNw2oHLnrCTlwaNamzK0",
       "توابع ریاضی و ویژوال بیسیک",
-      "Unknown",
+      "زﻧﯿﺎ ريﻣﺎ آ و ﻓﯿﮑﯽ",
       "Nonfiction",
       "Technology & Computing",
       "Programming",
@@ -33509,7 +33509,7 @@
       "Persian",
       "Unknown",
       "Unknown",
-      "Original filename: Visual Basic 6.pdf. Missing/unverified: author, edition year. Series affiliation unverified.",
+      "Original filename: Visual Basic 6.pdf. Missing/unverified: author, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 5, 6, 7, 8, 116, 231, 346 using embedded text. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -35174,7 +35174,7 @@
     "updated_at": "2026-10-16",
     "excluded_assets": 117,
     "folders_scanned": 216,
-    "authors_identified": 1645,
+    "authors_identified": 1648,
     "languages_identified": 1717,
     "category_counts": {
       "Arts & Culture": 279,
@@ -35288,7 +35288,7 @@
         "0B9wuggJUWO5Pal9LaG9qblNsdGc",
         "0B9wuggJUWO5Pd21EcjlGWDdWVVU"
       ],
-      "updated_at": "2026-10-15"
+      "updated_at": "2026-10-16"
     },
     {
       "id": "bookshelf",
