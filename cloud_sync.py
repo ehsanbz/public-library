@@ -336,6 +336,19 @@ def main():
     # Complete read access to BOTH vaults is required before any Inbox mutations.
     initial = scan(drive, config)
     from content_reader import analyze, update_existing, merge_overrides
+    campaign_id = os.environ.get('LIBRARY_REVIEW_CAMPAIGN', '')
+    if campaign_id:
+        from review_campaign import pending_keys, record_results
+        keys = pending_keys(ROOT, initial, campaign_id)
+        print('Reading the fixed one-time review snapshot; no Drive files will move.', flush=True)
+        readings, reading_summary = analyze(drive, initial, ROOT, review_keys=keys)
+        overrides = merge_overrides(readings, catalog.read_json(ROOT/'metadata_additions.json', {}))
+        update_existing(ROOT, overrides)
+        record_results(ROOT, campaign_id, readings)
+        subprocess.run(['python', str(ROOT/'build_catalog.py')], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+        subprocess.run(['python', str(ROOT/'verify_metadata.py')], cwd=ROOT, check=True)
+        print(json.dumps({'one_time_review': reading_summary, 'drive_moves': 0}))
+        return
     print('Reading new books and unresolved Inbox books on the cloud runner.', flush=True)
     readings, reading_summary = analyze(drive, initial, ROOT)
     reviewed = catalog.read_json(ROOT/'metadata_additions.json', {})

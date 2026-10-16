@@ -19,16 +19,28 @@ class ContentReaderTests(unittest.TestCase):
                 entry = row(identifier,'Existing reviewed book')
                 entry[10] = 'REVIEW: Verify inferred author and language.'
                 rows[vault][identifier]=entry
-        queue = reader.reading_queue(state,rows,audit,{})
+        keys={v+':'+identifier for v in rows for identifier in rows[v]}
+        self.assertEqual(reader.reading_queue(state,rows,audit,{}),[])
+        queue = reader.reading_queue(state,rows,audit,{},review_keys=keys)
         self.assertEqual([q[1] for q in queue[:4]],['bookshelf','public-library']*2)
         item=state['vaults']['bookshelf']['files'][0]
         audit['bookshelf:same']={'content_analysis':{'fingerprint':reader.fingerprint(item),'status':'read','can_sort':False,'attempts':1}}
-        queue=reader.reading_queue(state,rows,audit,{})
+        keys.remove('bookshelf:same')
+        queue=reader.reading_queue(state,rows,audit,{},review_keys=keys)
         self.assertNotIn(('bookshelf','same'),[(q[1],q[2]['id']) for q in queue])
         self.assertIn(('public-library','same'),[(q[1],q[2]['id']) for q in queue])
-        rows['public-library']['third'][10]='Verified metadata'
-        queue=reader.reading_queue(state,rows,audit,{})
+        keys.remove('public-library:third')
+        queue=reader.reading_queue(state,rows,audit,{},review_keys=keys)
         self.assertNotIn(('public-library','third'),[(q[1],q[2]['id']) for q in queue])
+
+    def test_daily_queue_keeps_deferred_new_books_but_excludes_old_reviews(self):
+        old=row('deferred','New upload awaiting its first read')
+        old[10]='REVIEW: Unknown metadata'
+        state={'vaults':{'bookshelf':{'files':[{'id':'deferred','title':'upload.pdf','folder':'History'}]}}}
+        rows={'bookshelf':{'deferred':old}}
+        self.assertEqual(reader.reading_queue(state,rows,{},{}),[])
+        queue=reader.reading_queue(state,rows,{}, {},pending_new={'bookshelf:deferred'})
+        self.assertEqual(queue[0][2]['id'],'deferred')
 
     def test_reviewed_fields_override_only_their_fields_and_preserve_reading_provenance(self):
         automatic={'bookshelf:same':{'fields':{'Author(s)':'Read author','Book Title':'OCR title'},

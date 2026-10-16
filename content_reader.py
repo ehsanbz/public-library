@@ -300,7 +300,7 @@ def validated(result, pages, categories, item, detected):
         'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()}}
 
 
-def reading_queue(state, rows, audit, review_ids):
+def reading_queue(state, rows, audit, review_ids, review_keys=None, pending_new=()):
     """Fair, vault-scoped backlog: Inbox/new entries first, untouched reviews before retries."""
     buckets = {v: [] for v in state['vaults']}
     for vault, snapshot in state['vaults'].items():
@@ -310,12 +310,11 @@ def reading_queue(state, rows, audit, review_ids):
             trace = audit.get(key) or audit.get(item['id'], {})
             previous = trace.get('content_analysis', {})
             inbox = vault == 'bookshelf' and (item['folder']=='Inbox' or item['folder'].startswith('Inbox/'))
-            review = old and (old[10].startswith('REVIEW:') or item['id'] in review_ids.get(vault,set()))
-            auto = trace.get('author_source', '').startswith('automatic filename/folder')
-            if not catalog.candidate(item) or not (inbox or not old or review or auto):
+            eligible = (inbox or not old or key in pending_new) if review_keys is None else key in review_keys
+            if not catalog.candidate(item) or not eligible:
                 continue
             same = previous.get('fingerprint') == fingerprint(item)
-            if same and (previous.get('status')=='read' or previous.get('attempts',0)>=2):
+            if review_keys is None and same and (previous.get('status')=='read' or previous.get('attempts',0)>=2):
                 continue
             priority = 0 if inbox else 1 if not old else 2
             buckets[vault].append((priority, previous.get('attempts',0) if same else 0, item['id'], item, previous))
@@ -341,7 +340,7 @@ def merge_overrides(readings, reviewed):
     return result
 
 
-def analyze(drive, state, root):
+def analyze(drive, state, root, review_keys=None):
     """Prioritize Inbox; also read newly discovered eligible books in either vault."""
     personal = catalog.read_json(root/'bookshelf_source.json')
     rows = {'bookshelf': {r[0]:r for r in personal['rows']},
@@ -349,7 +348,9 @@ def analyze(drive, state, root):
     audit = catalog.read_json(root/'metadata_audit.json', {})
     review_ids = {'bookshelf':set(personal['summary'].get('review_ids',[])),
                   'public-library':set()}
-    queue = reading_queue(state, rows, audit, review_ids)
+    config = catalog.read_json(root/'sync_config.json')
+    pending_new = set(config.get('reader_pending_new', []))
+    queue = reading_queue(state, rows, audit, review_ids, review_keys, pending_new)
     print('Cloud reading batch: '+json.dumps({
         'selected_by_vault': {v:sum(entry[1]==v for entry in queue[:4]) for v in rows},
         'queued_by_vault': {v:sum(entry[1]==v for entry in queue) for v in rows}}), flush=True)
@@ -388,6 +389,17 @@ def analyze(drive, state, root):
                 'can_sort': False, 'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()}}
         output[key]['content_analysis']['attempts'] = (previous.get('attempts',0) if previous.get('fingerprint')==fingerprint(item) else 0)+1
         print('Content reader processed one '+vault+' entry: '+output[key]['content_analysis']['status'], flush=True)
+    if review_keys is None:
+        pending = []
+        for _, vault, item, previous in queue:
+            key = vault+':'+item['id']
+            if item['id'] in rows[vault] and key not in pending_new:
+                continue
+            reading = output.get(key)
+            if not reading or (reading['content_analysis']['status']!='read' and reading['content_analysis']['attempts']<2):
+                pending.append(key)
+        config['reader_pending_new'] = pending
+        catalog.write_json(root/'sync_config.json',config)
     return output, {'processed': len(output), 'deferred': max(0, len(queue)-4),
                     'processed_by_vault': {v:sum(k.startswith(v+':') for k in output) for v in rows},
                     'queued_by_vault': {v:sum(entry[1]==v for entry in queue) for v in rows}}
