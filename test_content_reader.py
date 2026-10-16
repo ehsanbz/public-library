@@ -27,6 +27,14 @@ class ContentReaderTests(unittest.TestCase):
         self.assertNotIn('By Jane Historian', json.dumps(result))
         self.assertNotIn('Iranian history and historical essays.', json.dumps(result))
 
+    def test_form_check_blocks_confident_but_conflicting_fiction_classification(self):
+        prediction = dict(self.prediction, category='Literary Fiction', subcategory='General fiction',
+                          form='Nonfiction', form_confidence=.99,
+                          form_evidence='Iranian history and historical essays.')
+        result = reader.validated(prediction,self.pages,{'Literary Fiction':['General fiction']},self.item,['English'])
+        self.assertFalse(result['content_analysis']['can_sort'])
+        self.assertNotIn('Main Category',result['fields'])
+
     def test_hallucinated_author_and_injected_destination_are_rejected(self):
         prediction = dict(self.prediction, author='Invented Person', category='../Other vault', subcategory='Inbox')
         result = reader.validated(prediction, self.pages, self.categories, self.item, ['English'])
