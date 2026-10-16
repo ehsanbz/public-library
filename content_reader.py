@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 
 import sync_catalog as catalog
 
-VERSION = 'ocr-qwen-v1'
+VERSION = 'ocr-qwen-v2'
 MODEL_REPO = 'Qwen/Qwen3-4B-GGUF'
 MODEL_REVISION = 'bc640142c66e1fdd12af0bd68f40445458f3869b'
 MODEL_FILE = 'Qwen3-4B-Q4_K_M.gguf'
@@ -37,7 +37,8 @@ def fingerprint(item):
 def taxonomy(root):
     source = catalog.read_json(root/'bookshelf_source.json')
     result = collections.defaultdict(set)
-    for row in source['rows']:
+    # Share the catalog taxonomy without merging the actual vault records.
+    for row in source['rows'] + catalog.read_csv(root/'public_library_catalog.csv')[1:]:
         if row[4] in catalog.CATEGORIES and row[5] not in {'Unknown', 'Needs review', ''}:
             result[row[4]].add(row[5])
     return {k: sorted(v) for k,v in sorted(result.items())}
@@ -60,10 +61,20 @@ def ocr_page(page, directory, number):
         if word and score >= 20:
             lines[(row['block_num'], row['par_num'], row['line_num'])].append(word)
             confidence.append(score)
-    image.unlink(missing_ok=True)
     if not confidence or sum(confidence)/len(confidence) < 35:
+        image.unlink(missing_ok=True)
         return ''
-    return '\n'.join(' '.join(words) for words in lines.values())
+    text = '\n'.join(' '.join(words) for words in lines.values())
+    arabic = len(re.findall(r'[\u0600-\u06ff]', text))
+    if number <= 3 and arabic > len(normalized(text))*.25:
+        # Mixed-script recognition misses Persian display fonts. Independent
+        # Persian-only passes recover title/author lines without correcting by hand.
+        for layout in ['6', '11']:
+            extra = subprocess.run(['tesseract', str(image), 'stdout', '-l', 'fas', '--psm', layout],
+                capture_output=True, text=True, encoding='utf-8', timeout=35, check=True)
+            text += '\n'+extra.stdout
+    image.unlink(missing_ok=True)
+    return text
 
 
 def extract(path, directory):
@@ -135,6 +146,7 @@ class Reader:
     def infer(self, pages, categories):
         from llama_cpp import Llama, LlamaGrammar
         if self.model is None:
+            print('Loading the pinned multilingual model on the cloud runner.', flush=True)
             cache = pathlib.Path(os.environ.get('RUNNER_TEMP', tempfile.gettempdir()))/'library-reader-model'
             cache.mkdir(exist_ok=True)
             target = cache/MODEL_FILE
@@ -145,6 +157,8 @@ class Reader:
             self.model = Llama(model_path=str(target), n_ctx=8192, n_threads=2, n_batch=256, verbose=False)
         fields = ['title', 'author', 'category', 'subcategory', 'title_evidence', 'author_evidence', 'category_evidence']
         properties = {k: {'type': 'string'} for k in fields}
+        properties['category']['enum'] = sorted(categories)+['Unknown']
+        properties['subcategory']['enum'] = sorted({s for subs in categories.values() for s in subs})+['Unknown']
         properties.update({k: {'type': 'number', 'minimum': 0, 'maximum': 1}
                            for k in ['title_confidence', 'author_confidence', 'category_confidence']})
         schema = {'type': 'object', 'properties': properties, 'required': list(properties), 'additionalProperties': False}
@@ -154,7 +168,10 @@ class Reader:
                   'Use Unknown when evidence is insufficient. For title and author copy an exact supporting span '
                   'of the supplied text into the evidence field. Classify the main subject using ONLY a category '
                   'and one of its subcategories in the supplied taxonomy. Copy a supporting subject/contents '
-                  'span into category_evidence. Never invent names. Return only the requested JSON. /no_think')
+                  'span into category_evidence. Evidence quotes must be short, at most 80 characters. '
+                  'For category_evidence copy a meaningful phrase with at least 12 letters, not a single keyword. '
+                  'Copy evidence as OCR printed it; minor OCR errors in the title or author may be corrected. '
+                  'Never invent names. Return only the requested JSON. /no_think')
         sample = [{'page': p['page'], 'text': p['text'][:1800]} for p in pages]
         user = json.dumps({'taxonomy': categories, 'book_pages': sample}, ensure_ascii=False)
         # Qwen3 non-thinking ChatML prompt; grammar constrains output to data, never executable actions.
@@ -165,7 +182,7 @@ class Reader:
             sample = [{'page': p['page'], 'text': p['text'][:900]} for p in pages[:8]]
             user = json.dumps({'taxonomy': categories, 'book_pages': sample}, ensure_ascii=False)
             prompt = '<|im_start|>system\n'+system+'<|im_end|>\n<|im_start|>user\n'+user+'<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n'
-        while len(self.model.tokenize(prompt.encode())) > 6800:
+        while len(self.model.tokenize(prompt.encode())) > 4200:
             if len(sample) > 4:
                 sample.pop()
             else:
@@ -175,7 +192,8 @@ class Reader:
                     raise ValueError('Taxonomy/prompt exceeds reader context')
             user = json.dumps({'taxonomy': categories, 'book_pages': sample}, ensure_ascii=False)
             prompt = '<|im_start|>system\n'+system+'<|im_end|>\n<|im_start|>user\n'+user+'<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n'
-        result = self.model.create_completion(prompt=prompt, max_tokens=900, temperature=0,
+        print('Inferring bibliographic metadata from bounded book samples.', flush=True)
+        result = self.model.create_completion(prompt=prompt, max_tokens=750, temperature=0,
             grammar=LlamaGrammar.from_json_schema(json.dumps(schema), verbose=False), stop=['<|im_end|>'])
         return json.loads(result['choices'][0]['text'])
 
@@ -183,9 +201,18 @@ class Reader:
 def grounded(evidence, pages, value=None):
     if not isinstance(evidence, str) or len(normalized(evidence)) < 4:
         return False
-    if value and normalized(value) not in normalized(evidence):
-        return False
-    return any(normalized(evidence) in normalized(p['text']) for p in pages)
+    from rapidfuzz.fuzz import partial_ratio
+    needle = normalized(evidence)
+    if value and normalized(value) not in needle:
+        if len(normalized(value)) < 12 or partial_ratio(normalized(value), needle) < 95:
+            return False
+    for page in pages:
+        source = normalized(page['text'])
+        if needle in source:
+            return True
+        if page['method'] == 'OCR' and len(needle) >= 12 and partial_ratio(needle, source) >= 95:
+            return True
+    return False
 
 
 def validated(result, pages, categories, item, detected):
@@ -196,13 +223,18 @@ def validated(result, pages, categories, item, detected):
             result.get(name+'_confidence', 0) >= .85 and
             grounded(result.get(name+'_evidence'), pages, value)):
             fields[column] = value
-    category, sub = result.get('category'), result.get('subcategory')
+    label_key = lambda v: normalized(str(v or '').replace('&','and'))
+    category = next((c for c in categories if label_key(c)==label_key(result.get('category'))), 'Unknown')
+    sub = next((s for s in categories.get(category,[]) if label_key(s)==label_key(result.get('subcategory'))), 'Unknown')
     can_sort = (category in categories and sub in categories[category] and
                 result.get('category_confidence', 0) >= .88 and
+                len(normalized(result.get('category_evidence',''))) >= 12 and
                 grounded(result.get('category_evidence'), pages))
     if can_sort:
-        fields.update({'Main Category': category, 'Subcategory': sub, 'Topic Tags': sub,
-                       'Book Type': 'Fiction' if category in {'Literary Fiction','Historical Fiction','Science Fiction','Mystery & Thriller'} else 'Nonfiction'})
+        kind = ('Poetry' if sub == 'Poetry' else 'Drama' if sub == 'Drama' else
+                'Reference' if sub == 'Literary periodicals' else
+                'Fiction' if category in {'Literary Fiction','Historical Fiction','Science Fiction','Mystery & Thriller'} else 'Nonfiction')
+        fields.update({'Main Category': category, 'Subcategory': sub, 'Topic Tags': sub, 'Book Type': kind})
     actual_languages = list(detected)
     policy = bool(re.search(r'[\u0600-\u06ff]', item['title']+' '+fields.get('Book Title','')+' '+fields.get('Author(s)','')))
     if policy and 'Persian' not in detected:
@@ -212,7 +244,7 @@ def validated(result, pages, categories, item, detected):
     refs = ', '.join(str(p['page']) for p in pages)
     methods = sorted({p['method'] for p in pages})
     evidence = {
-        'author_source': 'Automatic content reader; author accepted only when copied from sampled book text' if 'Author(s)' in fields else 'Automatic content reader; author unresolved',
+        'author_source': 'Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance' if 'Author(s)' in fields else 'Automatic content reader; author unresolved',
         'language_source': 'Text language detection: '+(', '.join(actual_languages) or 'unresolved')+('; Persian owner-rule tag also applied' if policy else ''),
         'classification_source': 'Automatic content classification against existing taxonomy; evidence checked in sampled pages' if can_sort else 'Content classification uncertain; retain in Inbox',
     }
@@ -225,6 +257,10 @@ def validated(result, pages, categories, item, detected):
         'ocr_pages': [p['page'] for p in pages if p['method']=='OCR'],
         'verified_languages': actual_languages, 'policy_persian': policy,
         'classification_confidence': result.get('category_confidence', 0), 'can_sort': bool(can_sort),
+        'proposed_category': category, 'proposed_subcategory': sub,
+        'title_accepted': 'Book Title' in fields, 'author_accepted': 'Author(s)' in fields,
+        'classification_evidence_matched': grounded(result.get('category_evidence'), pages),
+        'grounding_rule': 'normalized exact match or at least 95% similarity on OCR text',
         'status': 'read', 'attempts': 1,
         'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()}}
 
@@ -273,6 +309,7 @@ def analyze(drive, state, root):
                     drive.download(item['id'], path, MAX_BYTES)
                     stage = 'extraction'
                     pages = extract(path, directory)
+                    print('Extracted '+str(len(pages))+' book samples; '+str(sum(p['method']=='OCR' for p in pages))+' used OCR.', flush=True)
                     if pages:
                         stage = 'language_detection'
                         detected = languages(pages)

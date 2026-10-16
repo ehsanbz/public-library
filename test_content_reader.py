@@ -38,6 +38,18 @@ class ContentReaderTests(unittest.TestCase):
         result = reader.validated(dict(self.prediction, category_confidence=.6), self.pages, self.categories, self.item, [])
         self.assertFalse(result['content_analysis']['can_sort'])
 
+    def test_minor_ocr_error_is_tolerated_but_different_author_is_not(self):
+        pages = [{'page': 1, 'text': 'By Alexandrianna Historiographer', 'method': 'OCR'}]
+        self.assertTrue(reader.grounded('By Alexandrianna Historlographer', pages, 'Alexandrianna Historiographer'))
+        self.assertFalse(reader.grounded('By Completely Different', pages, 'Completely Different'))
+        pages[0]['method'] = 'embedded text'
+        self.assertFalse(reader.grounded('By Alexandrianna Historlographer', pages))
+
+    def test_category_capitalization_is_canonicalized(self):
+        prediction = dict(self.prediction, category='HISTORY', subcategory='IRANIAN HISTORY')
+        result = reader.validated(prediction, self.pages, self.categories, self.item, ['English'])
+        self.assertEqual(result['fields']['Subcategory'], 'Iranian history')
+
     def test_persian_owner_tag_is_separate_from_detected_book_language(self):
         result = reader.validated(self.prediction, self.pages, self.categories,
                                  dict(self.item, title='کتاب.pdf'), ['English'])

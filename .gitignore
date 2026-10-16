@@ -6,3 +6,4 @@ text_evidence*.json
 download_references*.json
 *.jpg
 sync_tests.local/
+reader_deps.local/
