@@ -16286,10 +16286,10 @@
     "source_path": "Inbox",
     "discovered_at": "2026-10-15T19:58:51.738883+00:00",
     "content_analysis": {
-      "reader_version": "ocr-qwen-v1",
+      "reader_version": "ocr-qwen-v2",
       "model": "Qwen/Qwen3-4B-GGUF",
       "model_revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
-      "fingerprint": "7f4089db7c9437b4ab361d587efa55a7d210707622ba12720d2fececee9932fd",
+      "fingerprint": "c96bf67f2be0c4f97adb4142edcdb3081026fac1090c0e0d7b475163ade885b6",
       "page_numbers": [
         1,
         2,
@@ -16317,12 +16317,18 @@
       "verified_languages": [
         "Persian"
       ],
-      "policy_persian": false,
-      "classification_confidence": 1,
+      "policy_persian": true,
+      "classification_confidence": 0.7,
       "can_sort": false,
+      "proposed_category": "Literary Fiction",
+      "proposed_subcategory": "General fiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
       "status": "read",
       "attempts": 1,
-      "checked_at": "2026-10-16T08:37:41.893575+00:00"
+      "checked_at": "2026-10-16T08:51:05.228395+00:00"
     }
   }
 }
