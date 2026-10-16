@@ -34604,10 +34604,10 @@
       "Unknown",
       "Needs review",
       "Needs review",
+      "Persian",
       "Unknown",
       "Unknown",
-      "Unknown",
-      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Title/category use filename or explicit source folder only. Original file: tasvir_ezandarfarhang_eiran_tarikhem_com.pdf | Source folder: Inbox.",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Title/category use filename or explicit source folder only. Original file: tasvir_ezandarfarhang_eiran_tarikhem_com.pdf | Source folder: Inbox. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 6, 7, 8, 37, 73, 109 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification did not meet the filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -35171,11 +35171,11 @@
     "review_count": 548,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "excluded_assets": 117,
     "folders_scanned": 216,
     "authors_identified": 1644,
-    "languages_identified": 1716,
+    "languages_identified": 1717,
     "category_counts": {
       "Arts & Culture": 278,
       "Biography & Memoir": 69,
@@ -35197,14 +35197,14 @@
       "Unknown": 25
     },
     "language_counts": {
-      "Persian": 1326,
+      "Persian": 1327,
       "English": 366,
       "English; Persian": 3,
       "Azerbaijani; Persian": 1,
       "Romanian": 2,
       "Italian": 1,
       "Arabic; Persian": 3,
-      "Unknown": 206,
+      "Unknown": 205,
       "German; English": 1,
       "German": 5,
       "Turkish": 2,
@@ -35789,7 +35789,7 @@
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
         "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
       ],
-      "updated_at": "2026-10-15"
+      "updated_at": "2026-10-16"
     }
   ],
   "sync": {
