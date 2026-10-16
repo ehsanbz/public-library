@@ -16,5 +16,6 @@
   },
   "cloud_enabled": true,
   "personal_inbox_organization": true,
-  "schedule_utc": "16:23"
+  "schedule_utc": "16:23",
+  "reader_pending_new": []
 }
