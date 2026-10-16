@@ -16281,15 +16281,15 @@
   },
   "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o": {
     "vault": "My Bookshelf",
-    "author_source": "automatic filename/folder discovery; needs review",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "Text language detection: Persian",
     "source_path": "Inbox",
     "discovered_at": "2026-10-15T19:58:51.738883+00:00",
     "content_analysis": {
-      "reader_version": "ocr-qwen-v2",
+      "reader_version": "ocr-qwen-v3",
       "model": "Qwen/Qwen3-4B-GGUF",
       "model_revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
-      "fingerprint": "c96bf67f2be0c4f97adb4142edcdb3081026fac1090c0e0d7b475163ade885b6",
+      "fingerprint": "a173276444571f04464e0e6e639657cd449b90212d328bbaa7caf04e1fd422d6",
       "page_numbers": [
         1,
         2,
@@ -16318,17 +16318,18 @@
         "Persian"
       ],
       "policy_persian": true,
-      "classification_confidence": 0.7,
-      "can_sort": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
       "proposed_category": "Literary Fiction",
       "proposed_subcategory": "General fiction",
       "title_accepted": true,
-      "author_accepted": false,
+      "author_accepted": true,
       "classification_evidence_matched": true,
       "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
       "status": "read",
       "attempts": 1,
-      "checked_at": "2026-10-16T08:51:05.228395+00:00"
-    }
+      "checked_at": "2026-10-16T09:03:39.852007+00:00"
+    },
+    "classification_source": "Automatic content classification against existing taxonomy; evidence checked in sampled pages"
   }
 }
