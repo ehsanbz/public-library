@@ -17,5 +17,13 @@
       "language_source": "Persian prose verified visually from PDF contents page 4; owner Persian-script/author rule also applies",
       "classification_source": "Iran/history subject in PDF cataloging page 3 and historical contents on page 4"
     }
+  },
+  "bookshelf:1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o": {
+    "fields": {
+      "Book Title": "تصویر زن در فرهنگ ایرانی"
+    },
+    "evidence": {
+      "title_source": "Verified visually from the PDF title page, page 3, 2026-10-16; corrected one OCR letter"
+    }
   }
 }

@@ -342,7 +342,7 @@ def main():
     overrides = {**readings, **reviewed}
     # Register newly read books first, then enrich unresolved existing Inbox entries.
     result = catalog.ingest(ROOT, initial, overrides=overrides, upstream=upstream_catalog())
-    update_existing(ROOT, readings)
+    update_existing(ROOT, {**readings, **reviewed})
     print('Organizing personal Inbox.', flush=True)
     organized = organize(drive)
     state = scan(drive, config)  # Scan after moves; crash recovery discovers moved IDs here next run.

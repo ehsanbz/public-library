@@ -396,7 +396,7 @@ def update_existing(root, readings):
                     current = set(row[index].split('; ')) - {'Unknown',''}
                     value = '; '.join(sorted(current | set(value.split('; '))))
                     editable = not current or generated or trace.get('author_source','').startswith('Automatic content reader')
-                    if reading['content_analysis'].get('policy_persian') and 'Persian' not in current:
+                    if reading.get('content_analysis',{}).get('policy_persian') and 'Persian' not in current:
                         value = '; '.join(sorted(current | {'Persian'})) if not editable else value
                         editable = True
                 if editable and row[index] != value:
@@ -405,9 +405,10 @@ def update_existing(root, readings):
                     changed_columns.add(column)
             if changed:
                 row[10] += ' '+reading['fields'].get('Notes / Uncertainty', '')
-            trace['content_analysis'] = reading['content_analysis']
+            if 'content_analysis' in reading:
+                trace['content_analysis'] = reading['content_analysis']
             if changed:
-                for column, evidence_field in [('Author(s)','author_source'),('Language','language_source'),('Main Category','classification_source')]:
+                for column, evidence_field in [('Book Title','title_source'),('Author(s)','author_source'),('Language','language_source'),('Main Category','classification_source')]:
                     if column in changed_columns and evidence_field in reading['evidence']:
                         trace[evidence_field] = reading['evidence'][evidence_field]
     catalog.write_json(root/'bookshelf_source.json', personal)
