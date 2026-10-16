@@ -1383,7 +1383,15 @@
     "persian_tag_by_user_rule": false,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "5c5b13a91121677bca98d2be407de71e9c185b893e76244d8790bd5f3a26e070",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-16T17:38:48.803228+00:00",
+      "attempts": 1
+    }
   },
   "0B9wuggJUWO5PRTBLSi1ZRXBUaVE": {
     "author_source": "source author collection",
@@ -8582,7 +8590,15 @@
     "persian_tag_by_user_rule": false,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "8aa01fce2361a0912eb07c869c037a1ed9eb3285e7ae0b310fd099adcb7ad0b8",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-16T17:50:07.530586+00:00",
+      "attempts": 1
+    }
   },
   "0B9wuggJUWO5PXzViYUJzV2NHTUE": {
     "author_source": "source author collection",
@@ -13771,7 +13787,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "e095d905a91bd81463955a3e0686aaba530568d7d62c5d69c8ee61a7b5ee67d8",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        141,
+        282,
+        422
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Social Sciences",
+      "proposed_subcategory": "Politics & society",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T17:50:07.529369+00:00"
+    }
   },
   "1F0-1wGuuuGEDLMKkiEhZmvswSTKobaS8": {
     "vault": "My Bookshelf",
@@ -16213,7 +16267,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "58c8322c4b3c39960f114ac4bb99090bfa3996211d86b9f156c4e660d884fdc8",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-16T17:38:48.803046+00:00",
+      "attempts": 1
+    }
   },
   "1GyuWeZf2yiOoQItQGvFnjDF0a0EoDsl3": {
     "vault": "My Bookshelf",
