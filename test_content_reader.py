@@ -8,6 +8,36 @@ from test_sync_catalog import HEADERS, row
 
 
 class ContentReaderTests(unittest.TestCase):
+    def test_backlog_is_vault_scoped_balanced_and_advances_past_completed_reads(self):
+        rows = {v:{} for v in ['bookshelf','public-library']}
+        state = {'vaults': {v:{'files':[]} for v in rows}}
+        audit = {}
+        for vault in rows:
+            for identifier in ['same','second','third']:
+                item = {'id':identifier,'title':identifier+'.pdf','folder':'Existing category','size':'20'}
+                state['vaults'][vault]['files'].append(item)
+                entry = row(identifier,'Existing reviewed book')
+                entry[10] = 'REVIEW: Verify inferred author and language.'
+                rows[vault][identifier]=entry
+        queue = reader.reading_queue(state,rows,audit,{})
+        self.assertEqual([q[1] for q in queue[:4]],['bookshelf','public-library']*2)
+        item=state['vaults']['bookshelf']['files'][0]
+        audit['bookshelf:same']={'content_analysis':{'fingerprint':reader.fingerprint(item),'status':'read','can_sort':False,'attempts':1}}
+        queue=reader.reading_queue(state,rows,audit,{})
+        self.assertNotIn(('bookshelf','same'),[(q[1],q[2]['id']) for q in queue])
+        self.assertIn(('public-library','same'),[(q[1],q[2]['id']) for q in queue])
+        rows['public-library']['third'][10]='Verified metadata'
+        queue=reader.reading_queue(state,rows,audit,{})
+        self.assertNotIn(('public-library','third'),[(q[1],q[2]['id']) for q in queue])
+
+    def test_reviewed_fields_override_only_their_fields_and_preserve_reading_provenance(self):
+        automatic={'bookshelf:same':{'fields':{'Author(s)':'Read author','Book Title':'OCR title'},
+                                    'content_analysis':{'verified_languages':['Persian']}}}
+        reviewed={'bookshelf:same':{'fields':{'Book Title':'Verified title'}}}
+        merged=reader.merge_overrides(automatic,reviewed)
+        self.assertEqual(merged['bookshelf:same']['fields'],{'Author(s)':'Read author','Book Title':'Verified title'})
+        self.assertEqual(merged['bookshelf:same']['content_analysis']['verified_languages'],['Persian'])
+
     def setUp(self):
         self.pages = [{'page': 1, 'text': 'A History of Iran\nBy Jane Historian\nIranian history and historical essays.', 'method': 'OCR'}]
         self.categories = {'History': ['Iranian history']}

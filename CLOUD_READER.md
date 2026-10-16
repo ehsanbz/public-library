@@ -1,10 +1,10 @@
 # Automatic reading and filing
 
-The daily GitHub Actions workflow reads new books from their contents, including scanned PDFs. It needs only the existing Google Drive authorization: no Codex session, local PC, external AI API key or inference subscription.
+The daily GitHub Actions workflow reads new books and the existing metadata-review backlog in both vaults from their contents, including scanned PDFs. It needs only the existing Google Drive authorization: no Codex session, local PC, external AI API key or inference subscription.
 
 ## Reading process
 
-1. Fully scan both vaults. Prioritize unresolved personal Inbox files, then new eligible files in either vault. Never follow shortcuts.
+1. Fully scan both vaults. Alternate between vaults so each gets up to two of the four daily slots when both have work. Within each vault prioritize Inbox files, new files, then existing review-marked entries. Untouched entries precede failed-read retries. Never follow shortcuts or merge records across vaults.
 2. Download a temporary copy on the GitHub runner (up to 100 MiB). Extract PDF opening pages, credits, contents and three body samples. Image-only pages use Tesseract OCR with Persian, English, Arabic and German recognition. Persian cover/title pages get independent Persian-only layout passes. EPUB, DOCX, TXT and basic RTF text are supported too.
 3. Run the Apache-2.0 [Qwen3-8B model](https://huggingface.co/Qwen/Qwen3-8B-GGUF) on the runner CPU through llama.cpp. Model weights are pinned to a revision. No book contents are sent to Hugging Face or an external inference API; Hugging Face only supplies model weights.
 4. Read title/author credits separately from subject classification. A separate evidence-backed fiction/nonfiction decision constrains category selection, so an author's reputation does not determine this book's genre. Independently detect text languages using Lingua. Keep the owner's Persian policy tag separate from languages detected in sampled text.
@@ -14,7 +14,7 @@ The daily GitHub Actions workflow reads new books from their contents, including
 
 ## Limits and recovery
 
-The reader samples up to eleven PDF pages, not the entire book. It processes up to four candidates per daily run; remaining candidates are picked up on later runs, including entries already added with Unknown metadata. Cached fingerprints avoid repeated work. Unreadable or unresolved files are retried once; a changed file or reader version enables another attempt. Password-protected, oversized, unsupported or ambiguous files stay marked for review. Saved web pages with companion assets remain in Inbox.
+The reader samples up to eleven PDF pages, not the entire book. It processes up to four candidates per daily run; remaining candidates are picked up on later runs, including existing entries marked REVIEW or listed in their vault's review IDs. A successful read is cached even if some fields remain uncertain; failed/unreadable files are retried once. A changed file or reader version enables another attempt. Provenance records verified text languages separately from preserved catalog language labels. Review flags remain when edition, duplicates or other questions remain unresolved; this is not a promise to clear every flag. Password-protected, oversized, unsupported or ambiguous files stay marked for review. Existing organized files stay in their folders: only personal Inbox files can be moved.
 
 OCR and model confidence are imperfect. Authors may remain Unknown and ambiguous books may remain in Inbox. Scanned languages beyond the installed OCR packs may require another language pack. Existing curated data takes precedence.
 

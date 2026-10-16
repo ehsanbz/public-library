@@ -335,14 +335,14 @@ def main():
     config = catalog.read_json(ROOT/'sync_config.json')
     # Complete read access to BOTH vaults is required before any Inbox mutations.
     initial = scan(drive, config)
-    from content_reader import analyze, update_existing
+    from content_reader import analyze, update_existing, merge_overrides
     print('Reading new books and unresolved Inbox books on the cloud runner.', flush=True)
     readings, reading_summary = analyze(drive, initial, ROOT)
     reviewed = catalog.read_json(ROOT/'metadata_additions.json', {})
-    overrides = {**readings, **reviewed}
+    overrides = merge_overrides(readings, reviewed)
     # Register newly read books first, then enrich unresolved existing Inbox entries.
     result = catalog.ingest(ROOT, initial, overrides=overrides, upstream=upstream_catalog())
-    update_existing(ROOT, {**readings, **reviewed})
+    update_existing(ROOT, overrides)
     print('Organizing personal Inbox.', flush=True)
     organized = organize(drive)
     state = scan(drive, config)  # Scan after moves; crash recovery discovers moved IDs here next run.

@@ -300,14 +300,9 @@ def validated(result, pages, categories, item, detected):
         'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()}}
 
 
-def analyze(drive, state, root):
-    """Prioritize Inbox; also read newly discovered eligible books in either vault."""
-    personal = catalog.read_json(root/'bookshelf_source.json')
-    rows = {'bookshelf': {r[0]:r for r in personal['rows']},
-            'public-library': {r[0]:r for r in catalog.read_csv(root/'public_library_catalog.csv')[1:]}}
-    audit = catalog.read_json(root/'metadata_audit.json', {})
-    manual = catalog.read_json(root/'metadata_additions.json', {})
-    queue = []
+def reading_queue(state, rows, audit, review_ids):
+    """Fair, vault-scoped backlog: Inbox/new entries first, untouched reviews before retries."""
+    buckets = {v: [] for v in state['vaults']}
     for vault, snapshot in state['vaults'].items():
         for item in snapshot['files']:
             key = vault+':'+item['id']
@@ -315,17 +310,49 @@ def analyze(drive, state, root):
             trace = audit.get(key) or audit.get(item['id'], {})
             previous = trace.get('content_analysis', {})
             inbox = vault == 'bookshelf' and (item['folder']=='Inbox' or item['folder'].startswith('Inbox/'))
+            review = old and (old[10].startswith('REVIEW:') or item['id'] in review_ids.get(vault,set()))
             auto = trace.get('author_source', '').startswith('automatic filename/folder')
-            if not catalog.candidate(item) or key in manual:
+            if not catalog.candidate(item) or not (inbox or not old or review or auto):
                 continue
-            if old and not inbox and not auto:
+            same = previous.get('fingerprint') == fingerprint(item)
+            if same and (previous.get('status')=='read' or previous.get('attempts',0)>=2):
                 continue
-            if old and not inbox and old[2] != 'Unknown' and old[7] != 'Unknown' and old[4] != 'Unknown':
-                continue
-            if previous.get('fingerprint') == fingerprint(item) and (previous.get('can_sort') or previous.get('attempts',0)>=2):
-                continue
-            queue.append((not inbox, vault, item, previous))
-    queue.sort(key=lambda x:(x[0], x[2]['id']))
+            priority = 0 if inbox else 1 if not old else 2
+            buckets[vault].append((priority, previous.get('attempts',0) if same else 0, item['id'], item, previous))
+    for bucket in buckets.values():
+        bucket.sort(key=lambda x:x[:3])
+    queue = []
+    # Each batch gets work from both vaults, even if one has a large backlog.
+    while any(buckets.values()):
+        for vault in sorted(buckets):
+            if buckets[vault]:
+                _, _, _, item, previous = buckets[vault].pop(0)
+                queue.append((False, vault, item, previous))
+    return queue
+
+
+def merge_overrides(readings, reviewed):
+    result = {k:dict(v) for k,v in readings.items()}
+    for key, manual in reviewed.items():
+        current = result.get(key,{})
+        result[key] = {**current, **manual,
+                       'fields': {**current.get('fields',{}), **manual.get('fields',{})},
+                       'evidence': {**current.get('evidence',{}), **manual.get('evidence',{})}}
+    return result
+
+
+def analyze(drive, state, root):
+    """Prioritize Inbox; also read newly discovered eligible books in either vault."""
+    personal = catalog.read_json(root/'bookshelf_source.json')
+    rows = {'bookshelf': {r[0]:r for r in personal['rows']},
+            'public-library': {r[0]:r for r in catalog.read_csv(root/'public_library_catalog.csv')[1:]}}
+    audit = catalog.read_json(root/'metadata_audit.json', {})
+    review_ids = {'bookshelf':set(personal['summary'].get('review_ids',[])),
+                  'public-library':set()}
+    queue = reading_queue(state, rows, audit, review_ids)
+    print('Cloud reading batch: '+json.dumps({
+        'selected_by_vault': {v:sum(entry[1]==v for entry in queue[:4]) for v in rows},
+        'queued_by_vault': {v:sum(entry[1]==v for entry in queue) for v in rows}}), flush=True)
     reader, output = Reader(), {}
     for _, vault, item, previous in queue[:4]:
         key = vault+':'+item['id']
@@ -361,7 +388,9 @@ def analyze(drive, state, root):
                 'can_sort': False, 'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()}}
         output[key]['content_analysis']['attempts'] = (previous.get('attempts',0) if previous.get('fingerprint')==fingerprint(item) else 0)+1
         print('Content reader processed one '+vault+' entry: '+output[key]['content_analysis']['status'], flush=True)
-    return output, {'processed': len(output), 'deferred': max(0, len(queue)-8)}
+    return output, {'processed': len(output), 'deferred': max(0, len(queue)-4),
+                    'processed_by_vault': {v:sum(k.startswith(v+':') for k in output) for v in rows},
+                    'queued_by_vault': {v:sum(entry[1]==v for entry in queue) for v in rows}}
 
 
 def update_existing(root, readings):
