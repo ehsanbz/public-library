@@ -8065,13 +8065,61 @@
     "vault": "Public Library"
   },
   "0B9wuggJUWO5PVjh1Snk0ZXlseTg": {
-    "author_source": "curated credit; see notes and source filename",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "user-requested Persian tagging rule; document language not independently confirmed",
     "content_language_source": "curated source indication; see notes",
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "57e158fa56203ef2bef577d61e26c2c333ad585ba0e005d32d3f2a39cccb94fd",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        137,
+        273,
+        409
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        137,
+        273,
+        409
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Religion",
+      "proposed_subcategory": "Biblical literature",
+      "verified_form": "Nonfiction",
+      "title_accepted": false,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T18:33:24.805447+00:00"
+    }
   },
   "0B9wuggJUWO5PaVBlaFpYalR5Qzg": {
     "author_source": "filename credit",
@@ -10382,13 +10430,50 @@
     "vault": "Public Library"
   },
   "0B9wuggJUWO5PVnlvd3NZY1Nzc0U": {
-    "author_source": "curated credit; see notes and source filename",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "document text / title page",
     "content_language_source": "document text / title page",
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": true,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "7d0d3a5f43bc13c63eb476cbaff7dd3fba7f460c107bdb59fad0c75aa23f5737",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T19:01:13.840003+00:00"
+    }
   },
   "0B9wuggJUWO5PaG1nc3lsbEdvZ00": {
     "author_source": "curated credit; see notes and source filename",
@@ -16359,7 +16444,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "5d4030f50998b84727622e505057e340813c7c5539e3f0dcc69586583ae43310",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        145,
+        217
+      ],
+      "ocr_pages": [
+        2,
+        3
+      ],
+      "verified_languages": [
+        "English",
+        "Indonesian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Operating systems",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T18:42:38.380675+00:00"
+    }
   },
   "1K2col9PH0vJz57jVdSSGSZwy4ESaU5bZ": {
     "vault": "My Bookshelf",
@@ -16394,7 +16517,43 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "1f788c5bf25cd0d02845f7b33a1557f667fbf71805278a267b3b0bade45230d1",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        25,
+        50,
+        75
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Programming",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T18:10:55.353434+00:00"
+    }
   },
   "1SmNaiU52jePAEriYuYhdgI-ymWfmCbkI": {
     "vault": "My Bookshelf",
