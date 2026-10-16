@@ -16286,10 +16286,10 @@
     "source_path": "Inbox",
     "discovered_at": "2026-10-15T19:58:51.738883+00:00",
     "content_analysis": {
-      "reader_version": "ocr-qwen-v3",
-      "model": "Qwen/Qwen3-4B-GGUF",
-      "model_revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
-      "fingerprint": "a173276444571f04464e0e6e639657cd449b90212d328bbaa7caf04e1fd422d6",
+      "reader_version": "ocr-qwen-v4",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "d9ef553b99bcf048bc7d75237f9a17b020ef3135132c5cb8e7d6e6afc88de792",
       "page_numbers": [
         1,
         2,
@@ -16322,13 +16322,13 @@
       "can_sort": true,
       "proposed_category": "Literary Fiction",
       "proposed_subcategory": "General fiction",
-      "title_accepted": true,
+      "title_accepted": false,
       "author_accepted": true,
       "classification_evidence_matched": true,
       "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
       "status": "read",
       "attempts": 1,
-      "checked_at": "2026-10-16T09:03:39.852007+00:00"
+      "checked_at": "2026-10-16T09:20:24.711029+00:00"
     },
     "classification_source": "Automatic content classification against existing taxonomy; evidence checked in sampled pages"
   }
