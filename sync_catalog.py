@@ -87,6 +87,7 @@ def ingest(root,scan,overrides=None,upstream=None):
   for field,value in o.get('evidence',{}).items():
    if field not in {'author_source','language_source','classification_source'} or not isinstance(value,str):raise ValueError('Unsupported verified metadata evidence')
    audit[key][field]=value
+  if 'content_analysis' in o:audit[key]['content_analysis']=o['content_analysis']
   counts[vault]+=1
  # Every existing row survives untouched; new IDs are idempotent within each vault.
  assert public[:len(pcsv)-1]==pcsv[1:]

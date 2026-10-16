@@ -119,6 +119,23 @@ class Drive:
         return self.request('GET', 'files/'+file_id,
                             {'fields': FIELDS, 'supportsAllDrives': 'true'})
 
+    def download(self, file_id, destination, max_bytes):
+        headers = {}
+        if file_id in self.keys:
+            headers['X-Goog-Drive-Resource-Keys'] = file_id+'/'+self.keys[file_id]
+        with self.session.get('https://www.googleapis.com/drive/v3/files/'+file_id,
+                              params={'alt': 'media', 'supportsAllDrives': 'true'},
+                              headers=headers, stream=True, timeout=90) as response:
+            if not response.ok:
+                raise RuntimeError('Book download failed')
+            count = 0
+            with destination.open('wb') as stream:
+                for chunk in response.iter_content(1024*1024):
+                    count += len(chunk)
+                    if count > max_bytes:
+                        raise ValueError('Book exceeds the reading size limit')
+                    stream.write(chunk)
+
     def children(self, folder_id):
         found, page, seen_pages = [], None, set()
         while True:
@@ -309,11 +326,19 @@ def main():
     drive = Drive(credential_info(secret))
     config = catalog.read_json(ROOT/'sync_config.json')
     # Complete read access to BOTH vaults is required before any Inbox mutations.
-    scan(drive, config)
+    initial = scan(drive, config)
+    from content_reader import analyze, update_existing
+    print('Reading new books and unresolved Inbox books on the cloud runner.', flush=True)
+    readings, reading_summary = analyze(drive, initial, ROOT)
+    reviewed = catalog.read_json(ROOT/'metadata_additions.json', {})
+    overrides = {**readings, **reviewed}
+    # Register newly read books first, then enrich unresolved existing Inbox entries.
+    result = catalog.ingest(ROOT, initial, overrides=overrides, upstream=upstream_catalog())
+    update_existing(ROOT, readings)
     print('Organizing personal Inbox.', flush=True)
     organized = organize(drive)
     state = scan(drive, config)  # Scan after moves; crash recovery discovers moved IDs here next run.
-    result = catalog.ingest(ROOT, state, overrides=catalog.read_json(ROOT/'metadata_additions.json', {}), upstream=upstream_catalog())
+    late = catalog.ingest(ROOT, state, overrides=overrides)
     config = catalog.read_json(ROOT/'sync_config.json')
     config.update(execution='GitHub Actions hosted runner with Google Drive API',
                   cloud_enabled=True, personal_inbox_organization=True)
@@ -321,7 +346,7 @@ def main():
     # Rebuild also on no-addition runs: a previous commit or deployment may have failed.
     subprocess.run(['python', str(ROOT/'build_catalog.py')], cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(['python', str(ROOT/'verify_metadata.py')], cwd=ROOT, check=True)
-    print(json.dumps({'organization': organized, 'catalog': result}))
+    print(json.dumps({'reading': reading_summary, 'organization': organized, 'catalog': result, 'late_discovery': late}))
 
 
 if __name__ == '__main__':

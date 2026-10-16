@@ -81,7 +81,7 @@ payload=json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\
 html=template.replace('__CATALOG_DATA__',payload)
 (root/'index.html').write_text(html,encoding='utf-8')
 (root/'.nojekyll').write_text('',encoding='utf-8')
-automation_description = ('Daily checks run on GitHub Actions with Google Drive API authorization and do not require a local computer or Codex. Personal Inbox files are organized within the personal vault; Public Library remains read-only.' if sync.get('cloud_enabled') else 'The active hourly routine currently runs in Codex desktop while the computer is on and awake. A computer-independent GitHub Actions workflow is prepared; complete the authorization and first-run steps in CLOUD_SETUP.md before retiring the desktop routine.')
+automation_description = ('Daily checks run on GitHub Actions with Google Drive API authorization and do not require a local computer or Codex. New books are read with text extraction, OCR and a multilingual model on the cloud runner. Reliably categorized personal Inbox files are filed within the personal vault; Public Library remains read-only. See CLOUD_READER.md.' if sync.get('cloud_enabled') else 'The active hourly routine currently runs in Codex desktop while the computer is on and awake. A computer-independent GitHub Actions workflow is prepared; complete the authorization and first-run steps in CLOUD_SETUP.md before retiring the desktop routine.')
 (root/'README.md').write_text(f'''# Public Library
 
 [Open the catalog](https://ehsanbz.github.io/public-library/)

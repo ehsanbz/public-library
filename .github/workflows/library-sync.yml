@@ -17,7 +17,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 90
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-reader.txt
       - name: Check cloud authorization
         env:
           DRIVE_AUTH: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
@@ -37,12 +39,19 @@ jobs:
             echo '::error::Add GOOGLE_DRIVE_CREDENTIALS_JSON to repository Actions secrets. See CLOUD_SETUP.md.'
             exit 1
           fi
-      - name: Install Drive authentication libraries
-        run: python -m pip install 'google-auth[requests]>=2.40,<3'
+      - name: Install book OCR and multilingual reader
+        env:
+          CMAKE_ARGS: '-DGGML_NATIVE=OFF -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS'
+          CMAKE_BUILD_PARALLEL_LEVEL: '2'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-fas tesseract-ocr-eng tesseract-ocr-ara tesseract-ocr-deu libopenblas-dev
+          python -m pip install -r requirements-reader.txt
       - name: Check synchronization safeguards
         run: |
           python test_sync_catalog.py
           python test_cloud_sync.py
+          python test_content_reader.py
       - name: Organize personal Inbox and rebuild both vaults
         env:
           GOOGLE_DRIVE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
