@@ -4594,7 +4594,33 @@
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "04ecd6daf3f8fc16070b91900194a172aa5e2c187d397ee24234c0f14017e56f",
+      "page_numbers": [
+        1
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Dutch"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Unknown",
+      "title_accepted": false,
+      "author_accepted": false,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T13:52:15.835280+00:00"
+    }
   },
   "0B9wuggJUWO5PeEpIQUotT1ZuNWs": {
     "author_source": "source author collection",
@@ -8071,13 +8097,59 @@
     "vault": "Public Library"
   },
   "0B9wuggJUWO5PQnBFWE9OLUFfSU0": {
-    "author_source": "curated credit; see notes and source filename",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "document text / title page",
     "content_language_source": "document text / title page",
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "c921fbe602ce3668fd9c37af51cefa9163f7344628faca337931810127b1f155",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        87,
+        173,
+        259
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        87,
+        173,
+        259
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Operating systems",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T14:36:17.443934+00:00"
+    }
   },
   "0B9wuggJUWO5PN0RVMmQ3bTNjY1k": {
     "author_source": "explicit filename credit",
@@ -13484,7 +13556,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "7469589bd6dce15931676e8e070a263efa7a6c8faa5590a1c0dc61d765bf473f",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        145,
+        289,
+        433
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Business & Economics",
+      "proposed_subcategory": "Game theory",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-16T14:10:17.435964+00:00"
+    }
   },
   "11CtnkqYCPG4NNEj7IiK9wrwnPpq2Ejyc": {
     "vault": "My Bookshelf",
@@ -16550,7 +16660,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "dee9b2304ba7d702d67022a68916c51e167a6e74ff0bde7129235cea9a3c94b8",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-16T13:45:16.672445+00:00",
+      "attempts": 1
+    }
   },
   "1-pDGcVRialYUU_XrcObAmrcaD4jRDDGm": {
     "vault": "My Bookshelf",
