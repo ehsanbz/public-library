@@ -256,7 +256,7 @@
     "bookshelf:1P1MXkqXRthEuCktOf1ZXOSai8pQsWtlu": "pending",
     "bookshelf:1qm1pZUvagJkHz-Nw40sU4N8z015a-L1I": "pending",
     "bookshelf:1clN1RLWuvscel55Wgw-i2oWS3gkih9hn": "pending",
-    "bookshelf:115NUpjbpl3FOj4JufHK5yVxLFMHxLzff": "pending",
+    "bookshelf:115NUpjbpl3FOj4JufHK5yVxLFMHxLzff": "read",
     "bookshelf:15J8iHofyYdFaTDX2DRw3_UbH9Z3G0cVw": "pending",
     "bookshelf:1Vk2uoenQe_jaxLqLnmsoxQIFJCOJLO8c": "pending",
     "bookshelf:1xYL0PJDber0fBt6MtUyvJ0CnsFaPcGUm": "pending",
@@ -417,7 +417,7 @@
     "bookshelf:1OidV56gXx4umGMxNfU7OR5QYJcWxjd7o": "pending",
     "bookshelf:10_DgATyIaAUDqH3y0zjFhUu83-6vZs_7": "read",
     "bookshelf:1UyHUBs1VamsMAjmfEaQDStOinL5WDcx0": "pending",
-    "bookshelf:10xa0JnlOHRQDqeYiYO1ItKCGZ3CVJ8Yv": "pending",
+    "bookshelf:10xa0JnlOHRQDqeYiYO1ItKCGZ3CVJ8Yv": "read",
     "bookshelf:1DE1N-fZ8pBfLGkl2LnKUMDbcu2cnpS-L": "pending",
     "bookshelf:1v24yZSivG9X_-TDD5_kUK54ZWWcnW-D_": "pending",
     "bookshelf:1_YsL0QPKgHqItzco2KnUTAKG3w_efy_z": "pending",
@@ -506,7 +506,7 @@
     "public-library:0B9wuggJUWO5PWHlodHk1V3RRa1k": "pending",
     "public-library:0B9wuggJUWO5PanJIOFg5T3M4X2M": "pending",
     "public-library:0B9wuggJUWO5PNzd6dk5peUdvQ2M": "unsupported_format",
-    "public-library:0B9wuggJUWO5PTE5NbWJRMDREcWs": "pending",
+    "public-library:0B9wuggJUWO5PTE5NbWJRMDREcWs": "read",
     "public-library:0B9wuggJUWO5PQnBFWE9OLUFfSU0": "read",
     "public-library:0B9wuggJUWO5PUGJrTlh5YUloXzg": "not_a_book",
     "public-library:0B9wuggJUWO5PQWZZa1BrNWh2X1k": "read",
@@ -520,7 +520,7 @@
     "public-library:0B9wuggJUWO5PeDVLUV9RVDFvamc": "pending",
     "public-library:0B9wuggJUWO5PYlBERVYtUFkwdFE": "pending",
     "public-library:0B9wuggJUWO5PdTRpWU9zNTFQMUU": "pending",
-    "public-library:0B9wuggJUWO5PSVZwQ1ltQng1ZkU": "pending",
+    "public-library:0B9wuggJUWO5PSVZwQ1ltQng1ZkU": "unsupported_format",
     "public-library:0B9wuggJUWO5PN2tlaWZyREJaZUE": "unsupported_format",
     "public-library:0B9wuggJUWO5PXzViYUJzV2NHTUE": "pending",
     "public-library:0B9wuggJUWO5PVi10d3E5eVZtTGM": "pending",
@@ -552,5 +552,5 @@
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "pending",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "pending"
   },
-  "updated_at": "2026-10-16T16:35:23.099404+00:00"
+  "updated_at": "2026-10-16T17:36:03.028494+00:00"
 }
