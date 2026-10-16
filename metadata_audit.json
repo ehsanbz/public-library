@@ -16331,6 +16331,7 @@
       "attempts": 1,
       "checked_at": "2026-10-16T09:41:44.446453+00:00"
     },
-    "classification_source": "Automatic content classification against existing taxonomy; evidence checked in sampled pages"
+    "classification_source": "Automatic content classification against existing taxonomy; evidence checked in sampled pages",
+    "title_source": "Verified visually from the PDF title page, page 3, 2026-10-16; corrected one OCR letter"
   }
 }
