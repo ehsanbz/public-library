@@ -224,6 +224,7 @@ def organize(drive, root=ROOT):
     state = walk(drive, INBOX)
     source_ids = {f['path']: f['id'] for f in state['folders']}
     metadata = {r[0]: r for r in catalog.read_json(root/'bookshelf_source.json')['rows']}
+    audit = catalog.read_json(root/'metadata_audit.json', {})
     moved, unresolved = 0, 0
     destinations = {}
     journal = []
@@ -244,6 +245,13 @@ def organize(drive, root=ROOT):
                     raise ValueError('Verified addition cannot alter source ID or link')
                 row[headers.index(field)] = value
         category, subcategory = row[4:6]
+        trace = audit.get('bookshelf:'+item['id']) or audit.get(item['id'], {})
+        if trace.get('classification_source','').startswith('Automatic content classification'):
+            from content_reader import VERSION
+            analysis = trace.get('content_analysis', {})
+            if analysis.get('reader_version') != VERSION or not analysis.get('can_sort'):
+                unresolved += 1
+                continue
         if category not in catalog.CATEGORIES or subcategory in {'', 'Unknown', 'Needs review'}:
             unresolved += 1
             continue

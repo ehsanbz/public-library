@@ -6,7 +6,7 @@ The daily GitHub Actions workflow reads new books from their contents, including
 
 1. Fully scan both vaults. Prioritize unresolved personal Inbox files, then new eligible files in either vault. Never follow shortcuts.
 2. Download a temporary copy on the GitHub runner (up to 100 MiB). Extract PDF opening pages, credits, contents and three body samples. Image-only pages use Tesseract OCR with Persian, English, Arabic and German recognition. Persian cover/title pages get independent Persian-only layout passes. EPUB, DOCX, TXT and basic RTF text are supported too.
-3. Run the Apache-2.0 [Qwen3-4B model](https://huggingface.co/Qwen/Qwen3-4B-GGUF) on the runner CPU through llama.cpp. Model weights are pinned to a revision. No book contents are sent to Hugging Face or an external inference API; Hugging Face only supplies model weights.
+3. Run the Apache-2.0 [Qwen3-8B model](https://huggingface.co/Qwen/Qwen3-8B-GGUF) on the runner CPU through llama.cpp. Model weights are pinned to a revision. No book contents are sent to Hugging Face or an external inference API; Hugging Face only supplies model weights.
 4. Read title/author credits separately from subject classification, so an author's reputation does not determine this book's genre. Independently detect text languages using Lingua. Keep the owner's Persian policy tag separate from languages detected in sampled text.
 5. Accept titles and author names only when normalized supporting spans exist in sampled text, allowing up to 5% spelling differences on OCR pages. Constrain output to JSON and categories/subcategories already in either catalog, while preserving separate vault records. Ignore instructions inside books. Only classifications meeting confidence and evidence checks can guide a move.
 6. Fill unknown metadata and replace automatically generated filename titles. Preserve curated fields, IDs and links. Machine-read metadata remains reviewable. Persist page numbers, OCR method, language results, model version and file fingerprint in catalog provenance, never excerpts or extracted text.
@@ -14,7 +14,7 @@ The daily GitHub Actions workflow reads new books from their contents, including
 
 ## Limits and recovery
 
-The reader samples up to eleven PDF pages, not the entire book. It processes up to eight candidates per daily run; remaining candidates are picked up on later runs, including entries already added with Unknown metadata. Cached fingerprints avoid repeated work. Unreadable or unresolved files are retried once; a changed file or reader version enables another attempt. Password-protected, oversized, unsupported or ambiguous files stay marked for review. Saved web pages with companion assets remain in Inbox.
+The reader samples up to eleven PDF pages, not the entire book. It processes up to four candidates per daily run; remaining candidates are picked up on later runs, including entries already added with Unknown metadata. Cached fingerprints avoid repeated work. Unreadable or unresolved files are retried once; a changed file or reader version enables another attempt. Password-protected, oversized, unsupported or ambiguous files stay marked for review. Saved web pages with companion assets remain in Inbox.
 
 OCR and model confidence are imperfect. Authors may remain Unknown and ambiguous books may remain in Inbox. Scanned languages beyond the installed OCR packs may require another language pack. Existing curated data takes precedence.
 

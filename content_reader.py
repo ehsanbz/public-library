@@ -17,10 +17,10 @@ import xml.etree.ElementTree as ET
 
 import sync_catalog as catalog
 
-VERSION = 'ocr-qwen-v3'
-MODEL_REPO = 'Qwen/Qwen3-4B-GGUF'
-MODEL_REVISION = 'bc640142c66e1fdd12af0bd68f40445458f3869b'
-MODEL_FILE = 'Qwen3-4B-Q4_K_M.gguf'
+VERSION = 'ocr-qwen-v4'
+MODEL_REPO = 'Qwen/Qwen3-8B-GGUF'
+MODEL_REVISION = '7c41481f57cb95916b40956ab2f0b139b296d974'
+MODEL_FILE = 'Qwen3-8B-Q4_K_M.gguf'
 MAX_BYTES = 100 * 1024 * 1024
 SUPPORTED = {'.pdf', '.epub', '.docx', '.txt', '.rtf'}
 
@@ -160,7 +160,7 @@ class Reader:
                 url = 'https://huggingface.co/'+MODEL_REPO+'/resolve/'+MODEL_REVISION+'/'+MODEL_FILE
                 urllib.request.urlretrieve(url, str(target)+'.part')
                 pathlib.Path(str(target)+'.part').replace(target)
-            self.model = Llama(model_path=str(target), n_ctx=8192, n_threads=2, n_batch=256, verbose=False)
+            self.model = Llama(model_path=str(target), n_ctx=6144, n_threads=2, n_batch=128, verbose=False)
         fields = ['title', 'author', 'category', 'subcategory', 'title_evidence', 'author_evidence', 'category_evidence']
         properties = {k: {'type': 'string'} for k in fields}
         properties['category']['enum'] = sorted(categories)+['Unknown']
@@ -196,18 +196,16 @@ class Reader:
         prompt = '<|im_start|>system\n'+system+'<|im_end|>\n<|im_start|>user\n'+user+'<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n'
         tokens = self.model.tokenize(prompt.encode())
         if len(tokens) > 6800:
-            # Bound prompt size without losing the first credits/title pages.
-            sample = [{'page': p['page'], 'text': p['text'][:900]} for p in pages[:8]]
+            sample = [{'page': p['page'], 'text': p['text'][:900]} for p in pages]
             user = json.dumps({'taxonomy': active_taxonomy, 'book_pages': sample}, ensure_ascii=False)
             prompt = '<|im_start|>system\n'+system+'<|im_end|>\n<|im_start|>user\n'+user+'<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n'
-        while len(self.model.tokenize(prompt.encode())) > 4200:
-            if len(sample) > 4:
-                sample.pop()
-            else:
-                for page in sample:
-                    page['text'] = page['text'][:len(page['text'])//2]
-                if max(len(p['text']) for p in sample) < 100:
-                    raise ValueError('Taxonomy/prompt exceeds reader context')
+        while len(self.model.tokenize(prompt.encode())) > 4500:
+            # Retain body evidence as well as opening pages. Dropping body pages
+            # biases subject classification toward credits and author reputation.
+            for page in sample:
+                page['text'] = page['text'][:int(len(page['text'])*.8)]
+            if max(len(p['text']) for p in sample) < 100:
+                raise ValueError('Taxonomy/prompt exceeds reader context')
             user = json.dumps({'taxonomy': active_taxonomy, 'book_pages': sample}, ensure_ascii=False)
             prompt = '<|im_start|>system\n'+system+'<|im_end|>\n<|im_start|>user\n'+user+'<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n'
         print('Inferring bibliographic metadata from bounded book samples.', flush=True)
@@ -310,7 +308,7 @@ def analyze(drive, state, root):
             queue.append((not inbox, vault, item, previous))
     queue.sort(key=lambda x:(x[0], x[2]['id']))
     reader, output = Reader(), {}
-    for _, vault, item, previous in queue[:8]:
+    for _, vault, item, previous in queue[:4]:
         key = vault+':'+item['id']
         status = 'unreadable'
         with tempfile.TemporaryDirectory(prefix='library-content-') as temporary:
@@ -362,9 +360,11 @@ def update_existing(root, readings):
             trace_key = key if key in audit else row[0]
             trace = audit.setdefault(trace_key, {'vault': catalog.NAMES[vault]})
             generated = trace.get('author_source', '').startswith('automatic filename/folder')
+            machine_author = trace.get('author_source', '').startswith('Automatic content reader')
+            machine_category = trace.get('classification_source', '').startswith('Automatic content classification')
             changed = False
             changed_columns = set()
-            category_conflict = row[4] not in {'Unknown','Needs review',''} and reading['fields'].get('Main Category',row[4]) != row[4]
+            category_conflict = not machine_category and row[4] not in {'Unknown','Needs review',''} and reading['fields'].get('Main Category',row[4]) != row[4]
             for column, value in reading['fields'].items():
                 index = headers.index(column)
                 if column == 'Notes / Uncertainty':
@@ -372,6 +372,7 @@ def update_existing(root, readings):
                 if category_conflict and column in {'Main Category','Subcategory','Topic Tags','Book Type'}:
                     continue
                 editable = row[index] in {'Unknown', 'Needs review', ''} or (column=='Book Title' and generated)
+                editable = editable or (machine_author and column in {'Book Title','Author(s)'}) or (machine_category and column in {'Main Category','Subcategory','Topic Tags','Book Type'})
                 if column == 'Language':
                     current = set(row[index].split('; ')) - {'Unknown',''}
                     value = '; '.join(sorted(current | set(value.split('; '))))
