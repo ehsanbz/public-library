@@ -8051,7 +8051,51 @@
     "persian_tag_by_user_rule": false,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "e0bb6015abeed29f4e1c0de37c9049e4e07ec8ed20a37d2bb440602838847376",
+      "page_numbers": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        155,
+        310,
+        465
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        155,
+        310,
+        465
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Religion",
+      "proposed_subcategory": "Islam & Quran",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T01:37:34.928593+00:00"
+    }
   },
   "0B9wuggJUWO5PLVZoX3FORlZBNlE": {
     "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
@@ -10841,7 +10885,42 @@
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "5249ee13a426951c9f58e0e2ce75462abb7ea765113dfa2f31ac2492eb9343b9",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        15,
+        22
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Romanian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry in translation",
+      "verified_form": "Nonfiction",
+      "title_accepted": false,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T01:00:51.111438+00:00"
+    }
   },
   "0B9wuggJUWO5PaS1VMmhNN1F3VTQ": {
     "author_source": "curated credit; see notes and source filename",
@@ -13780,10 +13859,39 @@
   },
   "12cLl0Gqgphp-bCf0iu33IHx8b0rO0bcV": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "664e682a59eb09f33cd5a10f7337d7784c77aaa63dc63fe38691921dc4d00033",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Practical arts",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T00:43:18.100053+00:00"
+    }
   },
   "1PDXTCEYgjwJTqXF9rZ50pJb3szPp9f_X": {
     "vault": "My Bookshelf",
@@ -14038,9 +14146,57 @@
   "12e9RDZjm-tHHRBSpAQ2W9PgKdX_4PZIH": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "04bf26083d6936b737887d454282cf6bb0c5eed89ba4eec9c78f00698d7b6a15",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        84,
+        168,
+        251
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        84,
+        168,
+        251
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Social Sciences",
+      "proposed_subcategory": "Politics & society",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T01:18:55.943860+00:00"
+    }
   },
   "1F7v4z98k0LNXuXx3F6EaInv_LnbuYgmv": {
     "vault": "My Bookshelf",
