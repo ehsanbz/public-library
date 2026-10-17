@@ -16995,7 +16995,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "2d66c82fa5239becd6498f281fc343cb0382e9abd91921aea191ca10e9123b92",
+      "status": "reading_failed_model_reading",
+      "can_sort": false,
+      "checked_at": "2026-10-17T17:30:33.724982+00:00",
+      "attempts": 1
+    }
   },
   "1ZV-5kJmNYruzep2jAKiKAU6jSOktAk9a": {
     "vault": "My Bookshelf",
@@ -17440,7 +17448,41 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "890d50ee1755f2ecadb2e10fa0843c71214a97848282013e94a406423dc91350",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        11
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer fundamentals",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T17:50:26.771425+00:00"
+    }
   },
   "1RLgalYSxvJIB9l4lhn9zxNCi5X436ccV": {
     "vault": "My Bookshelf",
@@ -19095,7 +19137,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "bd0ee6e3d1ea96438a35a875db01e182138a92a16718632c42454545f86d9462",
+      "status": "reading_failed_model_reading",
+      "can_sort": false,
+      "checked_at": "2026-10-17T17:05:39.064343+00:00",
+      "attempts": 1
+    }
   },
   "11H_Jr49zRueFO1oPLwlrikwwSPn3LrTe": {
     "vault": "My Bookshelf",
@@ -20342,10 +20392,46 @@
   },
   "177fectjJ_OGAY2wzyydszg-f9KcY8U6S": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Italian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "04d516cdcd46a3c0e2fc7ce8a4c79d54f9b974cede4fafadd37d4f82afdd98b9",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        27,
+        54,
+        81
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Italian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry in translation",
+      "verified_form": "Unknown",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T17:13:01.549640+00:00"
+    }
   },
   "1uokWfqME4TpeCOd1pAfX3AzMVz4t1TTK": {
     "vault": "My Bookshelf",
