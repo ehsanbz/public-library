@@ -15239,7 +15239,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "953fa434719f388def300fddaa5c1b3a239b80ef7da93871cde6a9bef6401a41",
+      "page_numbers": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        96,
+        192,
+        288
+      ],
+      "ocr_pages": [
+        1,
+        4
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Social Sciences",
+      "proposed_subcategory": "Politics & society",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T23:51:42.448553+00:00"
+    }
   },
   "1Uf4zECUCjqll87XK_f5VVU9ZOBHdYYFX": {
     "vault": "My Bookshelf",
@@ -18343,7 +18381,43 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "4b275aacf0e51270578ea2869360a504741bbe2a6b407d56e5e1b5db4d59a424",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        18,
+        26
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer graphics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T23:10:49.382496+00:00"
+    }
   },
   "1NWESotzT2WNQvyWjyOAP7K6E_-7oaDYk": {
     "vault": "My Bookshelf",
@@ -18595,7 +18669,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "f503c45ce1bd8cb303ea3fb254bf539d2b28864503deb9142e163b2cabd1bd94",
+      "page_numbers": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        61,
+        121,
+        181
+      ],
+      "ocr_pages": [
+        1,
+        3
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Digital media",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T23:22:31.131788+00:00"
+    }
   },
   "1C0PDbHvjjwghba9N-MpDh8OByetJaKBR": {
     "vault": "My Bookshelf",
@@ -18929,7 +19040,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "40e187b7ad86a23e38006a54006ed3df3c16b515677f04f8d3c018f1b8ba21b5",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        96,
+        192,
+        287
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "German"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Embedded systems",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T23:37:26.868612+00:00"
+    }
   },
   "1t79sxpG6aYOlZLbtFtx6rs8TyyyYOwIj": {
     "vault": "My Bookshelf",
