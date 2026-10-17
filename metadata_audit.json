@@ -15644,10 +15644,54 @@
   },
   "16-XHQUpkyx4Ok5grl313FAVDZGFpN18K": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "bc62e998768243da2a272be5a244290510192d32077f9bc8e60e4681b7c12eb0",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        105,
+        209,
+        313
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        105,
+        209,
+        313
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "History",
+      "proposed_subcategory": "Intellectual history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T14:41:32.518752+00:00"
+    }
   },
   "1FfrbVwagEOuiYEY3KRaBHzJt18Wa9j5u": {
     "vault": "My Bookshelf",
@@ -16171,7 +16215,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "cf9280766dbd7cb07c2887a2ab31b145b56b4f04887712735d98e2a90e63556c",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        32,
+        63,
+        94
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T14:07:40.082556+00:00"
+    }
   },
   "1qVbykFimZfAUmnegVRc7jH-e9UQ21a_5": {
     "vault": "My Bookshelf",
@@ -18169,7 +18251,46 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "f128f4ed8cdc8336c00be346a4003259b640e6c916c55ee6900edeba8722d3da",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        56,
+        112,
+        167
+      ],
+      "ocr_pages": [
+        1,
+        56
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Unknown",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T14:59:25.588666+00:00"
+    }
   },
   "1Zd4lgbgU9Q5WiuSDnlrSP8RmJoCa0plm": {
     "vault": "My Bookshelf",
@@ -19334,7 +19455,46 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "e6e665fb76caf3dbc6030ccfaa1469d6f30676743e724dbf8aabd96fade191d7",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        136,
+        272,
+        408
+      ],
+      "ocr_pages": [
+        1,
+        3
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Robotics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T14:22:49.060019+00:00"
+    }
   },
   "15Cd3I7W5Nc7l8NTY8wOpFQI5hbN5h9Mh": {
     "vault": "My Bookshelf",
