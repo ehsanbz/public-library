@@ -8436,7 +8436,51 @@
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "bd5e9d6a2969a290ebddbcdda2b8a1c17ee15d4f5dcdba9d76553a54ec538730",
+      "page_numbers": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        155,
+        310,
+        465
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        155,
+        310,
+        465
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Religion",
+      "proposed_subcategory": "Biblical literature",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T12:53:00.257610+00:00"
+    }
   },
   "0B9wuggJUWO5PaUJhZlQ4d0FoYUE": {
     "author_source": "curated credit; see notes and source filename",
@@ -9065,7 +9109,15 @@
     "persian_tag_by_user_rule": false,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "dcb9c79cbec8f65f480f9db142ee68fa69c08a47736d1442020b282e4304b943",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-17T12:15:01.397573+00:00",
+      "attempts": 1
+    }
   },
   "0B9wuggJUWO5Pbkp0bkUxejZlTEU": {
     "author_source": "source author collection",
@@ -16206,7 +16258,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "d87cd1f31bde5be52da70f1a03de5ebece791f6589719feca73f41d36863624a",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        24,
+        35
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.85,
+      "can_sort": false,
+      "proposed_category": "Historical Fiction",
+      "proposed_subcategory": "War fiction",
+      "verified_form": "Fiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T12:15:01.396741+00:00"
+    }
   },
   "1mgmKtxZ0VSSMHKHjq-jY5mBsF2wLt_QN": {
     "vault": "My Bookshelf",
@@ -17342,7 +17432,42 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "e882467bc7705d38dd595ecc81fb14483041c570fdffceb0816077754e57e9e1",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        18
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer graphics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T12:31:22.781884+00:00"
+    }
   },
   "1Vk2uoenQe_jaxLqLnmsoxQIFJCOJLO8c": {
     "vault": "My Bookshelf",
