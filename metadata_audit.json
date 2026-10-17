@@ -7533,13 +7533,59 @@
     }
   },
   "0B9wuggJUWO5PbHNWRkRQbEd0LUk": {
-    "author_source": "unresolved",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "user-requested Persian tagging rule; document language not independently confirmed",
     "content_language_source": "inferred from Persian title; document language not verified",
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "08eaea9b389189d3fd4f04adb96de1175f589c5bc51c4d00e07409f73f2f9f94",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        26,
+        39
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        26,
+        39
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Philosophy",
+      "proposed_subcategory": "History of philosophy",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T06:34:25.965926+00:00"
+    }
   },
   "0B9wuggJUWO5Pc1NLcDZUWmRIMmM": {
     "author_source": "unresolved",
@@ -10005,7 +10051,15 @@
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "86b000e0e9a1d8a886ffd9aef3e240e7f27548720c17220b849be1e5b7bcc688",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-17T06:55:52.770935+00:00",
+      "attempts": 1
+    }
   },
   "0B9wuggJUWO5PTjNNYWFqNDMtN0U": {
     "author_source": "curated credit; see notes and source filename",
@@ -15128,9 +15182,42 @@
   "148TGePh8oE10Ex9-0STq6HbwgDAAsK9O": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: Romanian",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "5b9d64f5ebae2ba4963b25bf404879cc50bb43166ce25acd5e0c061dffad822b",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Romanian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T06:12:48.222060+00:00"
+    }
   },
   "1UymTrH-W1XgtqikyGIRvw6e9MTnI5J9-": {
     "vault": "My Bookshelf",
@@ -17120,7 +17207,38 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "0948729c1fa6858cf0d2627a357b26321bd17f313e512206ab12b18f81f18bc6",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Digital media",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T06:55:52.770194+00:00"
+    }
   },
   "12BdCaoGzU_fgAnra_S9fWB7IzPamTm96": {
     "vault": "My Bookshelf",
