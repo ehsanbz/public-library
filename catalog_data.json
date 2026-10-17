@@ -1569,7 +1569,7 @@
     [
       "0B9wuggJUWO5PYjdCMGZuS1JoTzg",
       "مجله زمان (5)",
-      "Unknown",
+      "سادتر",
       "Reference",
       "Arts & Culture",
       "Literary periodicals",
@@ -1577,7 +1577,7 @@
       "Persian",
       "Unknown",
       "Unknown",
-      "REVIEW: Author unresolved. Persian language tag assigned by user rule: Persian-script filename or author name (including Iranian authors). This policy tag does not assert the language of the book text. Language: user-requested Persian tagging rule; document language not independently confirmed. No readable language evidence from text extraction; rely on visual verification or the stated catalog tagging rule where available. Author source: unresolved. Original file: مجله زمان (5).pdf | Source folder: 0-OTHERS/0-LITERATURE & CINEMA.",
+      "REVIEW: Author unresolved. Persian language tag assigned by user rule: Persian-script filename or author name (including Iranian authors). This policy tag does not assert the language of the book text. Language: user-requested Persian tagging rule; document language not independently confirmed. No readable language evidence from text extraction; rely on visual verification or the stated catalog tagging rule where available. Author source: unresolved. Original file: مجله زمان (5).pdf | Source folder: 0-OTHERS/0-LITERATURE & CINEMA. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 5, 6, 8, 13, 26, 39 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -25851,15 +25851,15 @@
     [
       "12_GYrwGXpFHP4gtZJqCMrsjL4lD3otZC",
       "The Cookie 2: English Rules",
-      "Unknown",
+      "Igor ۷",
       "Reference",
       "Arts & Culture",
       "Games & recreation",
       "games & recreation",
-      "English",
+      "English; Persian",
       "Unknown",
       "Unknown",
-      "Original filename: The_Cookie_2_English_rules.pdf. Missing/unverified: author, edition year. Series affiliation unverified.",
+      "Original filename: The_Cookie_2_English_rules.pdf. Missing/unverified: author, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 5, 6, 7, 8, 12 using OCR, embedded text. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification did not meet the filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -25946,10 +25946,10 @@
       "Arts & Culture",
       "Literary criticism",
       "literary criticism",
+      "Persian",
       "Unknown",
       "Unknown",
-      "Unknown",
-      "Original filename: ماجرای_پایان_ناپذیر_حافظ_از_دکتر_محمدعلی_اسلامی_ندوشن.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified.",
+      "Original filename: ماجرای_پایان_ناپذیر_حافظ_از_دکتر_محمدعلی_اسلامی_ندوشن.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 4, 5, 6, 8, 82, 163, 244 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -35171,11 +35171,11 @@
     "review_count": 548,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
-    "updated_at": "2026-10-16",
+    "updated_at": "2026-10-17",
     "excluded_assets": 117,
     "folders_scanned": 216,
-    "authors_identified": 1669,
-    "languages_identified": 1725,
+    "authors_identified": 1671,
+    "languages_identified": 1726,
     "category_counts": {
       "Arts & Culture": 280,
       "Biography & Memoir": 69,
@@ -35197,14 +35197,14 @@
       "Unknown": 23
     },
     "language_counts": {
-      "Persian": 1335,
-      "English": 366,
-      "English; Persian": 3,
+      "Persian": 1336,
+      "English": 365,
+      "English; Persian": 4,
       "Azerbaijani; Persian": 1,
       "Romanian": 2,
       "Italian": 1,
       "Arabic; Persian": 3,
-      "Unknown": 197,
+      "Unknown": 196,
       "German; English": 1,
       "German": 5,
       "Turkish": 2,
@@ -35288,7 +35288,7 @@
         "0B9wuggJUWO5Pal9LaG9qblNsdGc",
         "0B9wuggJUWO5Pd21EcjlGWDdWVVU"
       ],
-      "updated_at": "2026-10-16"
+      "updated_at": "2026-10-17"
     },
     {
       "id": "bookshelf",
@@ -35789,7 +35789,7 @@
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
         "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
       ],
-      "updated_at": "2026-10-16"
+      "updated_at": "2026-10-17"
     }
   ],
   "sync": {
