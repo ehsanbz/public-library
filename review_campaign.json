@@ -175,7 +175,7 @@
     "bookshelf:1lgEHPWtUibfwTxExE0VWhUWiqB4gtLdP": "pending",
     "bookshelf:1aWQHQwc0e7bNf_qdeoLxCRZmr62yO70t": "pending",
     "bookshelf:1AZt91Ja2vrB4Cp89Lx7RbPxy10Oi4kjJ": "pending",
-    "bookshelf:12fDOXl8qqU3DYM-TBCN5HhlhQhCn7xcL": "pending",
+    "bookshelf:12fDOXl8qqU3DYM-TBCN5HhlhQhCn7xcL": "read",
     "bookshelf:1GDbqT03Hp-BoOrtemBTbiTMgoiTexKVB": "pending",
     "bookshelf:1uu3fTA1pjqcOo7-jwo1BOs0uKdBkGHVe": "pending",
     "bookshelf:1xNAFc1g8yqMojKZm74Qr-Gku643WBbhk": "pending",
@@ -191,7 +191,7 @@
     "bookshelf:1u-At1SxH8SMAtCvKDUUu5Vr_gTknVRyT": "pending",
     "bookshelf:1FXR1GtlC5YQtTYlHBnq6OzabJQx0nymV": "pending",
     "bookshelf:1zfq6xs_nxqOHeTvR5ncIMcb1VZ-GJDTI": "pending",
-    "bookshelf:12hEV_6_aO-pXxN3t06StjTvBGY6Nl-kt": "pending",
+    "bookshelf:12hEV_6_aO-pXxN3t06StjTvBGY6Nl-kt": "read",
     "bookshelf:1YVuIMbzgm-M79jjtiLCYZU_ywXPvLl4t": "pending",
     "bookshelf:1yCAvp0w_RP18Wi9tThDQVQ0a1yVmd9KE": "pending",
     "bookshelf:1-VwvQxNgpSC-F2owyMZWG39Imw8ZDgUz": "read",
@@ -535,7 +535,7 @@
     "public-library:0B9wuggJUWO5PanB5WVVxTGZUalk": "pending",
     "public-library:0B9wuggJUWO5Pd3dIY2VVQkZzdk0": "pending",
     "public-library:0B9wuggJUWO5PRnBWUTBLMi1USjA": "read",
-    "public-library:0B9wuggJUWO5PaTNTclJhTkIwQk0": "pending",
+    "public-library:0B9wuggJUWO5PaTNTclJhTkIwQk0": "read",
     "public-library:0B9wuggJUWO5PRzJEeG9VOTJPYU0": "read",
     "public-library:0B9wuggJUWO5PZzExcXUyMWs5QXM": "read",
     "public-library:0B9wuggJUWO5PLVZoX3FORlZBNlE": "read",
@@ -548,9 +548,9 @@
     "public-library:0B9wuggJUWO5PdVZiSFE5eVV2aWc": "pending",
     "public-library:0B9wuggJUWO5PZ0I3Z0JST1FsUjQ": "read",
     "public-library:0B9wuggJUWO5PX3pUN0N3YnhLNVU": "read",
-    "public-library:0B9wuggJUWO5Pa2JuSDJCY25wcnM": "pending",
+    "public-library:0B9wuggJUWO5Pa2JuSDJCY25wcnM": "unsupported_format",
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "pending",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "pending"
   },
-  "updated_at": "2026-10-17T01:37:35.096451+00:00"
+  "updated_at": "2026-10-17T02:41:15.802597+00:00"
 }
