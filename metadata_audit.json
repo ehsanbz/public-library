@@ -636,7 +636,15 @@
     "persian_tag_by_user_rule": false,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "45498330d0bfef9c1d67e5ffc3fd833538622f1a74ca4a6009a75c9db98deaf3",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-17T04:52:37.375072+00:00",
+      "attempts": 1
+    }
   },
   "0B9wuggJUWO5PMHZrbUFtdm0yTkE": {
     "author_source": "source author collection",
@@ -10439,7 +10447,48 @@
     "persian_tag_by_user_rule": true,
     "text_checked": true,
     "text_readable_language": false,
-    "vault": "Public Library"
+    "vault": "Public Library",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "2e93c403cbff3fc1c2421d2fde232fa8906b1cbe26292d34bbca7c15a3aa106b",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        30,
+        60,
+        90
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Dutch",
+        "English",
+        "German",
+        "Turkish"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry in translation",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T04:37:56.294963+00:00"
+    }
   },
   "0B9wuggJUWO5PMjV6TXJ2OXAzbG8": {
     "author_source": "filename credit",
@@ -16233,7 +16282,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "99f107f19d1ae0ccf325e079e9cbe5703bafbe9364d282ee098230f52b896ce4",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        177,
+        353,
+        529
+      ],
+      "ocr_pages": [
+        4,
+        8
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.9999999999999999,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer architecture",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T04:18:28.637911+00:00"
+    }
   },
   "11rCuiVKQpBjunB7kXSOZPFcuITanLHT_": {
     "vault": "My Bookshelf",
@@ -17389,7 +17476,47 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "c0ffbcb33acf580a8065bae8894e6afd40e2d320beeffea8de29062285bb654c",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        135,
+        270,
+        405
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        4
+      ],
+      "verified_languages": [
+        "English",
+        "Persian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Networks & communications",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T04:52:37.372945+00:00"
+    }
   },
   "1UVLgzyfdYpWhG2NTUWvc3TdpFX-F3fbS": {
     "vault": "My Bookshelf",
