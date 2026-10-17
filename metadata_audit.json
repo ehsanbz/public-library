@@ -14265,10 +14265,44 @@
   },
   "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: English",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "4ea0732dfee9344f9eadab2842ec824ba994e6ae168d616bf3b8dbb71b8a3d30",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Science Fiction",
+      "proposed_subcategory": "Speculative fiction",
+      "verified_form": "Fiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T15:39:54.552343+00:00"
+    }
   },
   "1h21Np-eGjC2a4VuwdlPwgbB5AUKIm_0i": {
     "vault": "My Bookshelf",
@@ -14933,7 +14967,47 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "14e32ed90b10ccd07a3b2bed66d3e4b43e31980d01debce27edb5a7e74cdf293",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        84,
+        168,
+        252
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        252
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Science",
+      "proposed_subcategory": "Mathematics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T15:16:03.662170+00:00"
+    }
   },
   "14J52UgDWuVLglGa7D6wg31WCIZLDsyYG": {
     "vault": "My Bookshelf",
@@ -17271,7 +17345,46 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "3bdbd1ad353612b0b115913c3a3cbc99022d3ca7b8ce68854cc888c9b2a7b9c9",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        18,
+        35,
+        52
+      ],
+      "ocr_pages": [
+        1,
+        2
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer hardware",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T15:51:48.537355+00:00"
+    }
   },
   "1pTGrZ998QVCCPA2zoYU4tBToyquVd9-K": {
     "vault": "My Bookshelf",
@@ -18351,9 +18464,54 @@
   "167GwGUulfGFgmOtmNIJEBfNbiL36iZCU": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: English, French",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "0b3eaf841c0764df7f26ba19b5da4183644ecc9b8beb387f76320e618b488459",
+      "page_numbers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        113,
+        226,
+        339
+      ],
+      "ocr_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        113,
+        226,
+        339
+      ],
+      "verified_languages": [
+        "English",
+        "French"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Mechanical engineering",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-17T15:28:58.694217+00:00"
+    }
   },
   "1mro5WxOB6vlYU0yrJ0CZJyhE3AZvb3tI": {
     "vault": "My Bookshelf",
