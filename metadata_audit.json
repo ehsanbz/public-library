@@ -16465,10 +16465,52 @@
   },
   "1D91KlTGmZrZ9CMJ98Ex0-ACwpnimz7_A": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "7fcf444132e367aa6c145e62fa0dea24aeb12ad5832e3bb3df2c0697bcc23151",
+      "page_numbers": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        64,
+        128,
+        192
+      ],
+      "ocr_pages": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        64,
+        128,
+        192
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry in translation",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T04:45:09.636022+00:00"
+    }
   },
   "1Zp8Hbb2s1Mr1u1N4AHXkngI0UthhM-2d": {
     "vault": "My Bookshelf",
@@ -19847,7 +19889,43 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "b9e47c84ae203cec0d0d8e7b4f7b3f814e9de2a9edfe403a0c713b42bc3b2f2e",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        23,
+        34
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English",
+        "Persian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Networks & communications",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T05:33:13.299796+00:00"
+    }
   },
   "1fjUWw9CLQqtRQ4nePqgKn1GgKbON4PSf": {
     "vault": "My Bookshelf",
@@ -21018,9 +21096,35 @@
   "1DE1N-fZ8pBfLGkl2LnKUMDbcu2cnpS-L": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: English",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "695b7493cf6a146228bc3fc39b7de4abce880a1963e8712b8a08aa5eec960f53",
+      "page_numbers": [
+        1
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.0,
+      "can_sort": false,
+      "proposed_category": "Unknown",
+      "proposed_subcategory": "Unknown",
+      "verified_form": "Unknown",
+      "title_accepted": false,
+      "author_accepted": false,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T04:55:57.131651+00:00"
+    }
   },
   "1v24yZSivG9X_-TDD5_kUK54ZWWcnW-D_": {
     "vault": "My Bookshelf",
@@ -22078,7 +22182,42 @@
     "author_source": "automatic filename/folder discovery; needs review",
     "language_source": "owner Persian tagging rule",
     "source_path": "Inbox",
-    "discovered_at": "2026-10-15T13:03:16.464Z"
+    "discovered_at": "2026-10-15T13:03:16.464Z",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "d774985b54147e3eb33a96d3d81d753343bd64c25a690a667386ee43627002c2",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        14,
+        21
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": false,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T05:13:47.667965+00:00"
+    }
   },
   "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2": {
     "vault": "My Bookshelf",
