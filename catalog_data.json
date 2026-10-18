@@ -28592,10 +28592,10 @@
       "Literary Fiction",
       "Humor & satire",
       "humor & satire",
+      "Persian",
       "Unknown",
       "Unknown",
-      "Unknown",
-      "Original filename: چاخان - عزیز نسین.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified.",
+      "Original filename: چاخان - عزیز نسین.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 3, 4, 5, 6, 7, 8, 58, 115, 172 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -35171,11 +35171,11 @@
     "review_count": 548,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-18",
     "excluded_assets": 117,
     "folders_scanned": 216,
     "authors_identified": 1696,
-    "languages_identified": 1754,
+    "languages_identified": 1755,
     "category_counts": {
       "Arts & Culture": 282,
       "Biography & Memoir": 69,
@@ -35197,14 +35197,14 @@
       "Unknown": 21
     },
     "language_counts": {
-      "Persian": 1353,
+      "Persian": 1354,
       "English": 369,
       "English; Persian": 5,
       "Azerbaijani; Persian": 1,
       "Romanian": 3,
       "Italian": 1,
       "Arabic; Persian": 4,
-      "Unknown": 168,
+      "Unknown": 167,
       "Dutch; German; Persian; Romanian": 1,
       "German; English": 1,
       "German": 5,
@@ -35793,7 +35793,7 @@
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
         "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
       ],
-      "updated_at": "2026-10-17"
+      "updated_at": "2026-10-18"
     }
   ],
   "sync": {

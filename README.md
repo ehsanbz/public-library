@@ -7,7 +7,7 @@
 ## Sources
 
 - Public Library: [Drive vault](https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw), with the reviewed metadata and Persian tagging rule from this repository.
-- My Bookshelf: [Drive vault](https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM) and [original catalog](https://github.com/ehsanbz/bookshelf-catalog), personal metadata updated 2026-10-17. Existing entries, metadata and review flags are preserved; newly discovered files are added by the scheduled sync and uncertain fields are marked for review. The shortcut to Public Library inside this vault is not imported as another copy.
+- My Bookshelf: [Drive vault](https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM) and [original catalog](https://github.com/ehsanbz/bookshelf-catalog), personal metadata updated 2026-10-18. Existing entries, metadata and review flags are preserved; newly discovered files are added by the scheduled sync and uncertain fields are marked for review. The shortcut to Public Library inside this vault is not imported as another copy.
 
 No deduplication or bibliographic merging occurs across vaults. Author, language, category and review filters combine with vault selection. Co-authored books appear under each author. Filtered CSV exports contain only the selected results, with a Vault column. Reset all includes both vaults again.
 

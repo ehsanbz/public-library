@@ -2932,10 +2932,10 @@
       "Literary Fiction",
       "Humor & satire",
       "humor & satire",
+      "Persian",
       "Unknown",
       "Unknown",
-      "Unknown",
-      "Original filename: چاخان - عزیز نسین.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified.",
+      "Original filename: چاخان - عزیز نسین.pdf. Title-based classification is tentative. File text unavailable or unreliable; verify metadata against the file. Missing/unverified: edition language, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 3, 4, 5, 6, 7, 8, 58, 115, 172 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -9115,7 +9115,7 @@
       "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
     ],
     "review_count": 490,
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-18",
     "drive_library_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
   }
 }
