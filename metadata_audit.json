@@ -14571,10 +14571,43 @@
   },
   "1CW3p3YSb_WAJ3Dy76HVKO5JOvf8wbX8u": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "1721cc04f9ab0091ddd0af4654bb0769b65f2833d54b7d7b02e3bc0c93bf8390",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Science Fiction",
+      "proposed_subcategory": "Speculative fiction",
+      "verified_form": "Fiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T03:33:31.856852+00:00"
+    }
   },
   "1OPY_hfvhmK9P0PP2PGWTrRtWnlH-SQWY": {
     "vault": "My Bookshelf",
@@ -16150,7 +16183,47 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "96a3351ad2133407f436a62a13bf114d3e1a0d2a053c09ae919c35783d721d68",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        53,
+        105,
+        157
+      ],
+      "ocr_pages": [
+        1,
+        2
+      ],
+      "verified_languages": [
+        "English",
+        "German"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "History",
+      "proposed_subcategory": "Iranian political history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T04:04:07.187828+00:00"
+    }
   },
   "1RUkM-_OHIbuE0t2b74_WJwfMNBjzT_Ij": {
     "vault": "My Bookshelf",
@@ -20279,10 +20352,45 @@
   },
   "1CuJFYvc8EDm5LhSgL9eKrkt-1vMsHJjE": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "a0d5329afe9cd009e0dd7c14a4e438261da98be9bd184cc0099eca23cb5ee78a",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        29,
+        58,
+        86
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Operating systems",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T04:26:13.159787+00:00"
+    }
   },
   "1Q43tQkUBlB6_6jPjWT7Oq4XNJ-553ex-": {
     "vault": "My Bookshelf",
@@ -21446,7 +21554,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "c2afdf8b3585c39eaf2786efaf33241646246918152771362322f3ef4ca8b681",
+      "page_numbers": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        82,
+        164,
+        246
+      ],
+      "ocr_pages": [
+        3,
+        6
+      ],
+      "verified_languages": [
+        "English",
+        "Italian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "History",
+      "proposed_subcategory": "Iranian history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T03:46:53.075930+00:00"
+    }
   },
   "1joaF17mAjtXhQpmrh3Krhki19j81Zyif": {
     "vault": "My Bookshelf",
