@@ -17235,7 +17235,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "7f683efd453f7cba199d9a8d19268af02bcc84496ba8525a4e9ab352fed275e6",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        105,
+        209,
+        313
+      ],
+      "ocr_pages": [
+        2,
+        3
+      ],
+      "verified_languages": [
+        "Romanian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": false,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T11:25:50.323999+00:00"
+    }
   },
   "1TU8QYPt6gUHsMvGg3Dckm3fUmV8c9z8z": {
     "vault": "My Bookshelf",
@@ -21705,7 +21743,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "fd9507ccd227f68ef7aaf24dad690f7b2442980918563f705487ad5a242b5327",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T11:25:50.324948+00:00",
+      "attempts": 1
+    }
   },
   "1JmGO1nCVo3U7pmigBBuMXZsBVZqNlXin": {
     "vault": "My Bookshelf",
@@ -21723,10 +21769,48 @@
   },
   "1GReh6GUn0xkrIQMWUreE3vys-smL6o3I": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "bf6a73d7a25c397588195c3074ef01455ecbb83697c9d00d5e21b6d2681eae8e",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        14,
+        27,
+        40
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer fundamentals",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T11:45:24.363565+00:00"
+    }
   },
   "1q42BrTJeUmih87Sm15GKz3CD3FMPezeA": {
     "vault": "My Bookshelf",
@@ -21740,7 +21824,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "f2dc5dc8e5447ff7bdea6e0f1518991f6a8edd69fc9964e628d7ba1248ac4f7e",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T11:25:50.324789+00:00",
+      "attempts": 1
+    }
   },
   "1Rrxl0RjEO2RGTCPw2uDvOsIR5rJU-1Ag": {
     "vault": "My Bookshelf",
