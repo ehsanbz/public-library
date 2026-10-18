@@ -16335,9 +16335,53 @@
   "1BZ79dRYw5EhZm1yMkWka6HxuakUD-mTw": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "a8885dcdd2c3c2f4c8ae8ea82bcc1303e176ed55425876dc92b04dd61c08ece9",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        230,
+        460,
+        690
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        230,
+        460,
+        690
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T01:36:05.499828+00:00"
+    }
   },
   "1iCRz29n-6jfwn2SnICdd2Vm0cGG3w77U": {
     "vault": "My Bookshelf",
@@ -18250,7 +18294,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "e588d3c6e5dca72eeab3ddca830e1bd101045a4db47ac71cbec39aaed9e292bf",
+      "page_numbers": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        294,
+        588,
+        881
+      ],
+      "ocr_pages": [
+        1,
+        2
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer graphics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T01:13:54.178786+00:00"
+    }
   },
   "10iPCj8xCxSKjiCopWJjr5FnwtoFyEeHN": {
     "vault": "My Bookshelf",
@@ -18577,7 +18659,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "d40972679759fd619dd3b784f89c237e2f73320c0f0689ff92ee058df6328fde",
+      "page_numbers": [
+        1,
+        3,
+        5,
+        6,
+        8,
+        103,
+        205,
+        307
+      ],
+      "ocr_pages": [
+        1,
+        3,
+        5
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 100,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Programming",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T01:01:00.596985+00:00"
+    }
   },
   "1kyETc33uSbfmSWxEToLRq1EnD0tvV7kB": {
     "vault": "My Bookshelf",
@@ -19000,7 +19119,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "e2391f4262e29d3b075650da2eca406817755c5042d6dcf7bf44b4d4ba84bac0",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T00:50:05.664442+00:00",
+      "attempts": 1
+    }
   },
   "1AsBYNwmyJafJJe5AV30W-wL2h72s7pQq": {
     "vault": "My Bookshelf",
