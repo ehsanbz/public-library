@@ -17245,10 +17245,52 @@
   },
   "1KXBxT0VjjGHGUVjkBFWW0ND9wL9eEibQ": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "d53061ead6f07e18e0b886dbd9b873fcd7adbc3ea82c102606759b607ac6dc99",
+      "page_numbers": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        84,
+        168,
+        252
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        84,
+        168,
+        252
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Language & Linguistics",
+      "proposed_subcategory": "Historical linguistics",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T19:45:25.025652+00:00"
+    }
   },
   "1n4fmuB0UyUXDSj2aUfX7gum57ylntQ0B": {
     "vault": "My Bookshelf",
@@ -21175,10 +21217,57 @@
   },
   "1KzuQaw8v1_qicid4obOiRLDvusD-XWic": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Arabic, English",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "87a9609fd198f7701dc4e0256c80ad0cf7e34a9f6980be617e4a6b2f819c201e",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        18
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        18
+      ],
+      "verified_languages": [
+        "Arabic",
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Computer fundamentals",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T20:01:12.212204+00:00"
+    }
   },
   "1TwycsOWbbbipIGDfK7Cik3wELdFk78kO": {
     "vault": "My Bookshelf",
@@ -22026,7 +22115,42 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "48e456bad59e237b17f59b9f820b0ba5c1d15209d3968962f239f4045bc5ea58",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        96,
+        192,
+        287
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Programming",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T19:31:57.386666+00:00"
+    }
   },
   "1u8JrGS1zClX3Gk799JQmAck6YCY9KHJl": {
     "vault": "My Bookshelf",
@@ -22410,7 +22534,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "3476e77944c0802173bb0a9aff837a293a9ab08bc23fd867bb8eebf63190c3b3",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T20:01:12.217327+00:00",
+      "attempts": 1
+    }
   },
   "1GPu3os-naOhFUNcPuL_tC_HPc-sPAJPG": {
     "vault": "My Bookshelf",
