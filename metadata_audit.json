@@ -14407,7 +14407,38 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "53a20afd30b323aa662edc11bfe2b8863a30069237cbadec61e220fa80d11746",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English",
+        "Italian"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Games & recreation",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T02:49:10.374966+00:00"
+    }
   },
   "1ouZk5SVMA2QjoE4Z7vBu06ttoYIxSDX-": {
     "vault": "My Bookshelf",
@@ -14967,9 +14998,57 @@
   "1CS9JY260jUGWgXWq_0-ef3CsbS5c5Svo": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "b08ae3796bbbcb5fa338199fada81bde4ac18065613d93a1b183680e02f0823e",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        72,
+        143,
+        214
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        72,
+        143,
+        214
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "History",
+      "proposed_subcategory": "European history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T03:22:46.439412+00:00"
+    }
   },
   "12e9RDZjm-tHHRBSpAQ2W9PgKdX_4PZIH": {
     "vault": "My Bookshelf",
@@ -18912,7 +18991,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "76ba1ffb9cae0643b0e44da5eb45e0916d5d024192ee97a910904abb0b95bc9b",
+      "page_numbers": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        101,
+        201,
+        301
+      ],
+      "ocr_pages": [
+        1,
+        3
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Digital media",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T03:03:12.368822+00:00"
+    }
   },
   "1hti9i_e9ygKgjRqiVieAEn-62vFOa5SM": {
     "vault": "My Bookshelf",
@@ -21341,10 +21457,54 @@
   },
   "1Bm9NfxphX3GAiE7lIJz3YIPCXA9diCec": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "8d01c7da1d800d389e129ebe932f754d4aaa3bcf585c06e93fac3df52f98118b",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        94,
+        188,
+        282
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        94,
+        188,
+        282
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "History",
+      "proposed_subcategory": "European history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T02:39:17.169854+00:00"
+    }
   },
   "1K5G1dQ7zsx1qpEY5BVRqqEpqXrYfXOOE": {
     "vault": "My Bookshelf",
