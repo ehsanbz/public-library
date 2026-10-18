@@ -15179,7 +15179,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "62ae611f98343a7aad920308b7ebd4086513acd80687a47b3ac50ab97f9737ba",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        42,
+        84,
+        126
+      ],
+      "ocr_pages": [
+        4
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Social Sciences",
+      "proposed_subcategory": "Politics & society",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T08:25:38.487493+00:00"
+    }
   },
   "1h-1soEgSyKr5p7U9Nnr1-5uKXrM3fs6o": {
     "vault": "My Bookshelf",
@@ -15957,7 +15994,45 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "127fa57e0cfcdd55c2b03e01af5ca60e4386bc52552e3e38a6b4df0c780c9c37",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        29,
+        57,
+        85
+      ],
+      "ocr_pages": [
+        1
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry in translation",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T08:42:04.452238+00:00"
+    }
   },
   "1-CCnYbJ6kQ6cgXJnD3XvGLIfD-0Ugx59": {
     "vault": "My Bookshelf",
@@ -16987,7 +17062,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "d2d6cc01aaeb712565bdc56a71b326221d841b49c66ac308f79413b0d115256b",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T08:42:04.453088+00:00",
+      "attempts": 1
+    }
   },
   "1GL2--fhgIx2d8ZCVqlGv1JbNSx3NoqrT": {
     "vault": "My Bookshelf",
@@ -19312,7 +19395,44 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "43715cfb016dd8faaa19bd44524482af1189b9d7d887d16757880806da10e0c2",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        165,
+        330,
+        494
+      ],
+      "ocr_pages": [
+        3
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Digital media",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T08:11:08.536176+00:00"
+    }
   },
   "1S8RlyvhQUMDvVTk-EJtitS2yQ5TK5ki3": {
     "vault": "My Bookshelf",
