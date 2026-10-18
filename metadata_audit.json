@@ -17699,10 +17699,39 @@
   },
   "1Ir30wUuj7NRyeP3aliiaCF74CsE5pR4a": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "0ac4559756bcf3bebf55bb6da6a7d820de73bae77eb12a956ff58363a353ac1a",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Poetry",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T16:15:58.099340+00:00"
+    }
   },
   "1lgEHPWtUibfwTxExE0VWhUWiqB4gtLdP": {
     "vault": "My Bookshelf",
@@ -20243,7 +20272,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "d50966ce782910b946d3d0ffce4ae049ecb98809ab749659ba8b80244a4fe475",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-18T15:53:33.061850+00:00",
+      "attempts": 1
+    }
   },
   "1FOPiI_6nLt2CE0b0mlYeVNzDI5GuKypa": {
     "vault": "My Bookshelf",
@@ -22850,10 +22887,46 @@
   },
   "1I_NBwV2HZ7fnXFCcUb6Lv8iLxr_pR_M5": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "ab115034f99530b91c2b319476554a080faa52bf42412fdd9cc8f558acd418bd",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        31,
+        46
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Travel & Geography",
+      "proposed_subcategory": "Travel writing",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T15:30:21.753461+00:00"
+    }
   },
   "1BeSUL0iaGY95ZchsnPk6Beuw8OkWMiOL": {
     "vault": "My Bookshelf",
@@ -23128,10 +23201,58 @@
   },
   "1IdbkN6vyKR7pwt6Zy1w_j3EuEbydYEC4": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "893a1f9ddb1438275ed93cd1d43f61302627c728d5093e34927a23fa62676808",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        19,
+        37,
+        55
+      ],
+      "ocr_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        19,
+        37,
+        55
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-18T15:53:33.060901+00:00"
+    }
   },
   "1fzsYyxmvhC3SBCeQ8jUlUalCB0_jkQid": {
     "vault": "My Bookshelf",
