@@ -382,7 +382,7 @@
     "bookshelf:1KQLEDFySbaPfFeyyRlO5pgC3uOw52jCM": "read",
     "bookshelf:1u8JrGS1zClX3Gk799JQmAck6YCY9KHJl": "pending",
     "bookshelf:1yYFaSzpAIE9AxmE0bx4fBNS7UYoHVyih": "pending",
-    "bookshelf:1RmBCdzsqzjAfErNTy5oQ18smyhDSV1I9": "pending",
+    "bookshelf:1RmBCdzsqzjAfErNTy5oQ18smyhDSV1I9": "read",
     "bookshelf:1gmV2SYTFSrFTmVSi--JtbcclX4OSDHx_": "pending",
     "bookshelf:1WJWSc3qkd5u4sQPoUu0xJPskieuvqVXn": "pending",
     "bookshelf:1eCDdX4l_3q5emjUfUDhOg2kJkIV9IB7B": "pending",
@@ -408,11 +408,11 @@
     "bookshelf:1LRRDyW1GcA6WpaxtN9xnxaO5cJdMheu-": "unsupported_format",
     "bookshelf:1GPu3os-naOhFUNcPuL_tC_HPc-sPAJPG": "unsupported_format",
     "bookshelf:1JmGO1nCVo3U7pmigBBuMXZsBVZqNlXin": "unsupported_format",
-    "bookshelf:1RxJXjII7U9HyR42KvU_PBYbSZh2SvkFV": "pending",
+    "bookshelf:1RxJXjII7U9HyR42KvU_PBYbSZh2SvkFV": "unsupported_format",
     "bookshelf:1GReh6GUn0xkrIQMWUreE3vys-smL6o3I": "read",
     "bookshelf:1q42BrTJeUmih87Sm15GKz3CD3FMPezeA": "pending",
     "bookshelf:1GOaoFWhgzVsIt_Gg2wBjol_c7qvrMtOh": "unsupported_format",
-    "bookshelf:1Rrxl0RjEO2RGTCPw2uDvOsIR5rJU-1Ag": "pending",
+    "bookshelf:1Rrxl0RjEO2RGTCPw2uDvOsIR5rJU-1Ag": "read",
     "bookshelf:1kV5kS14mJavyUY8LyWqwt4iDDpXRwmqS": "pending",
     "bookshelf:1OidV56gXx4umGMxNfU7OR5QYJcWxjd7o": "read",
     "bookshelf:10_DgATyIaAUDqH3y0zjFhUu83-6vZs_7": "read",
@@ -471,7 +471,7 @@
     "bookshelf:1fzsYyxmvhC3SBCeQ8jUlUalCB0_jkQid": "pending",
     "bookshelf:1mtIoRoSUlf8clGXyblmh1bg2wRkPGh49": "pending",
     "bookshelf:146CHabFy1j9ov8gTthzQ0f05Z2XjQj32": "read",
-    "bookshelf:1RiK80MIIxOLyxVXdvEpxWWKnb_qgK8Wz": "pending",
+    "bookshelf:1RiK80MIIxOLyxVXdvEpxWWKnb_qgK8Wz": "unsupported_format",
     "bookshelf:12OACYvx80KLXhv6eOYjVhD5iPN0u-Sg2": "read",
     "bookshelf:1z3BUVg6rocIEAcupKlDYWil_ge-Yr5w1": "pending",
     "bookshelf:1amWZErKUFn9eHdqkw90H25vmi-J-qCCA": "pending",
@@ -552,5 +552,5 @@
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "read",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "read"
   },
-  "updated_at": "2026-10-19T07:05:15.981713+00:00"
+  "updated_at": "2026-10-19T07:46:42.982877+00:00"
 }

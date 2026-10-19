@@ -23664,7 +23664,41 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "bc2040931c5522a5062dbede92efdb0573d3719349a1c13c069a082cc02669f8",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        220,
+        439,
+        658
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.9999999999999999,
+      "can_sort": false,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Programming",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T07:25:42.567702+00:00"
+    }
   },
   "1gmV2SYTFSrFTmVSi--JtbcclX4OSDHx_": {
     "vault": "My Bookshelf",
@@ -24150,7 +24184,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "038a96088b0b5717f553c7277fd870940cfd5d4955b9c7d780a4b24e4eef8d52",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-19T07:46:42.779952+00:00",
+      "attempts": 1
+    }
   },
   "1GReh6GUn0xkrIQMWUreE3vys-smL6o3I": {
     "vault": "My Bookshelf",
@@ -24221,10 +24263,48 @@
   },
   "1Rrxl0RjEO2RGTCPw2uDvOsIR5rJU-1Ag": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "0836d9c5b893ba23966ea2c5e7476cd4eec46a5c604c96acabac54318089f132",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        20,
+        40,
+        59
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Dutch",
+        "English",
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Programming",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T07:46:42.779297+00:00"
+    }
   },
   "1kV5kS14mJavyUY8LyWqwt4iDDpXRwmqS": {
     "vault": "My Bookshelf",
@@ -25591,7 +25671,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "23bde66c861989cdf9564460c919df01a727a156ab1171e36f174d2247768fb2",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-19T07:08:39.687349+00:00",
+      "attempts": 1
+    }
   },
   "12OACYvx80KLXhv6eOYjVhD5iPN0u-Sg2": {
     "vault": "My Bookshelf",
