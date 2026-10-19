@@ -153,7 +153,7 @@
     "bookshelf:1bpyRabHoHB4m1TyLRPNNnVd_0vnvE3qa": "pending",
     "bookshelf:1gZyY6C0Zif6ZBcQwS7mZ5_Ij_hxtIar3": "pending",
     "bookshelf:1s8qAxyyrzJWp0JW-A7opUKjVhNlE9IY-": "pending",
-    "bookshelf:1O4TJ2t2B6GgCc418BQLoYVB3LUQ1Z1P7": "pending",
+    "bookshelf:1O4TJ2t2B6GgCc418BQLoYVB3LUQ1Z1P7": "read",
     "bookshelf:180biRUNcg37iLCyc5NVoXfP97i8oQ4z6": "read",
     "bookshelf:1F9uDjZOtUgTg15cG0bzuLIic8orM1DTm": "unsupported_format",
     "bookshelf:1GL2--fhgIx2d8ZCVqlGv1JbNSx3NoqrT": "read",
@@ -204,7 +204,7 @@
     "bookshelf:1j-TY2tCz-biImwh5mjt7_um8ZUrrPX_t": "pending",
     "bookshelf:1zZ3FA7Q2ymhPwIayd06tho9k1GzhxnDS": "pending",
     "bookshelf:1YSAHEE5L5se-pF5qUXuoZcbBpLqtrEvQ": "pending",
-    "bookshelf:1O2X1JUaSnaSjNifGsvpkZltZMj8iYmbx": "pending",
+    "bookshelf:1O2X1JUaSnaSjNifGsvpkZltZMj8iYmbx": "unsupported_format",
     "bookshelf:1MPkkUppBwnQzNAIoB2EKOakPjOvv8w0O": "file_over_100mb",
     "bookshelf:1myUOoTt0LnFxzcPkQPVBkQEGt_I21y2-": "pending",
     "bookshelf:1aNnLjLjdimYtYF_IbUtAZEqKxaBUDxO1": "pending",
@@ -275,7 +275,7 @@
     "bookshelf:1kyETc33uSbfmSWxEToLRq1EnD0tvV7kB": "pending",
     "bookshelf:1hp_VohGDH0bHQo27AcSW_1ipLzVA8OVR": "pending",
     "bookshelf:16eMjo0Neot9EU1tWlPUP9gysJTtErj-f": "read",
-    "bookshelf:1NaWAQGdimBP7IazQk3Bf2WrUPgOCuWCc": "pending",
+    "bookshelf:1NaWAQGdimBP7IazQk3Bf2WrUPgOCuWCc": "read",
     "bookshelf:1t2q-6LStFriAelde7KbYMyQ6FdzB8426": "pending",
     "bookshelf:1ZSiuuJfVVkqlgvBUmZQNso4D_oXSRW0m": "pending",
     "bookshelf:1n9n3_E8FYCI3sf0yDp8EwzFrZJ8yrG0H": "pending",
@@ -454,7 +454,7 @@
     "bookshelf:1Abo1_eVTuLHIJ9jHduEJBZAAPtqFR2YS": "read",
     "bookshelf:1i2S-eyUmbJGNT-JequfAMCPNtRjwmYR_": "pending",
     "bookshelf:1dam9lPl4VE0WIUjhEYU-bGgz5uP1nsPe": "pending",
-    "bookshelf:1NtG6vYV1UQADVJmYeVNYWKn4vuVAsN25": "pending",
+    "bookshelf:1NtG6vYV1UQADVJmYeVNYWKn4vuVAsN25": "read",
     "bookshelf:1lJSIsjrn_Ch3M_3N8dKHuO14B_sIwvzz": "pending",
     "bookshelf:1I_NBwV2HZ7fnXFCcUb6Lv8iLxr_pR_M5": "read",
     "bookshelf:1BeSUL0iaGY95ZchsnPk6Beuw8OkWMiOL": "file_over_100mb",
@@ -552,5 +552,5 @@
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "read",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "read"
   },
-  "updated_at": "2026-10-18T23:28:33.054484+00:00"
+  "updated_at": "2026-10-19T00:19:44.871264+00:00"
 }

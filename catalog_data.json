@@ -28208,8 +28208,8 @@
     ],
     [
       "1O4TJ2t2B6GgCc418BQLoYVB3LUQ1Z1P7",
-      "Unknown",
-      "Unknown",
+      "کتاب ھای شخصيت معرفی",
+      "تاکاھاشی",
       "Nonfiction",
       "Language & Linguistics",
       "Language learning",
@@ -28217,7 +28217,7 @@
       "Persian",
       "Unknown",
       "Unknown",
-      "Generic filename textbook_persian.pdf; title needs review. Original filename: textbook_persian.pdf. Missing/unverified: title, author, edition year. Series affiliation unverified.",
+      "Generic filename textbook_persian.pdf; title needs review. Original filename: textbook_persian.pdf. Missing/unverified: title, author, edition year. Series affiliation unverified. REVIEW: Metadata read automatically from book pages 1, 2, 3, 4, 5, 6, 7, 8, 15, 29, 43 using embedded text. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
       "Unknown",
       "Unknown",
       "PDF",
@@ -35171,10 +35171,10 @@
     "review_count": 548,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
-    "updated_at": "2026-10-18",
+    "updated_at": "2026-10-19",
     "excluded_assets": 117,
     "folders_scanned": 216,
-    "authors_identified": 1719,
+    "authors_identified": 1720,
     "languages_identified": 1781,
     "category_counts": {
       "Arts & Culture": 283,
@@ -35795,7 +35795,7 @@
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
         "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
       ],
-      "updated_at": "2026-10-18"
+      "updated_at": "2026-10-19"
     }
   ],
   "sync": {
