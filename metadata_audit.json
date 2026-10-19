@@ -15912,7 +15912,46 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "9bbe81411162b43bbb9bff949105d5afa415588f2be8a8ab41f537b5acd35010",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        30,
+        60,
+        90
+      ],
+      "ocr_pages": [
+        30,
+        90
+      ],
+      "verified_languages": [
+        "English"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Social Sciences",
+      "proposed_subcategory": "Politics & society",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T03:20:09.386039+00:00"
+    }
   },
   "1LsDkrYgWEVTPtDwW2O9cc7UxF8-31SGK": {
     "vault": "My Bookshelf",
@@ -17877,7 +17916,15 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "146edfdf18cd5b5be4f2902682307670dede50ef5fddcc40b96478cc6f658398",
+      "status": "file_over_100mb",
+      "can_sort": false,
+      "checked_at": "2026-10-19T03:02:07.590888+00:00",
+      "attempts": 1
+    }
   },
   "1uGQvYnjzV9DeiJsfFUy3ki0g2p9vYcze": {
     "vault": "My Bookshelf",
@@ -18502,10 +18549,54 @@
   },
   "1PUt6UWvG7TUcATJ_ypmcr4GMVPzSFnUv": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "f3eb1bbd41c5984044bcbb137e9f14dc25c47158f5948991e5131fbe9620856b",
+      "page_numbers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        41,
+        81,
+        121
+      ],
+      "ocr_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        41,
+        81,
+        121
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Historical Fiction",
+      "proposed_subcategory": "War fiction",
+      "verified_form": "Fiction",
+      "title_accepted": false,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T03:54:52.519580+00:00"
+    }
   },
   "1Ir30wUuj7NRyeP3aliiaCF74CsE5pR4a": {
     "vault": "My Bookshelf",
@@ -19079,7 +19170,42 @@
     "author_source": "imported unchanged from bookshelf-catalog",
     "language_source": "imported unchanged from bookshelf-catalog",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "ee260d427271c037f4bcfccd7ae8d38b5fdfeb4c0a81b3efc52c31d2fa01702c",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        15,
+        29,
+        43
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Psychology",
+      "proposed_subcategory": "Relationships & personal development",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T03:36:47.609982+00:00"
+    }
   },
   "1j-TY2tCz-biImwh5mjt7_um8ZUrrPX_t": {
     "vault": "My Bookshelf",
