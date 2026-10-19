@@ -26,7 +26,7 @@
     "bookshelf:1CW3p3YSb_WAJ3Dy76HVKO5JOvf8wbX8u": "read",
     "bookshelf:1OPY_hfvhmK9P0PP2PGWTrRtWnlH-SQWY": "read",
     "bookshelf:12cLl0Gqgphp-bCf0iu33IHx8b0rO0bcV": "read",
-    "bookshelf:1PDXTCEYgjwJTqXF9rZ50pJb3szPp9f_X": "pending",
+    "bookshelf:1PDXTCEYgjwJTqXF9rZ50pJb3szPp9f_X": "read",
     "bookshelf:12cDezubPnqVgBzu7WgfTDItsy1qjl5d9": "read",
     "bookshelf:1We7USJHJN3acEhqLvdMuntOF8rCXVMAj": "pending",
     "bookshelf:1fbkumMRaP16XL6e5iS1pvw9dQcA4hRnI": "pending",
@@ -138,7 +138,7 @@
     "bookshelf:1N-DBzKAUHAG6FJkdBnPTzTXW1Jx6Tjxo": "read",
     "bookshelf:1vQRlYSd7T66vOPBMNtZHa4WMMFMag61R": "pending",
     "bookshelf:1Fxy7bRZA-59zMejt-cQjPAkLmcntXmwu": "read",
-    "bookshelf:1PA9y4GxFNFhP3ZLGmHmEViNTgB-acHaT": "pending",
+    "bookshelf:1PA9y4GxFNFhP3ZLGmHmEViNTgB-acHaT": "read",
     "bookshelf:1KXBxT0VjjGHGUVjkBFWW0ND9wL9eEibQ": "read",
     "bookshelf:1n4fmuB0UyUXDSj2aUfX7gum57ylntQ0B": "pending",
     "bookshelf:1tM6Se1Mv2uQ8znpGWjmoYTLB5EsU0yul": "pending",
@@ -253,7 +253,7 @@
     "bookshelf:1-6ObtncuHmqEjz0EcgbRWxvJhbSfkVyR": "read",
     "bookshelf:1B6AwAsjyrFhB-oAheJ7bw8M4jo3_45aj": "read",
     "bookshelf:10iPCj8xCxSKjiCopWJjr5FnwtoFyEeHN": "read",
-    "bookshelf:1P1MXkqXRthEuCktOf1ZXOSai8pQsWtlu": "pending",
+    "bookshelf:1P1MXkqXRthEuCktOf1ZXOSai8pQsWtlu": "read",
     "bookshelf:1qm1pZUvagJkHz-Nw40sU4N8z015a-L1I": "pending",
     "bookshelf:1clN1RLWuvscel55Wgw-i2oWS3gkih9hn": "pending",
     "bookshelf:115NUpjbpl3FOj4JufHK5yVxLFMHxLzff": "read",
@@ -315,7 +315,7 @@
     "bookshelf:1tEDkhRsf0EZ6Egno-odmqSdNxgVT9sHN": "pending",
     "bookshelf:1eH9f7NA-uToSeDNC47TeZ3vBEMrXYGji": "pending",
     "bookshelf:1GaN126ywZfp0PaBT1IpCP-dDKbtlwNBf": "read",
-    "bookshelf:1P2Ohjx9b-qIzxFkV4TDLYnwpyQJHvlWe": "pending",
+    "bookshelf:1P2Ohjx9b-qIzxFkV4TDLYnwpyQJHvlWe": "read",
     "bookshelf:1pw9G-pGbyallNB6940c1U-Y99Oi90N9m": "pending",
     "bookshelf:1KOsWkrPWQwixFDy-wicWnv9uehj0PE9c": "read",
     "bookshelf:1zBmbSMMfPa1lagBL08-GlXMLPGW2RR9t": "pending",
@@ -552,5 +552,5 @@
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "read",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "read"
   },
-  "updated_at": "2026-10-19T02:00:24.440086+00:00"
+  "updated_at": "2026-10-19T03:00:05.108880+00:00"
 }
