@@ -17248,10 +17248,56 @@
   },
   "1RUkM-_OHIbuE0t2b74_WJwfMNBjzT_Ij": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "4a8a1a0c85b275dfa05cf21302dba16a6fb6aaf982c2dfcf4fc4073ef5fcfa98",
+      "page_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        106,
+        212,
+        317
+      ],
+      "ocr_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        106,
+        212,
+        317
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": false,
+      "proposed_category": "History",
+      "proposed_subcategory": "Iranian history",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": false,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T06:44:05.763170+00:00"
+    }
   },
   "16TNvpTXGVIBh-0uaIXU5VusY_ctH7L6g": {
     "vault": "My Bookshelf",
@@ -19287,9 +19333,50 @@
   "1Rd_K-IWiTG5b9myCrmU7GE7R-ZPxDouY": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "acc6626c94132afa2b98771d9358381999e8fb6d09441c0403efe27180aac953",
+      "page_numbers": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        98,
+        196,
+        294
+      ],
+      "ocr_pages": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        98,
+        196
+      ],
+      "verified_languages": [
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Arts & Culture",
+      "proposed_subcategory": "Literary criticism",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T06:56:43.245623+00:00"
+    }
   },
   "1kEPlXqQ8AJ0aKXjRXoIxUENz2qWGcbYe": {
     "vault": "My Bookshelf",
@@ -19778,10 +19865,57 @@
   },
   "1RhNjhBlSLGnXCvRG9IqVPnAE85pT9rUb": {
     "vault": "My Bookshelf",
-    "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "author_source": "Automatic content reader; sampled-page evidence matched with bounded OCR spelling tolerance",
+    "language_source": "Text language detection: English, French, Persian; Persian owner-rule tag also applied",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "28027dae5252d4cab4193a0e808bfe26b347d9f11db42daa3f20f34b858c2ada",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        21,
+        41,
+        61
+      ],
+      "ocr_pages": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        41,
+        61
+      ],
+      "verified_languages": [
+        "English",
+        "French",
+        "Persian"
+      ],
+      "policy_persian": true,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Algorithms & data structures",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": true,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T07:05:15.826869+00:00"
+    }
   },
   "1uRt0fwJgsWVzBQsWfVsAuyUJKS9efRHt": {
     "vault": "My Bookshelf",
@@ -23144,9 +23278,43 @@
   "1RT54Vs3LznoSuOrOFoJuy24KINonGBKE": {
     "vault": "My Bookshelf",
     "author_source": "imported unchanged from bookshelf-catalog",
-    "language_source": "imported unchanged from bookshelf-catalog",
+    "language_source": "Text language detection: English, German",
     "source_repository": "https://github.com/ehsanbz/bookshelf-catalog",
-    "source_catalog_date": "2026-10-14"
+    "source_catalog_date": "2026-10-14",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "model": "Qwen/Qwen3-8B-GGUF",
+      "model_revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "fingerprint": "aa84a89b6766dfa11d40109d4a2b6f5bfcf21e6baed5eeeb55057a2afad7c4e1",
+      "page_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ocr_pages": [],
+      "verified_languages": [
+        "English",
+        "German"
+      ],
+      "policy_persian": false,
+      "classification_confidence": 0.95,
+      "can_sort": true,
+      "proposed_category": "Technology & Computing",
+      "proposed_subcategory": "Networks & communications",
+      "verified_form": "Nonfiction",
+      "title_accepted": true,
+      "author_accepted": false,
+      "classification_evidence_matched": true,
+      "grounding_rule": "normalized exact match or at least 95% similarity on OCR text",
+      "status": "read",
+      "attempts": 1,
+      "checked_at": "2026-10-19T06:28:15.279547+00:00"
+    }
   },
   "1cjY2aR3FxU2e97kni9p5UILs8qzZNO03": {
     "vault": "My Bookshelf",

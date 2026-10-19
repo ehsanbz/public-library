@@ -117,7 +117,7 @@
     "bookshelf:16-XHQUpkyx4Ok5grl313FAVDZGFpN18K": "read",
     "bookshelf:1FfrbVwagEOuiYEY3KRaBHzJt18Wa9j5u": "read",
     "bookshelf:1CsENp999AfEsLb2tbJymD282fXo3CPlV": "read",
-    "bookshelf:1RUkM-_OHIbuE0t2b74_WJwfMNBjzT_Ij": "pending",
+    "bookshelf:1RUkM-_OHIbuE0t2b74_WJwfMNBjzT_Ij": "read",
     "bookshelf:16TNvpTXGVIBh-0uaIXU5VusY_ctH7L6g": "read",
     "bookshelf:1sP9AfMa0f6vKah9MVuuVg051O2cy8HkZ": "pending",
     "bookshelf:1XcP_MhQ_UhLG5GOhK3kceWYAoCK0IRLL": "pending",
@@ -198,7 +198,7 @@
     "bookshelf:1A71aQE3VJpQ_JID5jhxLD9fRqeDqSF9R": "read",
     "bookshelf:1UlKdVEHb1-O0vBTHT5NiDWm1rXxwjxX4": "pending",
     "bookshelf:1pkJkRFD-n5mJdy1KzVt_WojW7SL4DlS9": "pending",
-    "bookshelf:1Rd_K-IWiTG5b9myCrmU7GE7R-ZPxDouY": "pending",
+    "bookshelf:1Rd_K-IWiTG5b9myCrmU7GE7R-ZPxDouY": "read",
     "bookshelf:1kEPlXqQ8AJ0aKXjRXoIxUENz2qWGcbYe": "pending",
     "bookshelf:1PUFVcXZ-2JkP5SpykownsFwiwBPqM8ir": "read",
     "bookshelf:1j-TY2tCz-biImwh5mjt7_um8ZUrrPX_t": "pending",
@@ -224,7 +224,7 @@
     "bookshelf:1s4NZXXQ5YX9QYMlj-z5IaSKMYvDDNRcS": "pending",
     "bookshelf:14r8Gmn3z4iUScUXxZylInGHLX8gShjp0": "read",
     "bookshelf:1_cK5AnkCOn7In3tBkNfclwLON5AKRzxj": "pending",
-    "bookshelf:1RhNjhBlSLGnXCvRG9IqVPnAE85pT9rUb": "pending",
+    "bookshelf:1RhNjhBlSLGnXCvRG9IqVPnAE85pT9rUb": "read",
     "bookshelf:1uRt0fwJgsWVzBQsWfVsAuyUJKS9efRHt": "pending",
     "bookshelf:137RxmeRbMgV19hbEhlIAk8HoRstaZ1o3": "read",
     "bookshelf:1px_FVvD1k5z80F9ZDn5fhs3g8XfUpbm2": "pending",
@@ -369,7 +369,7 @@
     "bookshelf:1iBvyJfy473VxAGieiJfcgoW5YEcWqE0N": "pending",
     "bookshelf:1jk8mF2VqjNZvTDGMSAJ6cNaZSkUF7MW0": "pending",
     "bookshelf:1rRkWXVLVIZJWJYM4rHGleJ9sRL7OAxL-": "pending",
-    "bookshelf:1RT54Vs3LznoSuOrOFoJuy24KINonGBKE": "pending",
+    "bookshelf:1RT54Vs3LznoSuOrOFoJuy24KINonGBKE": "read",
     "bookshelf:1cjY2aR3FxU2e97kni9p5UILs8qzZNO03": "pending",
     "bookshelf:1Eyo4r49tI8NEoEqGYm8lG_QlL8X5cxtO": "read",
     "bookshelf:11K58qdy4c_LPa_n4R75W4TWTTfCWlABB": "read",
@@ -552,5 +552,5 @@
     "public-library:0B9wuggJUWO5Pal9LaG9qblNsdGc": "read",
     "public-library:0B9wuggJUWO5Pd21EcjlGWDdWVVU": "read"
   },
-  "updated_at": "2026-10-19T06:08:44.136822+00:00"
+  "updated_at": "2026-10-19T07:05:15.981713+00:00"
 }
