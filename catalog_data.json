@@ -34613,11 +34613,29 @@
       "PDF",
       "https://drive.google.com/file/d/1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o/view?usp=drivesdk",
       "My Bookshelf"
+    ],
+    [
+      "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ",
+      "ChatExport 2026-10-19",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Needs review",
+      "Needs review",
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "REVIEW: New automatically discovered entry; authorship and edition metadata need verification. Title/category use filename or explicit source folder only. Original file: ChatExport_2026-10-19.zip | Source folder: .",
+      "Unknown",
+      "Unknown",
+      "ZIP",
+      "https://drive.google.com/file/d/1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ/view?usp=drivesdk",
+      "My Bookshelf"
     ]
   ],
   "summary": {
     "screened_files": 1533,
-    "catalog_output_rows": 1922,
+    "catalog_output_rows": 1923,
     "review_ids": [
       "0B9wuggJUWO5PdWg1c2stS3ZkT2M",
       "0B9wuggJUWO5PYXhhcjJrUnd0ekE",
@@ -35166,9 +35184,10 @@
       "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
       "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
       "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
-      "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
+      "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
+      "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ"
     ],
-    "review_count": 548,
+    "review_count": 549,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
     "updated_at": "2026-10-19",
@@ -35194,7 +35213,7 @@
       "Health": 3,
       "Science": 4,
       "Technology & Computing": 254,
-      "Unknown": 18
+      "Unknown": 19
     },
     "language_counts": {
       "Persian": 1381,
@@ -35204,7 +35223,7 @@
       "Romanian": 3,
       "Italian": 1,
       "Arabic; Persian": 7,
-      "Unknown": 127,
+      "Unknown": 128,
       "Dutch; German; Persian; Romanian": 1,
       "German; English": 1,
       "German": 5,
@@ -35225,7 +35244,7 @@
     "language_confirmed_from_text": 226,
     "vault_counts": {
       "Public Library": 1416,
-      "My Bookshelf": 506
+      "My Bookshelf": 507
     }
   },
   "vaults": [
@@ -35304,7 +35323,7 @@
       "drive_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM",
       "repository_url": "https://github.com/ehsanbz/bookshelf-catalog",
       "csv": "bookshelf_catalog.csv",
-      "count": 506,
+      "count": 507,
       "review_ids": [
         "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
         "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -35795,7 +35814,8 @@
         "1ySDTcjGvzgvLDcc4lK1bvvecaAHu2Vx2",
         "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
-        "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o"
+        "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
+        "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ"
       ],
       "updated_at": "2026-10-19"
     }

@@ -2,7 +2,7 @@
 
 [Open the catalog](https://ehsanbz.github.io/public-library/)
 
-1,922 entries in two distinct vaults: **Public Library (1,416)** and **My Bookshelf (506)**. Use the Include vaults checkboxes to browse either or both. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved between vaults; existing IDs and access links are preserved.
+1,923 entries in two distinct vaults: **Public Library (1,416)** and **My Bookshelf (507)**. Use the Include vaults checkboxes to browse either or both. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved between vaults; existing IDs and access links are preserved.
 
 ## Sources
 

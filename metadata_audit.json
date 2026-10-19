@@ -26460,5 +26460,20 @@
     },
     "classification_source": "Automatic content classification against existing taxonomy; evidence checked in sampled pages",
     "title_source": "Verified visually from the PDF title page, page 3, 2026-10-16; corrected one OCR letter"
+  },
+  "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ": {
+    "vault": "My Bookshelf",
+    "author_source": "automatic filename/folder discovery; needs review",
+    "language_source": "unverified",
+    "source_path": "",
+    "discovered_at": "2026-10-19T21:09:50.287380+00:00",
+    "content_analysis": {
+      "reader_version": "ocr-qwen-v5",
+      "fingerprint": "b5828f7a050d65ae16f4607184abe1e2bca0cf685940f648b99224e3951dd55e",
+      "status": "unsupported_format",
+      "can_sort": false,
+      "checked_at": "2026-10-19T21:09:50.313092+00:00",
+      "attempts": 1
+    }
   }
 }
