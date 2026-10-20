@@ -4,7 +4,7 @@
   "frequency": "daily",
   "execution": "GitHub Actions hosted runner with Google Drive API",
   "automation_id": "sync-bookshelf-inbox",
-  "catalog_updated_at": "2026-10-19",
+  "catalog_updated_at": "2026-10-20",
   "public_updated_at": "2026-10-17",
   "preserve_existing_metadata": true,
   "follow_shortcuts": false,
@@ -17,7 +17,5 @@
   "cloud_enabled": true,
   "personal_inbox_organization": true,
   "schedule_utc": "16:23",
-  "reader_pending_new": [
-    "bookshelf:1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ"
-  ]
+  "reader_pending_new": []
 }
