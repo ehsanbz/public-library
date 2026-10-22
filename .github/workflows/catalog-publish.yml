@@ -29,7 +29,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Verify catalog
-        run: python verify_metadata.py
+        run: |
+          python test_enrich_shervin.py
+          python verify_metadata.py
       - name: Prepare public catalog
         run: |
           mkdir -p site.local

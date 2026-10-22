@@ -54,6 +54,13 @@ shervin=json.loads((p/'shervin_vakili_source.json').read_text(encoding='utf-8'))
 third=[r for r in d['rows'] if r[15]=='Shervin Vakili Library']
 assert [r[:15] for r in third]==shervin['rows']
 assert all(re.fullmatch(r'https://t.me/SherwinVakiliLibrary/\d+',r[14]) for r in third)
+if (p/'shervin_vakili_metadata_audit.json').exists():
+ evidence=json.loads((p/'shervin_vakili_metadata_audit.json').read_text(encoding='utf-8'))
+ for r in third:
+  fields=evidence.get(r[0],{}).get('fields',{})
+  for index in [4,5,7,8,9,11,12]:
+   if r[index]!='Unknown':assert str(index) in fields and fields[str(index)]['value']==r[index],(r[0],index)
+  if any(v['basis'].startswith('inferred:') for v in fields.values()):assert ': inferred:' in r[10] and r[10].startswith('REVIEW:')
 assert d['summary']['vault_counts']=={'Public Library':len(public),'My Bookshelf':len(personal),'Shervin Vakili Library':len(third)}
 for filename,subset in [('public_library_catalog.csv',public),('bookshelf_catalog.csv',personal),('shervin_vakili_catalog.csv',third)]:
  with (p/filename).open(encoding='utf-8-sig',newline='') as f:assert list(csv.reader(f))==[d['headers'][:15],*[r[:15] for r in subset]]
