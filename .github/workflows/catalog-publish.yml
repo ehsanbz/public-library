@@ -1,0 +1,44 @@
+name: Publish catalog changes
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - catalog_data.json
+      - shervin_vakili_source.json
+      - .github/workflows/catalog-publish.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: public-library-maintenance
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Verify catalog
+        run: python verify_metadata.py
+      - name: Prepare public catalog
+        run: |
+          mkdir -p site.local
+          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv shervin_vakili_catalog.csv .nojekyll site.local/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site.local
+      - name: Deploy catalog
+        id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Verify published catalog
+        run: python verify_cloud_deployment.py

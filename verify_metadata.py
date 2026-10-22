@@ -50,8 +50,12 @@ embedded=json.loads(re.search(r'<script id="catalog-data" type="application/json
 assert embedded==d
 with (p/'book_catalog.csv').open(encoding='utf-8-sig',newline='') as f:assert list(csv.reader(f))==[d['headers'],*d['rows']]
 assert set(d['summary']['review_ids'])<=all_ids
-assert d['summary']['vault_counts']=={'Public Library':len(public),'My Bookshelf':len(personal)}
-for filename,subset in [('public_library_catalog.csv',public),('bookshelf_catalog.csv',personal)]:
+shervin=json.loads((p/'shervin_vakili_source.json').read_text(encoding='utf-8'))
+third=[r for r in d['rows'] if r[15]=='Shervin Vakili Library']
+assert [r[:15] for r in third]==shervin['rows']
+assert all(re.fullmatch(r'https://t.me/SherwinVakiliLibrary/\d+',r[14]) for r in third)
+assert d['summary']['vault_counts']=={'Public Library':len(public),'My Bookshelf':len(personal),'Shervin Vakili Library':len(third)}
+for filename,subset in [('public_library_catalog.csv',public),('bookshelf_catalog.csv',personal),('shervin_vakili_catalog.csv',third)]:
  with (p/filename).open(encoding='utf-8-sig',newline='') as f:assert list(csv.reader(f))==[d['headers'][:15],*[r[:15] for r in subset]]
 assert all(r[2] not in ['Havaye Tazeh','دیوان شمس تبریزی','ترانه های خیام','مانیفست حزب کمونیست','سنت و سکولاریسم'] for r in d['rows'])
-print('PASS: dynamic counts in two distinct vaults; source rows and review flags preserved; source links preserved; separate and combined CSVs agree; existing metadata regressions pass.')
+print('PASS: dynamic counts in three distinct collections; source rows and review flags preserved; source links preserved; separate and combined CSVs agree; existing metadata regressions pass.')
