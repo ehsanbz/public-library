@@ -34633,6 +34633,24 @@
       "My Bookshelf"
     ],
     [
+      "1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa",
+      "مشروطه‌ی ایرانی",
+      "ماشاءالله آجودانی",
+      "Nonfiction",
+      "History",
+      "Political history",
+      "Political history",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: Metadata read automatically from book pages 2, 3, 4, 5, 6, 7, 8, 138, 275, 412 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa/view?usp=drivesdk",
+      "My Bookshelf"
+    ],
+    [
       "shervin-vakili:33827",
       "009 - Darlton, Clark - Wanderer zwischen d",
       "Utopia Classics",
@@ -516477,7 +516495,7 @@
   ],
   "summary": {
     "screened_files": 1533,
-    "catalog_output_rows": 28692,
+    "catalog_output_rows": 28693,
     "review_ids": [
       "0B9wuggJUWO5PdWg1c2stS3ZkT2M",
       "0B9wuggJUWO5PYXhhcjJrUnd0ekE",
@@ -517028,6 +517046,7 @@
       "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
       "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
       "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ",
+      "1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa",
       "shervin-vakili:33827",
       "shervin-vakili:33828",
       "shervin-vakili:569",
@@ -543798,20 +543817,20 @@
       "shervin-vakili:40079",
       "shervin-vakili:60133"
     ],
-    "review_count": 27318,
+    "review_count": 27319,
     "duplicate_groups": 96,
     "duplicate_rows": 208,
     "updated_at": "2026-10-23",
     "excluded_assets": 117,
     "folders_scanned": 216,
-    "authors_identified": 23704,
-    "languages_identified": 14837,
+    "authors_identified": 23705,
+    "languages_identified": 14838,
     "category_counts": {
       "Arts & Culture": 1685,
       "Biography & Memoir": 428,
       "Business & Economics": 449,
       "Historical Fiction": 47,
-      "History": 2517,
+      "History": 2518,
       "Language & Linguistics": 288,
       "Literary Fiction": 1750,
       "Mystery & Thriller": 34,
@@ -543827,7 +543846,7 @@
       "Unknown": 17059
     },
     "language_counts": {
-      "Persian": 12411,
+      "Persian": 12412,
       "English": 2365,
       "English; Persian": 6,
       "Azerbaijani; Persian": 1,
@@ -543857,7 +543876,7 @@
     "language_confirmed_from_text": 226,
     "vault_counts": {
       "Public Library": 1416,
-      "My Bookshelf": 507,
+      "My Bookshelf": 508,
       "Shervin Vakili Library": 26769
     }
   },
@@ -543937,7 +543956,7 @@
       "drive_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM",
       "repository_url": "https://github.com/ehsanbz/bookshelf-catalog",
       "csv": "bookshelf_catalog.csv",
-      "count": 507,
+      "count": 508,
       "review_ids": [
         "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
         "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -544429,9 +544448,10 @@
         "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
         "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
         "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
-        "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ"
+        "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ",
+        "1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa"
       ],
-      "updated_at": "2026-10-22"
+      "updated_at": "2026-10-23"
     },
     {
       "id": "shervin-vakili",

@@ -8635,10 +8635,27 @@
       "Unknown",
       "ZIP",
       "https://drive.google.com/file/d/1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ/view?usp=drivesdk"
+    ],
+    [
+      "1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa",
+      "مشروطه‌ی ایرانی",
+      "ماشاءالله آجودانی",
+      "Nonfiction",
+      "History",
+      "Political history",
+      "Political history",
+      "Persian",
+      "Unknown",
+      "Unknown",
+      "REVIEW: Metadata read automatically from book pages 2, 3, 4, 5, 6, 7, 8, 138, 275, 412 using OCR. Machine interpretation remains reviewable; uncertain fields are retained as Unknown. No book excerpts are published. Classification met the automatic filing threshold.",
+      "Unknown",
+      "Unknown",
+      "PDF",
+      "https://drive.google.com/file/d/1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa/view?usp=drivesdk"
     ]
   ],
   "summary": {
-    "catalog_output_rows": 507,
+    "catalog_output_rows": 508,
     "review_ids": [
       "1UrCpcXAVIHt0YD9nkfb3IjTJLeSZwY5A",
       "16Ckp_VjPXwN7e1BpXhTEh4IJM1z3B02f",
@@ -9130,10 +9147,11 @@
       "1Yu1JgsQeBDV4CDiZhzjwtR2HHUKg7Yfz",
       "1DlUZsd69ukzfeYIkLW4iQjK8kxyXFNqg",
       "1xvC_bTYfKgwsMLiiCjwyHAvLi6HrT05o",
-      "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ"
+      "1dgv-chR--5qV4sqMWGWVrFkW6wyymJBZ",
+      "1M-5EytK1-Oxoh-wUQlV5ENsz3qt0tCPa"
     ],
-    "review_count": 491,
-    "updated_at": "2026-10-22",
+    "review_count": 492,
+    "updated_at": "2026-10-23",
     "drive_library_url": "https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM"
   }
 }
