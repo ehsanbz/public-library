@@ -160,7 +160,7 @@ def main():
         rows.append(revised)
         if evidence:audit[row[0]]={'source_url':row[14],'fields':evidence}
     source['rows']=rows
-    source['metadata_enriched_at']='2026-10-23'
+    source['metadata_enriched_at']=source['updated_at']
     source['metadata_evidence']='shervin_vakili_metadata_audit.json'
     (ROOT/'shervin_vakili_source.json').write_text(json.dumps(source,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     (ROOT/'shervin_vakili_metadata_audit.json').write_text(json.dumps(audit,ensure_ascii=False,separators=(',',':')),encoding='utf-8')

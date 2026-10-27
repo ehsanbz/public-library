@@ -1,22 +1,22 @@
 {
-  "records": 26769,
+  "records": 30367,
   "coverage": {
-    "author": 21969,
-    "category": 9729,
-    "theme": 9729,
-    "language": 13042,
-    "year": 573,
-    "volume": 2466,
+    "author": 25209,
+    "category": 10945,
+    "theme": 10945,
+    "language": 14919,
+    "year": 582,
+    "volume": 3121,
     "isbn": 0,
-    "edition": 35
+    "edition": 36
   },
   "language_methods": {
-    "inferred": 12755,
+    "inferred": 14632,
     "explicit source language label": 287
   },
   "category_methods": {
-    "inferred": 7391,
-    "source subject label/hashtag": 2202,
-    "exact title and author match to existing catalog subject": 136
+    "inferred": 8538,
+    "source subject label/hashtag": 2258,
+    "exact title and author match to existing catalog subject": 149
   }
 }

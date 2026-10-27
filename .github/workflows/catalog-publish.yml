@@ -35,7 +35,7 @@ jobs:
       - name: Prepare public catalog
         run: |
           mkdir -p site.local
-          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv shervin_vakili_catalog.csv .nojekyll site.local/
+          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv shervin_vakili_catalog.csv shervin_vakili_provenance.json .nojekyll site.local/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site.local
