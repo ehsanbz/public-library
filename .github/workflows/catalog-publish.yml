@@ -1,13 +1,7 @@
-name: Publish catalog changes
+name: Publish metadata-only catalog
 on:
   push:
     branches: [main]
-    paths:
-      - index.html
-      - catalog_data.json
-      - shervin_vakili_source.json
-      - litera999_source.json
-      - .github/workflows/catalog-publish.yml
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,7 +9,7 @@ permissions:
   id-token: write
 concurrency:
   group: public-library-maintenance
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   publish:
     runs-on: ubuntu-24.04
@@ -23,25 +17,20 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v7
-        with:
-          ref: main
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify catalog
+      - name: Verify access links are withheld
+        run: python verify_public_privacy.py
+      - uses: actions/configure-pages@v5
+      - name: Prepare approved public files
         run: |
-          python test_enrich_shervin.py
-          python verify_metadata.py
-      - name: Prepare public catalog
-        run: |
-          mkdir -p site.local
-          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv shervin_vakili_catalog.csv litera999_catalog.csv shervin_vakili_provenance.json .nojekyll site.local/
+          mkdir site
+          cp index.html .nojekyll site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site.local
+          path: site
       - name: Deploy catalog
         id: deploy
         uses: actions/deploy-pages@v4
-      - name: Verify published catalog
-        run: python verify_cloud_deployment.py
