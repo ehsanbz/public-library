@@ -6,6 +6,7 @@ on:
       - index.html
       - catalog_data.json
       - shervin_vakili_source.json
+      - litera999_source.json
       - .github/workflows/catalog-publish.yml
   workflow_dispatch:
 permissions:
@@ -35,7 +36,7 @@ jobs:
       - name: Prepare public catalog
         run: |
           mkdir -p site.local
-          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv bookshelf_catalog.csv shervin_vakili_catalog.csv shervin_vakili_provenance.json .nojekyll site.local/
+          cp index.html catalog_data.json book_catalog.csv public_library_catalog.csv shervin_vakili_catalog.csv litera999_catalog.csv shervin_vakili_provenance.json .nojekyll site.local/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site.local

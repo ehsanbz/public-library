@@ -58,17 +58,9 @@ if (root/'public_library_catalog.csv').exists():
   elif 'public-library:'+r[0] in previous_audit:audit[r[0]]=previous_audit['public-library:'+r[0]]
 assert len(rows)==len({r[0] for r in rows})
 summary={'screened_files':len(source['files']),'catalog_output_rows':len(rows),'review_ids':review_ids,'review_count':len(review_ids),'duplicate_groups':len(duplicate_groups),'duplicate_rows':sum(map(len,duplicate_groups)),'updated_at':sync['catalog_updated_at'],'excluded_assets':len(excluded),'folders_scanned':len(source['folders']),'authors_identified':sum(r[2] not in ['Unknown','Various authors'] for r in rows),'languages_identified':sum(r[7]!='Unknown' for r in rows),'category_counts':dict(collections.Counter(r[4] for r in rows)),'language_counts':dict(collections.Counter(r[7] for r in rows)),'text_extraction_attempted':len(EVIDENCE),'language_confirmed_from_text':sum(v.get('text_readable_language',False) for v in audit.values())}
-personal=json.loads((root/'bookshelf_source.json').read_text(encoding='utf-8'))
-assert personal['headers']==headers
 with (root/'public_library_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*rows])
-with (root/'bookshelf_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*personal['rows']])
-vaults=[{'id':'public-library','name':'Public Library','drive_url':'https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw','repository_url':'https://github.com/ehsanbz/public-library','csv':'public_library_catalog.csv','count':len(rows),'review_ids':review_ids,'updated_at':sync['public_updated_at']},
- {'id':'bookshelf','name':'My Bookshelf','drive_url':'https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM','repository_url':'https://github.com/ehsanbz/bookshelf-catalog','csv':'bookshelf_catalog.csv','count':len(personal['rows']),'review_ids':personal['summary']['review_ids'],'updated_at':personal['summary']['updated_at']}]
-rows=[r+['Public Library'] for r in rows]+[r+['My Bookshelf'] for r in personal['rows']]
-for r in personal['rows']:
- audit_key='bookshelf:'+r[0] if r[0] in audit else r[0]
- previous_personal=previous_audit.get('bookshelf:'+r[0]) or previous_audit.get(r[0],{})
- audit[audit_key]=previous_personal if previous_personal.get('vault')=='My Bookshelf' else{'vault':'My Bookshelf','author_source':'imported unchanged from bookshelf-catalog','language_source':'imported unchanged from bookshelf-catalog','source_repository':'https://github.com/ehsanbz/bookshelf-catalog','source_catalog_date':personal['summary']['updated_at']}
+vaults=[{'id':'public-library','name':'Public Library','drive_url':'https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw','repository_url':'https://github.com/ehsanbz/public-library','csv':'public_library_catalog.csv','count':len(rows),'review_ids':review_ids,'updated_at':sync['public_updated_at']}]
+rows=[r+['Public Library'] for r in rows]
 for v in audit.values():v.setdefault('vault','Public Library')
 shervin=json.loads((root/'shervin_vakili_source.json').read_text(encoding='utf-8'))
 summary['updated_at']=max(summary['updated_at'],shervin['updated_at'])
@@ -82,8 +74,18 @@ shervin_evidence=json.loads((root/'shervin_vakili_metadata_audit.json').read_tex
 for r in shervin['rows']:
  fields=shervin_evidence.get(r[0],{}).get('fields',{})
  audit[r[0]]={'vault':shervin['name'],'source_catalog':'shervin_vakili_source.json','source_url':r[14],'author_source':'imported from reviewed Telegram catalog; see row notes','language_source':fields.get('7',{}).get('basis','unverified'),'category_source':fields.get('4',{}).get('basis','unverified'),'field_evidence':'shervin_vakili_metadata_audit.json#'+r[0]}
+litera=json.loads((root/'litera999_source.json').read_text(encoding='utf-8'))
+assert all(len(r)==15 for r in litera['rows'])
+assert len(litera['rows'])==len({r[0] for r in litera['rows']})
+with (root/'litera999_catalog.csv').open('w',encoding='utf-8-sig',newline='') as out:csv.writer(out).writerows([headers,*litera['rows']])
+litera_reviews=[r[0] for r in litera['rows'] if r[10].startswith('REVIEW:')]
+vaults.append({'id':'litera999','name':litera['name'],'drive_url':litera['url'],'source_label':'Telegram','csv':'litera999_catalog.csv','count':len(litera['rows']),'review_ids':litera_reviews,'updated_at':litera['updated_at']})
+rows.extend(r+[litera['name']] for r in litera['rows'])
+summary['updated_at']=max(summary['updated_at'],litera['updated_at'])
+for r in litera['rows']:
+ audit[r[0]]={'vault':litera['name'],'source_catalog':'litera999_source.json','source_url':r[14],'author_source':'unverified','language_source':'unverified'}
 headers=headers+['Vault']
-summary.update(catalog_output_rows=len(rows),vault_counts={v['name']:v['count'] for v in vaults},review_ids=review_ids+personal['summary']['review_ids']+shervin_reviews,review_count=len(review_ids)+len(personal['summary']['review_ids'])+len(shervin_reviews),authors_identified=sum(r[2] not in ['Unknown','Various authors'] for r in rows),languages_identified=sum(r[7]!='Unknown' for r in rows),category_counts=dict(collections.Counter(r[4] for r in rows)),language_counts=dict(collections.Counter(r[7] for r in rows)))
+summary.update(catalog_output_rows=len(rows),vault_counts={v['name']:v['count'] for v in vaults},review_ids=review_ids+shervin_reviews+litera_reviews,review_count=len(review_ids)+len(shervin_reviews)+len(litera_reviews),authors_identified=sum(r[2] not in ['Unknown','Various authors'] for r in rows),languages_identified=sum(r[7]!='Unknown' for r in rows),category_counts=dict(collections.Counter(r[4] for r in rows)),language_counts=dict(collections.Counter(r[7] for r in rows)))
 data={'headers':headers,'rows':rows,'summary':summary,'vaults':vaults,'sync':{'enabled':sync['enabled'],'frequency':sync['frequency'],'execution':sync['execution']}}
 (root/'catalog_data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
 (root/'metadata_audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -98,14 +100,14 @@ automation_description = ('Daily checks run on GitHub Actions with Google Drive 
 
 [Open the catalog](https://ehsanbz.github.io/public-library/)
 
-{len(rows):,} entries in three distinct collections: **Public Library ({vaults[0]['count']:,})** and **My Bookshelf ({vaults[1]['count']:,})**, plus **Shervin Vakili Library ({vaults[2]['count']:,})**. Use the Include vaults checkboxes to browse any combination. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved between vaults; existing IDs and access links are preserved.
+{len(rows):,} entries in three collections: **Public Library ({vaults[0]['count']:,})**, **Shervin Vakili Library ({vaults[1]['count']:,})** and **Litera999 ({vaults[2]['count']:,})**. Use the Include vaults checkboxes to browse any combination. Results stay grouped by vault, even when sorting. Every row, details panel and CSV export records its vault. Books are never moved between vaults; existing IDs and access links are preserved.
 
 ## Sources
 
 - Public Library: [Drive vault](https://drive.google.com/drive/folders/0B9wuggJUWO5PejkzOUJZTWx6NGM?resourcekey=0-CHaAwLapPnvIJ7BW3Nj8jw), with the reviewed metadata and Persian tagging rule from this repository.
-- My Bookshelf: [Drive vault](https://drive.google.com/drive/folders/1NvUlp3CWKggnwhxBS862_2i1LsIEOsxM) and [original catalog](https://github.com/ehsanbz/bookshelf-catalog), personal metadata updated {personal['summary']['updated_at']}. Existing entries, metadata and review flags are preserved; newly discovered files are added by the scheduled sync and uncertain fields are marked for review. The shortcut to Public Library inside this vault is not imported as another copy.
 
-- Shervin Vakili Library: [Telegram library](https://t.me/SherwinVakiliLibrary), imported from the reviewed local catalog dated {shervin['updated_at']}. Only entries classified as Books are included; excluded and unresolved candidates are omitted. Book links open their original Telegram posts. Metadata recovers explicit source labels, subject hashtags and volume markers, plus exact title/author subject matches to the existing catalog. Language and subject estimates based on title/filename wording are explicitly marked **inferred** in Details and remain flagged for review. A translated caption or author nationality does not establish the attachment language. Unknown values remain where evidence is insufficient. Filename and contributor credits are searchable. This is a saved snapshot, preserved by daily rebuilds; Drive synchronization does not fetch Telegram updates.
+- Shervin Vakili Library: [Telegram library](https://t.me/SherwinVakiliLibrary), updated from the supplied CSV dated {shervin['updated_at']}. Existing reviewed records and IDs are preserved by matching original post links. Previously reviewed records absent from the CSV are retained. New CSV entries retain their source titles and notes; missing bibliographic fields remain Unknown and flagged for review.
+- Litera999: [Telegram library](https://t.me/litera999), imported from the supplied CSV dated {litera['updated_at']}. Source titles, notes and post links are preserved. Bibliographic fields and attachment formats remain unverified and flagged for review. Both Telegram collections are saved snapshots preserved by daily rebuilds; Drive synchronization does not fetch Telegram updates.
 
 No deduplication or bibliographic merging occurs across vaults. Author, language, category and review filters combine with vault selection. Co-authored books appear under each author. Filtered CSV exports contain only the selected results, with a Vault column. Reset all includes all three collections again.
 
@@ -113,11 +115,13 @@ No deduplication or bibliographic merging occurs across vaults. Author, language
 
 - `index.html`: offline-capable interface and embedded data.
 - `catalog_data.json` / `book_catalog.csv`: combined browse data, with an explicit Vault field.
-- `public_library_catalog.csv` / `bookshelf_catalog.csv`: separate 15-column source catalogs.
+- `public_library_catalog.csv`: 15-column Public Library source catalog.
 - `shervin_vakili_source.json` / `shervin_vakili_catalog.csv`: durable Telegram collection metadata and separate export.
 - `shervin_vakili_provenance.json`: original inventory IDs, every book attachment/post reference, and bibliographic source links from the validated review checkpoint.
 - `shervin_vakili_metadata.json`: saved source descriptors (filename, labeled caption lines, hashtags and contributor credits). `enrich_shervin.py` recovers metadata; `shervin_vakili_metadata_audit.json` records field values, basis and source excerpts; `shervin_vakili_metadata_report.json` records coverage. Run enrichment explicitly before rebuilding; daily rebuilds preserve the saved enriched source.
-- `bookshelf_source.json`: personal-vault metadata master, seeded from the original GitHub catalog and extended by scheduled discovery.
+- `litera999_source.json` / `litera999_catalog.csv`: fourth collection source and export.
+- `shervin_vakili_csv_reference.json` / `litera999_csv_reference.json`: complete supplied CSV records and input checksums. `reference_import_report.json` records reconciliation counts.
+- `bookshelf_source.json`: personal-vault maintenance data, excluded from the public catalog.
 - `vault_inventory.json`, `metadata_source_order.json`, `metadata_rules.py`, `metadata_evidence.json`, `metadata_audit.json`, `metadata_sources.md`: Public Library inventory and metadata evidence; audit records identify imported Bookshelf provenance separately.
 - `build_catalog.py` / `catalog_ui.template.html`: builder and interface template.
 

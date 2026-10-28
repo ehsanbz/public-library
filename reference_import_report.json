@@ -1,0 +1,16 @@
+{
+  "Shervin Vakili Library": {
+    "csv_entries": 61865,
+    "preserved_existing": 30367,
+    "added": 32064,
+    "retained_absent_from_csv": 566,
+    "total": 62431
+  },
+  "Litera999": {
+    "csv_entries": 53220,
+    "preserved_existing": 0,
+    "added": 53220,
+    "retained_absent_from_csv": 0,
+    "total": 53220
+  }
+}

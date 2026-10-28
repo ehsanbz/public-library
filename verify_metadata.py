@@ -9,12 +9,10 @@ assert all(len(r)==16 for r in d['rows'])
 assert d['headers'][-1]=='Vault'
 public=[r for r in d['rows'] if r[15]=='Public Library']
 personal=[r for r in d['rows'] if r[15]=='My Bookshelf']
-assert len(public)>=1416 and len(personal)>=500
+assert len(public)>=1416 and not personal
+assert {v['name'] for v in d['vaults']}=={'Public Library','Shervin Vakili Library','Litera999'}
 by={r[0]:r for r in public}
 all_ids={r[0] for r in d['rows']}
-imported=json.loads((p/'bookshelf_source.json').read_text(encoding='utf-8'))
-assert [r[:15] for r in personal]==imported['rows'],'Imported metadata changed'
-assert next(v for v in d['vaults'] if v['id']=='bookshelf')['review_ids']==imported['summary']['review_ids']
 source={f['id']:f for f in v}
 assert all(r[14]==source[r[0]]['url'] for r in public)
 assert all(r[14].startswith(('https://drive.google.com/','https://docs.google.com/')) for r in public)
@@ -61,8 +59,12 @@ if (p/'shervin_vakili_metadata_audit.json').exists():
   for index in [4,5,7,8,9,11,12]:
    if r[index]!='Unknown':assert str(index) in fields and fields[str(index)]['value']==r[index],(r[0],index)
   if any(v['basis'].startswith('inferred:') for v in fields.values()):assert ': inferred:' in r[10] and r[10].startswith('REVIEW:')
-assert d['summary']['vault_counts']=={'Public Library':len(public),'My Bookshelf':len(personal),'Shervin Vakili Library':len(third)}
-for filename,subset in [('public_library_catalog.csv',public),('bookshelf_catalog.csv',personal),('shervin_vakili_catalog.csv',third)]:
+litera=json.loads((p/'litera999_source.json').read_text(encoding='utf-8'))
+fourth=[r for r in d['rows'] if r[15]=='Litera999']
+assert [r[:15] for r in fourth]==litera['rows']
+assert all(re.fullmatch(r'https://t.me/litera999/\d+',r[14]) for r in fourth)
+assert d['summary']['vault_counts']=={'Public Library':len(public),'Shervin Vakili Library':len(third),'Litera999':len(fourth)}
+for filename,subset in [('public_library_catalog.csv',public),('shervin_vakili_catalog.csv',third),('litera999_catalog.csv',fourth)]:
  with (p/filename).open(encoding='utf-8-sig',newline='') as f:assert list(csv.reader(f))==[d['headers'][:15],*[r[:15] for r in subset]]
 assert all(r[2] not in ['Havaye Tazeh','دیوان شمس تبریزی','ترانه های خیام','مانیفست حزب کمونیست','سنت و سکولاریسم'] for r in d['rows'])
-print('PASS: dynamic counts in three distinct collections; source rows and review flags preserved; source links preserved; separate and combined CSVs agree; existing metadata regressions pass.')
+print('PASS: dynamic counts in three collections; source rows and review flags preserved; source links preserved; separate and combined CSVs agree; existing metadata regressions pass.')
